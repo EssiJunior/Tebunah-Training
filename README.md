@@ -13,21 +13,21 @@ Tebunah Training website  built with **Next.js 16**, **React 19**, and **TypeScr
 
 1. Clone the repository and navigate to the project:
 
-```bash
-cd tebunah-training
-```
+    ```bash
+    cd tebunah-training
+    ```
 
 2. Install dependencies:
 
-```bash
-npm install
-```
+    ```bash
+    npm install
+    ```
 
 3. Start the development server:
 
-```bash
-npm run dev
-```
+    ```bash
+    npm run dev
+    ```
 
 4. Open your browser and visit [http://localhost:3000](http://localhost:3000)
 
@@ -42,7 +42,7 @@ npm run dev
 
 ## 🏗️ Project Structure
 
-```
+```bash
 tebunah-training/
 ├── app/                      # Next.js App Router directory
 │   ├── layout.tsx           # Root layout component
@@ -61,12 +61,14 @@ tebunah-training/
 ## 🛠️ Tech Stack
 
 ### Core
+
 - **[Next.js 16](https://nextjs.org)** - React framework with built-in optimization
 - **[React 19](https://react.dev)** - User interface library
 - **[TypeScript 5](https://www.typescriptlang.org)** - Static type checking
 - **[Tailwind CSS 4](https://tailwindcss.com)** - Utility-first CSS framework
 
 ### Development Tools
+
 - **[ESLint 9](https://eslint.org)** - Code linting and quality assurance
 - **[PostCSS 4](https://postcss.org)** - CSS transformation
 
@@ -122,6 +124,7 @@ The easiest way to deploy is using [Vercel](https://vercel.com):
 ### Deploy to Other Platforms
 
 This Next.js app can be deployed to any platform supporting Node.js:
+
 - AWS, Google Cloud, Azure
 - Netlify, Railway, Fly.io
 - Docker containers
@@ -147,6 +150,7 @@ This project is open source and available under the [MIT License](LICENSE).
 ## 🆘 Support
 
 For questions or issues, please:
+
 - Check the [official documentation](https://nextjs.org/docs)
 - Search existing GitHub issues
 - Create a new issue with detailed information
