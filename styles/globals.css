@@ -60,8 +60,8 @@
   --color-orange: #FF6B35;
   --color-blue-ice: #4FACFE;
 
-  --font-ultra: "Ultra", serif;
-  --font-slabo: "Slabo 27px", serif;
+  --font-chonburi: "Chonburi", serif;
+  --font-domine: "Domine", serif;
   --font-mono: "Space Mono", monospace;
 
   --radius-px: 2px;
@@ -107,7 +107,7 @@ html {
 body {
   background-color: var(--color-bg);
   color: var(--color-ink);
-  font-family: var(--font-slabo);
+  font-family: var(--font-domine);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   font-size: var(--body-size);
@@ -122,7 +122,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-ultra);
+  font-family: var(--font-chonburi);
 }
 
 h1 {

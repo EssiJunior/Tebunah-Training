@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Ultra, Slabo_27px, Space_Mono } from "next/font/google";
+import { Chonburi, Domine, Space_Mono } from "next/font/google";
 import "@/styles/globals.css";
 
 const mono = Space_Mono({
@@ -8,14 +8,14 @@ const mono = Space_Mono({
   weight: "400"
 });
 
-const ultra = Ultra({
-  variable: "--font-ultra",
+const chonburi = Chonburi({
+  variable: "--font-chonburi",
   subsets: ["latin"],
   weight: "400"
 });
 
-const slabo = Slabo_27px({
-  variable: "--font-slabo-27px",
+const domine = Domine({
+  variable: "--font-domine",
   subsets: ["latin"],
   weight: "400"
 });
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${ultra.variable} ${slabo.variable} ${mono.variable} h-full antialiased`}
+      className={`${chonburi.variable} ${domine.variable} ${mono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
