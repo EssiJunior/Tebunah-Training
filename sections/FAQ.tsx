@@ -20,7 +20,7 @@ export default function FAQ() {
         <span className="font-mono text-[10px] text-white/15">#faq</span>
       </motion.div>
 
-      <div className="grid grid-cols-[1fr_2fr] gap-20 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-20 items-start">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.1 }}>
           <h2 className="font-display text-[36px] font-extrabold leading-none! mb-4">
