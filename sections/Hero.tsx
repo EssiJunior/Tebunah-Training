@@ -91,7 +91,8 @@ export default function Hero() {
         <motion.span
           initial={{ scaleX: 0 }}
           animate={{ scaleX: 1 }}
-          transition={{ duration: 0.5, delay: D, transformOrigin: 'left' }}
+          transition={{ duration: 0.5, delay: D }}
+          style={{ transformOrigin: 'left' }}
           className="inline-block w-10 h-px bg-accent"
         />
         Formations IT · Yaoundé, Cameroun
@@ -99,8 +100,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Title */}
-      <h1 className="font-display font-extrabold leading-[1.0] tracking-[-0.03em] mb-8
-                     text-[clamp(48px,7vw,96px)] max-w-4xl">
+      <h1 className="font-display font-extrabold leading-none tracking-[-0.03em] mb-8 text-[clamp(48px,7vw,96px)] max-w-4xl">
         <div>
           <Slot delay={D + 0.00}>Maîtrise&nbsp;</Slot>
           <Slot delay={D + 0.06}>le&nbsp;</Slot>
@@ -131,7 +131,7 @@ export default function Hero() {
         className="font-mono text-[13px] text-white/45 leading-[1.9] max-w-md mb-12"
       >
         13+ formations pratiques en développement web, data & IA.<br/>
-        Dispensées à Yaoundé par un dev Full-Stack actif — 4 ans d'expérience terrain.
+        Dispensées à Yaoundé par un dev Full-Stack actif - 4 ans d&apos;expérience terrain.
       </motion.p>
 
       {/* CTAs */}
@@ -146,9 +146,7 @@ export default function Hero() {
           onClick={e => { e.preventDefault(); document.querySelector('#formations')?.scrollIntoView({ behavior: 'smooth' }) }}
           whileHover={{ scale: 1.03, boxShadow: '0 0 32px rgba(200,242,58,0.25)' }}
           whileTap={{ scale: 0.97 }}
-          className="font-mono text-[12px] font-medium bg-accent text-bg
-                     px-8 py-3.5 rounded-px tracking-[0.1em] uppercase
-                     inline-flex items-center gap-2.5"
+          className="font-mono text-[12px] font-medium bg-accent text-bg px-8 py-3.5 rounded-px tracking-[0.1em] uppercase inline-flex items-center gap-2.5"
         >
           Voir les formations <span>↓</span>
         </motion.a>
@@ -156,8 +154,7 @@ export default function Hero() {
           href="#instructeur"
           onClick={e => { e.preventDefault(); document.querySelector('#instructeur')?.scrollIntoView({ behavior: 'smooth' }) }}
           whileHover={{ x: 4 }}
-          className="font-mono text-[12px] text-white/35 tracking-[0.05em]
-                     flex items-center gap-2 hover:text-white/60 transition-colors"
+          className="font-mono text-[12px] text-white/35 tracking-wider flex items-center gap-2 hover:text-white/60 transition-colors"
         >
           <span className="w-4 h-px bg-current" /> Qui enseigne ?
         </motion.a>
