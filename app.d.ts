@@ -10,6 +10,12 @@ type LogoProps = {
 
 type LogoSize = 'small' | 'mid' | 'large'
 
+interface FAQ {
+    question: string
+    answer: string
+}
+
+
 interface Formation {
     id: string
     title: string
