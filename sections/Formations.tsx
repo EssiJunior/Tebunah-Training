@@ -1,11 +1,7 @@
 'use client'
 import { AnimatePresence, motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
-import { formations, CATEGORIES } from '@/data/formations'
-
-const CAT_COLOR: Record<string, string> = {
-  ia: '#C8F23A', dev: '#FF6B35', data: '#4FACFE', bureautique: 'rgba(255,255,255,0.4)',
-}
+import { formations, CATEGORIES, CATEGORY_COLORS } from '@/data/formations'
 
 function SectionMarker({ num, label, id }: { num: string; label: string; id: string }) {
   return (
@@ -62,7 +58,7 @@ function Card({ f, index }: { f: Formation; index: number }) {
       {/* Tag row */}
       <div className="flex items-center justify-between">
         <span className="font-mono text-[10px] tracking-[0.12em] uppercase"
-          style={{ color: CAT_COLOR[f.category] }}>
+          style={{ color: CATEGORY_COLORS[f.category] }}>
           {f.category === 'bureautique' ? 'Bureautique' : f.category.toUpperCase()}
         </span>
         {f.featured && (

@@ -1,9 +1,7 @@
 'use client'
 import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
-
-const WORDS = ['numérique.', 'web.', "l'IA.", 'la data.']
-const D = 2.2
+import { WORDS, ANIMATION_DELAY } from '@/data/hero'
 
 function useCounter(target: number, dur = 2000, delay = 0) {
   const [v, setV] = useState(0)
@@ -59,6 +57,7 @@ function WordCycler() {
 export default function Hero() {
   const formations = useCounter(13, 1500, 0)
   const years      = useCounter(4,  1200, 200)
+  const D = ANIMATION_DELAY
 
   return (
     <section id="hero"

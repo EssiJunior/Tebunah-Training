@@ -221,3 +221,10 @@ export const formations: Formation[] = [
     revenue: '~125 000 FCFA/mois',
   },
 ]
+
+export const CATEGORY_COLORS: Record<string, string> = {
+  ia: '#C8F23A',
+  dev: '#FF6B35',
+  data: '#4FACFE',
+  bureautique: 'rgba(255,255,255,0.4)',
+}
