@@ -1,20 +1,25 @@
 export interface ContactInfo {
-  platform: string
-  href: string
-  label: string
+    platform: string
+    href: string
+    label: string
 }
 
 export const CONTACTS: ContactInfo[] = [
-  {
-    platform: 'WhatsApp',
-    href: 'https://wa.me/237XXXXXXXXX',
-    label: 'WhatsApp',
-  },
-  {
-    platform: 'Email',
-    href: 'mailto:contact@essidev.cm',
-    label: 'contact@essidev.cm',
-  },
+    {
+        platform: 'Contact',
+        href: 'tel:237690743737',
+        label: 'Contact',
+    },
+    {
+        platform: 'WhatsApp',
+        href: 'https://wa.me/237690743737',
+        label: 'WhatsApp',
+    },
+    {
+        platform: 'Email',
+        href: 'mailto:dev@essijunior.com',
+        label: 'dev@essijunior.com',
+    },
 ]
 
 export const LOCATION = 'Yaoundé, CM'

@@ -87,7 +87,7 @@ export default function Hero() {
       {/* Title */}
       <h1 className="leading-none! tracking-[-0.03em]! mb-8 text-[clamp(48px,7vw,96px)]! max-w-4xl">
         <div>
-          <Slot delay={D + 0.00}>Maîtrise&nbsp;</Slot>
+          <Slot delay={D + 0.00}>Maîtrisez&nbsp;</Slot>
         </div>
         <div className="overflow-hidden">
           <motion.span
