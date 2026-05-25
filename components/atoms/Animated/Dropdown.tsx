@@ -11,7 +11,7 @@ const Dropdown = ({ items, visible }: { items: NonNullable<typeof NAV_LINKS[0]['
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: 6, scale: 0.98 }}
                     transition={{ duration: 0.22, ease: [0.25, 0.46, 0.45, 0.94] }}
-                    className="absolute top-[calc(100%+12px)] left-0 min-w-65 z-50 bg-surface border border-white/8 rounded overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.6)]"
+                    className="absolute top-[calc(100%+12px)] left-0 min-w-65 z-50 bg-surface border border-white/8 overflow-hidden shadow-[0_24px_60px_rgba(0,0,0,0.6)]"
                 >
                     {/* top accent line */}
                     <div className="h-px w-full bg-accent" />
