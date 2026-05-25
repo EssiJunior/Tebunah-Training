@@ -1,5 +1,15 @@
 type Category = 'all' | 'ia' | 'dev' | 'data' | 'bureautique'
 
+type LogoProps = {
+    size?: LogoSize;
+    className?: string;
+    hideText?: boolean;
+    id?: string;
+    handleClick?: (e: React.MouseEvent) => void;
+}
+
+type LogoSize = 'small' | 'mid' | 'large'
+
 interface Formation {
     id: string
     title: string

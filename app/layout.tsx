@@ -5,7 +5,7 @@ import "@/styles/globals.css";
 const mono = Space_Mono({
   variable: "--font-mono",
   subsets: ["latin"],
-  weight: "400"
+  weight: ["400", "700"]
 });
 
 const chonburi = Chonburi({
