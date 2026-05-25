@@ -2,6 +2,7 @@
 
 import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'
+import { CONTACTS, RESPONSE_TIME, LOCATION } from '@/data/contact'
 
 const scroll = (href: string) => (e: React.MouseEvent) => {
   e.preventDefault()
@@ -46,19 +47,20 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.3 }}
           className="flex justify-center gap-4 flex-wrap"
         >
-          <motion.a href="https://wa.me/237XXXXXXXXX" target="_blank" rel="noopener noreferrer"
-            whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(200,242,58,0.3)' }}
-            whileTap={{ scale: 0.97 }}
-            className="font-mono text-[13px] font-medium bg-accent text-bg px-10 py-4 rounded-px tracking-[0.08em] uppercase inline-flex items-center gap-3"
-          >
-            WhatsApp <span>→</span>
-          </motion.a>
-          <motion.a href="mailto:contact@essidev.cm"
-            whileHover={{ borderColor: 'rgba(255,255,255,0.3)', color: '#F0EDE6' }}
-            className="font-mono text-[13px] text-white/40 px-10 py-4 rounded-px border border-white/12 tracking-[0.08em] uppercase transition-all duration-200"
-          >
-            Email
-          </motion.a>
+          {CONTACTS.map((contact, i) => (
+            <motion.a key={contact.platform} href={contact.href} 
+              target={contact.platform === 'WhatsApp' ? '_blank' : undefined} 
+              rel={contact.platform === 'WhatsApp' ? 'noopener noreferrer' : undefined}
+              whileHover={{ scale: 1.05, boxShadow: '0 0 40px rgba(200,242,58,0.3)' }}
+              whileTap={{ scale: 0.97 }}
+              className={contact.platform === 'WhatsApp' 
+                ? 'font-mono text-[13px] font-medium bg-accent text-bg px-10 py-4 rounded-px tracking-[0.08em] uppercase inline-flex items-center gap-3'
+                : 'font-mono text-[13px] text-white/40 px-10 py-4 rounded-px border border-white/12 tracking-[0.08em] uppercase transition-all duration-200'
+              }
+            >
+              {contact.platform} {contact.platform === 'WhatsApp' ? <span>→</span> : null}
+            </motion.a>
+          ))}
         </motion.div>
 
         <motion.p
@@ -66,7 +68,7 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="font-mono text-[11px] text-white/20 mt-6"
         >
-          Réponse sous 24h · Yaoundé, Cameroun
+          {RESPONSE_TIME} · {LOCATION}
         </motion.p>
       </section>
 

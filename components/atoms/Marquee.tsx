@@ -1,13 +1,9 @@
 'use client'
 
-const ITEMS = [
-  'Développement Web','✦','Intelligence Artificielle','✦','Data & Analyse','✦',
-  'Bureautique','✦','Power BI','✦','React & Next.js','✦','Claude API','✦',
-  'Cursor AI','✦','Python','✦','Excel Avancé','✦',
-]
+import { MARQUEE_ITEMS } from '@/data/marquee'
 
 export default function Marquee() {
-  const all = [...ITEMS, ...ITEMS]
+  const all = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS]
   return (
     <div className="overflow-hidden border-y border-white/[0.06] py-4">
       <div className="marquee-track">
