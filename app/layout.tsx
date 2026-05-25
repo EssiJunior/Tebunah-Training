@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
-import { Ultra, Slabo_27px } from "next/font/google";
+import { Ultra, Slabo_27px, Space_Mono } from "next/font/google";
 import "@/styles/globals.css";
+
+const mono = Space_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: "400"
+});
 
 const ultra = Ultra({
   variable: "--font-ultra",
@@ -27,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${ultra.variable} ${slabo.variable} h-full antialiased`}
+      className={`${ultra.variable} ${slabo.variable} ${mono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
