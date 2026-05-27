@@ -2,6 +2,8 @@
 import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { SKILLS, STATS } from '@/data/instructor'
+import Image from 'next/image'
+import { essi } from '@/public/assets'
 
 function SectionMarker() {
   return (
@@ -20,7 +22,7 @@ export default function Instructor() {
 
   return (
     <section id="instructeur" ref={ref}
-      className="px-10 py-[120px] border-t border-white/[0.06]">
+      className="px-10 py-30 border-t border-white/6">
       <motion.div
         initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6 }}>
@@ -33,20 +35,21 @@ export default function Instructor() {
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }} animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.7 }}
-            className="w-24 h-24 bg-accent/[0.08] border border-accent/20 rounded-px
-                       flex items-center justify-center font-display text-[28px] font-extrabold text-accent mb-7"
-          >EK</motion.div>
+            className="flex items-start justify-start mb-2"
+          >
+            <Image src={essi} alt="Photo d'Essi Junior" width={140} height={140} className="rounded-px object-cover" />
+          </motion.div>
 
           <motion.h2 initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.1 }}
             className="font-display text-[36px] font-extrabold text-ink leading-none mb-2">
-            Essi
+            Essi Junior
           </motion.h2>
 
           <motion.p initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.15 }}
             className="font-mono text-[11px] text-accent tracking-[0.08em] mb-6">
-            // Full-Stack Developer · Formateur · Yaoundé, CM
+            Développeur d&apos;applications · Formateur IT · Designeur graphique
           </motion.p>
 
           <motion.p initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}}
