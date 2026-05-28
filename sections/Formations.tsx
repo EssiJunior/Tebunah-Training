@@ -2,17 +2,8 @@
 import { AnimatePresence, motion, useInView } from 'framer-motion'
 import { useRef, useState } from 'react'
 import { formations, CATEGORIES, CATEGORY_COLORS } from '@/data/formations'
+import SectionMarker from '@/components/atoms/SectionMarker';
 
-function SectionMarker({ num, label, id }: { num: string; label: string; id: string }) {
-  return (
-    <div className="flex items-center gap-4 mb-16">
-      <span className="font-mono text-[10px] text-accent tracking-[0.15em] px-2.5 py-1 rounded-px border border-accent/20 bg-accent/[0.08]">{num}</span>
-      <span className="font-mono text-[11px] text-white/30 tracking-widest">{label}</span>
-      <div className="flex-1 h-px bg-line" />
-      <span className="font-mono text-[10px] text-white/15">#{id}</span>
-    </div>
-  )
-}
 
 function Card({ f, index }: { f: Formation; index: number }) {
   const [hovered, setHovered] = useState(false)
@@ -31,7 +22,7 @@ function Card({ f, index }: { f: Formation; index: number }) {
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, scale: 0.9 }}
-      transition={{ duration: 0.45, delay: index * 0.04, ease: [0.25,0.46,0.45,0.94] }}
+      transition={{ duration: 0.45, delay: index * 0.04, ease: [0.25, 0.46, 0.45, 0.94] }}
       onMouseMove={onMove}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => { setHovered(false); setTilt({ x: 0, y: 0 }) }}
@@ -106,13 +97,9 @@ export default function Formations() {
   const filtered = active === 'all' ? formations : formations.filter(f => f.category === active)
 
   return (
-    <section id="formations" ref={ref} className="px-10 py-[120px]">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}
-      >
-        <SectionMarker num="02" label="Catalogue" id="formations" />
-      </motion.div>
+    <section id="formations" ref={ref} className="px-10 py-30">
+      <SectionMarker title="Catalogue" id="#formations" inView={inView} />
+
 
       {/* Filters */}
       <motion.div

@@ -13,11 +13,7 @@ export default function Instructor() {
   return (
     <section id="instructeur" ref={ref}
       className="px-10 py-30 border-t border-white/6">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.6 }}>
-        <SectionMarker title="Instructeurs" id="#instructeur" />
-      </motion.div>
+      <SectionMarker title="Instructeurs" id="#instructeur" inView={inView} />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-10 items-start">
         {INSTRUCTORS.map((instructor, idx) => (
