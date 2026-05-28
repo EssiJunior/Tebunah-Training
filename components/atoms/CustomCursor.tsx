@@ -2,7 +2,7 @@
 import { useEffect, useRef } from 'react'
 
 export default function CustomCursor() {
-  const dotRef  = useRef<HTMLDivElement>(null)
+  const dotRef = useRef<HTMLDivElement>(null)
   const ringRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -20,14 +20,23 @@ export default function CustomCursor() {
       ring.style.left = `${rx}px`; ring.style.top = `${ry}px`
       raf = requestAnimationFrame(tick)
     }
-    const on  = () => { dot.classList.add('hovering');    ring.classList.add('hovering') }
+    const on = () => { dot.classList.add('hovering'); ring.classList.add('hovering') }
     const off = () => { dot.classList.remove('hovering'); ring.classList.remove('hovering') }
 
-    const bind = () =>
+    const onHeading = () => { dot.classList.add('hovering-heading'); ring.classList.add('hovering-heading') }
+    const offHeading = () => { dot.classList.remove('hovering-heading'); ring.classList.remove('hovering-heading') }
+
+    const bind = () => {
       document.querySelectorAll<HTMLElement>('a,button,[data-cur]').forEach(el => {
         el.addEventListener('mouseenter', on)
         el.addEventListener('mouseleave', off)
       })
+
+      document.querySelectorAll<HTMLElement>('h1,h2,h3,h4,h5,h6').forEach(el => {
+        el.addEventListener('mouseenter', onHeading)
+        el.addEventListener('mouseleave', offHeading)
+      })
+    }
 
     document.addEventListener('mousemove', move)
     raf = requestAnimationFrame(tick)
@@ -39,7 +48,7 @@ export default function CustomCursor() {
 
   return (
     <>
-      <div ref={dotRef}  className="cursor-dot" />
+      <div ref={dotRef} className="cursor-dot" />
       <div ref={ringRef} className="cursor-ring" />
     </>
   )

@@ -208,7 +208,7 @@ a {
   position: fixed;
   width: 36px;
   height: 36px;
-  border: 1px solid rgba(200, 242, 58, .45);
+  border: 1px solid rgba(255, 210, 45, .45);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
@@ -219,6 +219,11 @@ a {
 .cursor-dot.hovering {
   width: 6px;
   height: 6px;
+}
+
+.cursor-dot.hovering-heading {
+  width: 60px;
+  height: 60px;
 }
 
 .cursor-ring.hovering {
