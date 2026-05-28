@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Chonburi, Domine, Space_Mono } from "next/font/google";
 import "@/styles/globals.css";
+import Layout from "@/layouts";
 
 const mono = Space_Mono({
   variable: "--font-mono",
@@ -35,7 +36,11 @@ export default function RootLayout({
       lang="en"
       className={`${chonburi.variable} ${domine.variable} ${mono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Layout>
+          {children}
+        </Layout>
+      </body>
     </html>
   );
 }
