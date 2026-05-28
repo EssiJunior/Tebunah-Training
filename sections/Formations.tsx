@@ -53,7 +53,7 @@ function Card({ f, index }: { f: Formation; index: number }) {
           {f.category === 'bureautique' ? 'Bureautique' : f.category.toUpperCase()}
         </span>
         {f.featured && (
-          <span className="font-mono text-[9px] bg-accent/10 text-accent px-2 py-0.5 rounded-px tracking-[0.1em]">
+          <span className="font-mono text-[9px] bg-accent/10 text-accent px-2 py-0.5 rounded-px tracking-widest">
             Populaire
           </span>
         )}
@@ -72,14 +72,14 @@ function Card({ f, index }: { f: Formation; index: number }) {
       <div className="flex gap-4 flex-wrap">
         {[['Cible', f.target], ['Format', f.format]].map(([k, v]) => (
           <div key={k}>
-            <div className="font-mono text-[9px] text-white/20 tracking-[0.1em] uppercase mb-0.5">{k}</div>
+            <div className="font-mono text-[9px] text-white/20 tracking-widest uppercase mb-0.5">{k}</div>
             <div className="font-mono text-[10px] text-white/45">{v}</div>
           </div>
         ))}
       </div>
 
       {/* Footer */}
-      <div className="flex items-center justify-between pt-4 mt-1 border-t border-white/[0.06]">
+      <div className="flex items-center justify-between pt-4 mt-1 border-t border-white/6">
         <div>
           <div className="font-display text-[18px] font-extrabold text-accent">{f.price}</div>
           <div className="font-mono text-[10px] text-white/25 mt-0.5">{f.duration}</div>
@@ -111,10 +111,10 @@ export default function Formations() {
           <motion.button key={cat.id} onClick={() => setActive(cat.id)}
             whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
             className={[
-              'font-mono text-[11px] px-[18px] py-2 rounded-full tracking-[0.06em] transition-all duration-200',
+              'font-mono text-[11px] px-4.5 py-2 rounded-full tracking-[0.06em] transition-all duration-200',
               active === cat.id
-                ? 'border border-accent/50 text-accent bg-accent/[0.06]'
-                : 'border border-white/[0.08] text-white/40 hover:border-white/20 hover:text-white/60',
+                ? 'border border-accent/50 text-accent bg-accent/6'
+                : 'border border-white/8 text-white/40 hover:border-white/20 hover:text-white/60',
             ].join(' ')}
           >
             {cat.label}
@@ -124,7 +124,7 @@ export default function Formations() {
 
       {/* Grid */}
       <motion.div layout
-        className="grid gap-px bg-white/[0.04] border border-white/[0.04] rounded overflow-hidden"
+        className="grid gap-px bg-white/4 border border-white/4 rounded overflow-hidden"
         style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))' }}
       >
         <AnimatePresence mode="popLayout">
