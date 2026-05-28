@@ -19,7 +19,7 @@ export default function Instructor() {
         <SectionMarker title="Instructeurs" id="#instructeur" />
       </motion.div>
 
-      <div className="grid grid-cols-2 gap-20 items-start">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-10 items-start">
         {INSTRUCTORS.map((instructor, idx) => (
           <div key={idx} className="contents">
             {/* Left */}
