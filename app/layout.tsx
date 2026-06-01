@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Chonburi, Domine, Space_Mono } from "next/font/google";
 import "@/styles/globals.css";
 import Layout from "@/layouts";
+import { Analytics } from "@vercel/analytics/next"
 
 const mono = Space_Mono({
   variable: "--font-mono",
@@ -41,6 +42,8 @@ export default function RootLayout({
           {children}
         </Layout>
       </body>
+
+      <Analytics />
     </html>
   );
 }
