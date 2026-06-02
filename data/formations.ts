@@ -1,23 +1,7 @@
 
 export type Category = 'all' | 'ia' | 'dev' | 'data' | 'bureautique'
 
-export interface Formation {
-  id: string
-  title: string
-  category: Exclude<Category, 'all'>
-  priceOnsite: number
-  priceOnsiteLabel: string
-  priceOnline: number
-  priceOnlineLabel: string
-  duration: string        // display label
-  hoursTotal: string      // e.g. "80h"
-  target: string
-  prereq: string
-  description: string
-  availableNow: boolean   // true = open for enrollment, false = coming soon
-  priority: boolean       // first-session focus formations
-  featured?: boolean
-}
+
 
 export const CATEGORIES: { id: Category; label: string }[] = [
   { id: 'all',         label: 'Toutes' },
