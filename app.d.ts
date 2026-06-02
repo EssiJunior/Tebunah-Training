@@ -15,18 +15,20 @@ interface FAQ {
     answer: string
 }
 
-
 interface Formation {
     id: string
     title: string
     category: Exclude<Category, 'all'>
-    price: string
-    priceRaw: number
-    duration: string
+    priceOnsite: number
+    priceOnsiteLabel: string
+    priceOnline: number
+    priceOnlineLabel: string
+    duration: string        // display label
+    hoursTotal: string      // e.g. "80h"
     target: string
     prereq: string
-    format: string
     description: string
-    revenue: string
+    availableNow: boolean   // true = open for enrollment, false = coming soon
+    priority: boolean       // first-session focus formations
     featured?: boolean
 }
