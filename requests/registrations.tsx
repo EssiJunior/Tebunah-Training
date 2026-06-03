@@ -3,8 +3,7 @@ import { API_URL } from "@/utils/baseURL";
 
 export const createRegistration = async (
     formData: Registration,
-    setIsLoading: (arg: boolean) => void,
-    setMessage: (arg: string) => void
+    setStatus: (arg: "error" | "sent" | "idle" | "sending") => void
 ) => {
     const data = {
         "name": formData.name,
@@ -18,8 +17,6 @@ export const createRegistration = async (
         "message": formData.message,
         "session": formData.session
     }
-
-    setIsLoading(true);
 
     try {
         const response = await fetch(`${API_URL}/registrations`, {
@@ -35,18 +32,19 @@ export const createRegistration = async (
 
         if (!response.ok) {
             const errorData = await response.json();
-            setMessage(errorData.detail || "Registration failed");
+            setStatus("error")
+            console.log(errorData.detail || "Registration failed");
         }
 
-        setMessage("")
+        setStatus("sent")
     } catch (error) {
+        setStatus("error")
         if (error instanceof Error) {
-            setMessage(error.message);
+            console.log(error.message);
         } else {
-            setMessage("An error occurred");
+            console.log("An error occurred");
         }
         console.error("Registration error:", error);
-        setIsLoading(false);
     }
 };
 

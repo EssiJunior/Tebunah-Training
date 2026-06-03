@@ -39,12 +39,12 @@ interface Registration {
     phone: string
     address: string
     academic_level: string
-    format: string
+    format: 'onsite' | 'online'
     price: number
     formation: string
     message: string
     session: string
-    status: string
+    status?: string
     updated_at?: string
     created_at?: string
     token?: string

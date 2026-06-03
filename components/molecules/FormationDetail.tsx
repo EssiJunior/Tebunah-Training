@@ -1,8 +1,12 @@
 'use client'
+
 import { useState } from 'react'
 import Link from 'next/link'
 import { motion } from 'motion/react'
 import { CATEGORY_COLORS } from '@/data/formations'
+import { createRegistration } from '@/requests/registrations'
+import Field from '../atoms/Field'
+import { academicLevels } from '@/utils/form'
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 
@@ -13,45 +17,29 @@ const CATEGORY_LABELS: Record<string, string> = {
     data: 'Data & SQL',
 }
 
-const fadeUp = (delay = 0) => ({
-    initial: { opacity: 0, y: 24 },
-    animate: { opacity: 1, y: 0 },
-    transition: { duration: 0.5, delay, ease: [0.25, 0.46, 0.45, 0.94] },
-})
-
 // ─── registration form ───────────────────────────────────────────────────────
 
-interface FormState {
-    name: string
-    phone: string
-    email: string
-    city: string
-    level: string
-    format: 'onsite' | 'online'
-    message: string
-}
-
-const INITIAL: FormState = {
-    name: '',
-    phone: '',
-    email: '',
-    city: '',
-    level: '',
-    format: 'onsite',
-    message: '',
-}
-
 function RegistrationForm({ formation }: { formation: Formation }) {
-    const [form, setForm] = useState<FormState>(INITIAL)
-    const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
-    const [errors, setErrors] = useState<Partial<Record<keyof FormState, string>>>({})
+    const INITIAL: Registration = {
+        name: '',
+        email: '',
+        phone: '',
+        address: '',
+        academic_level: academicLevels[0],
+        format: 'onsite',
+        price: 0,
+        formation: formation.title,
+        message: '',
+        session: '',
+    }
 
-    const set = (k: keyof FormState) => (
+    const [form, setForm] = useState<Registration>(INITIAL)
+    const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+    const [errors, setErrors] = useState<Partial<Record<keyof Registration, string>>>({})
+
+    const set = (k: keyof Registration) => (
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
     ) => setForm(prev => ({ ...prev, [k]: e.target.value }))
-
-    const setFormat = (v: 'onsite' | 'online') =>
-        setForm(prev => ({ ...prev, format: v }))
 
     const validate = () => {
         const e: typeof errors = {}
@@ -65,25 +53,8 @@ function RegistrationForm({ formation }: { formation: Formation }) {
     const handleSubmit = async () => {
         if (!validate()) return
         setStatus('sending')
-        try {
-            // Replace with your actual API route or email service
-            await fetch('/api/inscription', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    formation: formation.title,
-                    formationId: formation.id,
-                    ...form,
-                    priceLabel: form.format === 'onsite'
-                        ? formation.priceOnsiteLabel
-                        : formation.priceOnlineLabel,
-                }),
-            })
-            setStatus('sent')
-            setForm(INITIAL)
-        } catch {
-            setStatus('error')
-        }
+
+        await createRegistration(form, setStatus);
     }
 
     const displayPrice = form.format === 'onsite'
@@ -96,15 +67,15 @@ function RegistrationForm({ formation }: { formation: Formation }) {
                 <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center text-green-400 text-2xl">
                     ✓
                 </div>
-                <p className="font-display text-[16px] font-bold text-ink">Demande envoyée !</p>
+                <p className="font-display text-[16px] font-bold text-ink">Pré-inscription initiée !</p>
                 <p className="font-mono text-[12px] text-white/40 max-w-xs leading-relaxed">
-                    Nous vous contacterons dans les 24h pour confirmer votre inscription à <span className="text-white/60">{formation.title}</span>.
+                    Nous vous contacterons dans les 24h pour confirmer votre pré-inscription à <span className="text-white/60">{formation.title}</span>.
                 </p>
                 <button
                     onClick={() => setStatus('idle')}
                     className="font-mono text-[11px] text-white/30 hover:text-white/50 mt-2 transition-colors"
                 >
-                    Soumettre une autre demande
+                    Soumettre une autre pré-inscription
                 </button>
             </div>
         )
@@ -118,12 +89,12 @@ function RegistrationForm({ formation }: { formation: Formation }) {
                 <Field
                     label="Nom complet *"
                     error={errors.name}
-                    input={<input type="text" value={form.name} onChange={set('name')} placeholder="Ex : Jean Mbarga" />}
+                    input={<input type="text" value={form.name} onChange={set('name')} placeholder="Ex : Essi Junior" />}
                 />
                 <Field
                     label="Téléphone *"
                     error={errors.phone}
-                    input={<input type="tel" value={form.phone} onChange={set('phone')} placeholder="6XX XXX XXX" />}
+                    input={<input type="tel" value={form.phone} onChange={set('phone')} placeholder="6907437373" />}
                 />
             </div>
 
@@ -131,26 +102,24 @@ function RegistrationForm({ formation }: { formation: Formation }) {
             <Field
                 label="Email"
                 error={errors.email}
-                input={<input type="email" value={form.email} onChange={set('email')} placeholder="jean@exemple.com" />}
+                input={<input type="email" value={form.email} onChange={set('email')} placeholder="dev@essijunior.com" />}
             />
 
-            {/* City + Level */}
+            {/* Address + Level */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Field
-                    label="Ville"
-                    input={<input type="text" value={form.city} onChange={set('city')} placeholder="Ex : Yaoundé" />}
+                    label="Adresse"
+                    input={<input type="text" value={form.address} onChange={set('address')} placeholder="Ex : Santa Barbara, Yaoundé" />}
                 />
                 <Field
                     label="Niveau d'études"
                     input={
-                        <select value={form.level} onChange={set('level')}>
-                            <option value="">Sélectionner…</option>
-                            <option>Lycée / Baccalauréat</option>
-                            <option>BTS / DUT</option>
-                            <option>Licence</option>
-                            <option>Master +</option>
-                            <option>Professionnel en activité</option>
-                            <option>Autre</option>
+                        <select value={form.academic_level} onChange={set('academic_level')}>
+                            {
+                                academicLevels.map(level => (
+                                    <option key={level} value={level}>{level}</option>
+                                ))
+                            }
                         </select>
                     }
                 />
@@ -165,7 +134,10 @@ function RegistrationForm({ formation }: { formation: Formation }) {
                     {(['onsite', 'online'] as const).map(mode => (
                         <button
                             key={mode}
-                            onClick={() => setFormat(mode)}
+                            onClick={() => {
+                                setForm(prev => ({ ...prev, format: mode }))
+                                setForm(prev => ({ ...prev, price: mode === 'onsite' ? formation.priceOnsite : formation.priceOnline }))
+                            }}
                             className={[
                                 'flex flex-col items-start gap-1 p-4 rounded border transition-all duration-150 text-left',
                                 form.format === mode
@@ -190,6 +162,39 @@ function RegistrationForm({ formation }: { formation: Formation }) {
                 </div>
             </div>
 
+            {/* Session timing - only shown if onsite */}
+            {form.format === 'onsite' && (
+                <div className="flex flex-col gap-2">
+                    <span className="font-mono text-[11px] text-white/30 uppercase tracking-widest">
+                        Créneau souhaité
+                    </span>
+                    <div className="grid grid-cols-2 gap-3">
+                        {(['day', 'evening'] as const).map(session => (
+                            <button
+                                key={session}
+                                onClick={() => setForm(prev => ({ ...prev, session }))}
+                                className={[
+                                    'flex flex-col items-start gap-1 p-4 rounded border transition-all duration-150 text-left',
+                                    form.session === session
+                                        ? 'border-accent/40 bg-accent/5'
+                                        : 'border-white/8 bg-surface hover:border-white/15',
+                                ].join(' ')}
+                            >
+                                <span className="font-mono text-[11px] text-white/50">
+                                    {session === 'day' ? '☀️ Journée' : '🌙 Soirée'}
+                                </span>
+                                <span className={[
+                                    'font-display text-[14px] font-extrabold',
+                                    form.session === session ? 'text-accent' : 'text-white/60',
+                                ].join(' ')}>
+                                    {session === 'day' ? '09:00 - 13:00' : '15:00 - 19:00'}
+                                </span>
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            )}
+
             {/* Message */}
             <Field
                 label="Message (optionnel)"
@@ -206,10 +211,23 @@ function RegistrationForm({ formation }: { formation: Formation }) {
 
             {/* Summary line */}
             <p className="font-mono text-[11px] text-white/25 leading-relaxed">
-                Inscription à <span className="text-white/50">{formation.title}</span>
+                Pré-inscription à <span className="text-white/50">{formation.title}</span>
                 {' · '}<span className="text-accent">{displayPrice}</span>
                 {' · '}{form.format === 'onsite' ? 'Présentiel' : 'En ligne'}
             </p>
+
+            {/* Registration fee notice */}
+            <motion.div 
+                initial={{ opacity: 0, y: 12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="bg-accent/10 border border-accent/20 rounded px-3.5 py-1 flex items-center gap-2"
+            >
+                <span className="text-accent text-lg shrink-0">ℹ</span>
+                <p className="font-mono text-[11px] text-white/60 leading-relaxed">
+                    Frais d&apos;inscription : <span className="text-accent font-semibold">5 000 FCFA</span> (à payer à la confirmation)
+                </p>
+            </motion.div>
 
             {/* Submit */}
             <button
@@ -222,47 +240,13 @@ function RegistrationForm({ formation }: { formation: Formation }) {
                         : 'bg-accent text-black hover:bg-accent/90 active:scale-[0.99]',
                 ].join(' ')}
             >
-                {status === 'sending' ? 'Envoi en cours…' : "Envoyer ma demande d'inscription →"}
+                {status === 'sending' ? 'Envoi en cours…' : "Envoyer ma pré-inscription →"}
             </button>
 
             {status === 'error' && (
                 <p className="font-mono text-[11px] text-red-400 text-center">
-                    Une erreur s'est produite. Réessayez ou contactez-nous directement.
+                    Une erreur s&apos;est produite. Réessayez ou contactez-nous directement.
                 </p>
-            )}
-        </div>
-    )
-}
-
-// ─── small field wrapper ─────────────────────────────────────────────────────
-
-function Field({
-    label,
-    input,
-    error,
-}: {
-    label: string
-    input: React.ReactNode
-    error?: string
-}) {
-    return (
-        <div className="flex flex-col gap-1.5">
-            <label className="font-mono text-[11px] text-white/30 uppercase tracking-widest">
-                {label}
-            </label>
-            <div className={[
-                'font-mono text-[13px]',
-                '[&_input]:w-full [&_input]:bg-surface2 [&_input]:border [&_input]:rounded [&_input]:px-3 [&_input]:py-2.5 [&_input]:text-white/70 [&_input]:outline-none [&_input]:placeholder:text-white/15',
-                '[&_select]:w-full [&_select]:bg-surface2 [&_select]:border [&_select]:rounded [&_select]:px-3 [&_select]:py-2.5 [&_select]:text-white/70 [&_select]:outline-none',
-                '[&_textarea]:w-full [&_textarea]:bg-surface2 [&_textarea]:border [&_textarea]:rounded [&_textarea]:px-3 [&_textarea]:py-2.5 [&_textarea]:text-white/70 [&_textarea]:outline-none [&_textarea]:placeholder:text-white/15',
-                error
-                    ? '[&_input]:border-red-500/40 [&_select]:border-red-500/40 [&_textarea]:border-red-500/40'
-                    : '[&_input]:border-white/8 [&_select]:border-white/8 [&_textarea]:border-white/8',
-            ].join(' ')}>
-                {input}
-            </div>
-            {error && (
-                <span className="font-mono text-[10px] text-red-400">{error}</span>
             )}
         </div>
     )
@@ -284,7 +268,11 @@ export default function FormationDetail({ formation }: { formation: Formation })
         <main className="px-6 md:px-10 py-16 max-w-3xl mx-auto">
 
             {/* Back */}
-            <motion.div {...fadeUp(0)}>
+            <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
                 <Link
                     href="/#formations"
                     className="inline-flex items-center gap-2 font-mono text-[11px] text-white/30 hover:text-white/60 transition-colors mb-8"
@@ -294,7 +282,11 @@ export default function FormationDetail({ formation }: { formation: Formation })
             </motion.div>
 
             {/* Hero */}
-            <motion.div {...fadeUp(0.05)} className="flex flex-col gap-3 mb-10">
+            <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.05, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="flex flex-col gap-3 mb-10">
                 {/* Badges */}
                 <div className="flex flex-wrap gap-2">
                     <span
@@ -333,7 +325,11 @@ export default function FormationDetail({ formation }: { formation: Formation })
             </motion.div>
 
             {/* Meta grid */}
-            <motion.div {...fadeUp(0.1)} className="mb-10">
+            <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="mb-10">
                 <p className="font-mono text-[10px] text-white/20 tracking-widest uppercase mb-4">
                     Détails de la formation
                 </p>
@@ -352,7 +348,12 @@ export default function FormationDetail({ formation }: { formation: Formation })
             </motion.div>
 
             {/* Pricing */}
-            <motion.div {...fadeUp(0.15)} className="mb-12">
+            <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+                className="mb-12"
+            >
                 <p className="font-mono text-[10px] text-white/20 tracking-widest uppercase mb-4">
                     Tarifs
                 </p>
@@ -401,10 +402,14 @@ export default function FormationDetail({ formation }: { formation: Formation })
             <div className="border-t border-white/6 mb-12" />
 
             {/* Registration form */}
-            <motion.div {...fadeUp(0.2)}>
+            <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+            >
                 <div className="mb-6">
                     <h2 className="font-display text-[20px] font-bold text-ink mb-1">
-                        S'inscrire à cette formation
+                        Se pré-inscrire à cette formation
                     </h2>
                     <p className="font-mono text-[12px] text-white/30 leading-relaxed">
                         Remplissez le formulaire ci-dessous. Nous vous contacterons dans les 24h pour confirmer votre place.
@@ -414,6 +419,6 @@ export default function FormationDetail({ formation }: { formation: Formation })
                 <RegistrationForm formation={formation} />
             </motion.div>
 
-        </main>
+        </main >
     )
 }
