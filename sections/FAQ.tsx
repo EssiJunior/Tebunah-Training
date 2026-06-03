@@ -11,7 +11,7 @@ export default function FAQ() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
   return (
-    <section id="faq" ref={ref} className="px-10 py-30 border-t border-white/6">
+    <section id="faq" ref={ref} className="px-2.5 sm:px-10 py-30 border-t border-white/6">
       <SectionMarker title="Questions fréquentes" id="#faq" inView={inView} />
 
       <div className="grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-20 items-start">

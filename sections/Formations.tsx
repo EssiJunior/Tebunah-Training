@@ -18,7 +18,7 @@ export default function Formations() {
     .filter(f => !showAvailableOnly || f.availableNow)
 
   return (
-    <section id="formations" ref={ref} className="px-10 py-30">
+    <section id="formations" ref={ref} className="px-2.5 sm:px-10 py-30">
       <SectionMarker title="Catalogue" id="#formations" inView={inView} />
 
       <motion.div
