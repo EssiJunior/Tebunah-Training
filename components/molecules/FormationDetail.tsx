@@ -365,31 +365,25 @@ export default function FormationDetail({ formation }: { formation: Formation })
                                 mode: 'Présentiel',
                                 label: formation.priceOnsiteLabel,
                                 note: 'Yaoundé · en salle',
-                                primary: true,
                             },
                             {
                                 mode: 'En ligne',
                                 label: formation.priceOnlineLabel,
                                 note: 'Google Meet / Zoom',
-                                primary: false,
                             },
                         ] as const
-                    ).map(({ mode, label, note, primary }) => (
+                    ).map(({ mode, label, note }) => (
                         <div
                             key={mode}
                             className={[
-                                'p-5 rounded flex flex-col gap-1',
-                                primary
-                                    ? 'border border-accent/20 bg-accent/3'
-                                    : 'border border-white/6 bg-surface',
+                                'p-5 rounded flex flex-col gap-1 border border-white/6 bg-surface',
                             ].join(' ')}
                         >
                             <span className="font-mono text-[10px] text-white/25 tracking-widest uppercase">
                                 {mode}
                             </span>
                             <span className={[
-                                'font-display text-[22px] font-extrabold',
-                                primary ? 'text-accent' : 'text-white/70',
+                                'font-display text-[22px] font-extrabold text-white/70',
                             ].join(' ')}>
                                 {label}
                             </span>
