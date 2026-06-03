@@ -101,7 +101,7 @@ export default function Hero() {
         </div>
         <div>
           <Slot delay={D + 0.12}>à&nbsp;</Slot>
-          <Slot delay={D + 0.26}>l&apos;aire&nbsp;</Slot>
+          <Slot delay={D + 0.26}>l&apos;ère&nbsp;</Slot>
           <Slot delay={D + 0.32}>de{" "}
             <span
               className="inline-block"
