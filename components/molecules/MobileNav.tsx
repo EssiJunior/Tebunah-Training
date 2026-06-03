@@ -1,7 +1,6 @@
-import { go } from "@/utils/navigation";
 import { AnimatePresence, motion } from "framer-motion"
 
-function MobileNav({ open, onClose }: { open: boolean; onClose: () => void }) {
+function MobileNav({ open, onClose, go }: { open: boolean; onClose: () => void; go: (href: string) => (e: React.MouseEvent) => void }) {
     const ALL_LINKS = [
         { label: 'Formations', href: '#formations' },
         { label: 'IA (6 cours 🔥)', href: '#ia' },

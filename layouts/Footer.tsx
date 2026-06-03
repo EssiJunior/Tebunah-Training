@@ -3,15 +3,18 @@
 import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'
 import { CONTACTS, RESPONSE_TIME, LOCATION } from '@/data/contact'
-import { go, scroll } from '@/utils/navigation'
+import { createGoHandler, scroll } from '@/utils/navigation'
 import Logo from '@/components/atoms/Logo'
 import DeveloperInfo from '@/components/atoms/DeveloperInfo'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 
 export default function Footer() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
-  
+
+
+  const router = useRouter()
+  const go = createGoHandler(router)
   const actualPage = usePathname()
 
   return (
@@ -56,7 +59,7 @@ export default function Footer() {
               whileTap={{ scale: 0.97 }}
               className={`${contact.platform === 'WhatsApp'
                 && "bg-[rgba(200,242,58)]!"} ${contact.platform === 'Contact'
-                && "bg-[rgba(255,210,45)]!"} ${(contact.platform=="WhatsApp" || contact.platform=="Contact") ? 'font-mono text-[13px] font-medium  text-bg px-10 py-4 rounded-px tracking-[0.08em] uppercase inline-flex items-center gap-3':'font-mono text-[13px] text-white/40 px-10 py-4 rounded-px border border-white/12 tracking-[0.08em] uppercase transition-all duration-200'}`
+                && "bg-[rgba(255,210,45)]!"} ${(contact.platform == "WhatsApp" || contact.platform == "Contact") ? 'font-mono text-[13px] font-medium  text-bg px-10 py-4 rounded-px tracking-[0.08em] uppercase inline-flex items-center gap-3' : 'font-mono text-[13px] text-white/40 px-10 py-4 rounded-px border border-white/12 tracking-[0.08em] uppercase transition-all duration-200'}`
               }
             >
               {contact.platform} {contact.platform === 'WhatsApp' || contact.platform === 'Contact' ? <span>→</span> : null}

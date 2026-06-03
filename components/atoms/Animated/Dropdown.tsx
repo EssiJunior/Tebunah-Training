@@ -1,8 +1,12 @@
 import { NAV_LINKS } from "@/data/navigation";
-import { go } from "@/utils/navigation";
+import { createGoHandler } from "@/utils/navigation";
 import { motion, AnimatePresence } from "motion/react"
+import { useRouter } from "next/navigation";
 
 const Dropdown = ({ items, visible }: { items: NonNullable<typeof NAV_LINKS[0]['sub']>; visible: boolean }) => {
+    const router = useRouter()
+    const go = createGoHandler(router)
+
     return (
         <AnimatePresence>
             {visible && (
