@@ -32,3 +32,20 @@ interface Formation {
     priority: boolean       // first-session focus formations
     featured?: boolean
 }
+
+interface Registration {
+    name: string
+    email: string
+    phone: string
+    address: string
+    academic_level: string
+    format: string
+    price: number
+    formation: string
+    message: string
+    session: string
+    status: string
+    updated_at?: string
+    created_at?: string
+    token?: string
+}
