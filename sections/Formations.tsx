@@ -21,14 +21,12 @@ export default function Formations() {
     <section id="formations" ref={ref} className="px-10 py-30">
       <SectionMarker title="Catalogue" id="#formations" inView={inView} />
 
-      {/* Filters row */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.1 }}
         className="flex items-center gap-3 flex-wrap mb-10"
       >
-        {/* Category filters */}
         <div className="flex gap-2 flex-wrap">
           {CATEGORIES.map(cat => (
             <motion.button
@@ -48,7 +46,6 @@ export default function Formations() {
           ))}
         </div>
 
-        {/* Available now toggle */}
         <motion.button
           onClick={() => setShowAvailableOnly(v => !v)}
           whileHover={{ scale: 1.03 }}
@@ -68,16 +65,13 @@ export default function Formations() {
         </motion.button>
       </motion.div>
 
-      {/* Grid */}
       <motion.div
         layout
         className="grid gap-px bg-white/4 border border-white/4 rounded overflow-hidden"
         style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))' }}
       >
         <AnimatePresence mode="popLayout">
-          {filtered.map((f, i) => (
-            <Formation key={f.id} f={f} index={i} />
-          ))}
+          {filtered.map((f, i) => <Formation key={f.id} f={f} index={i} />)}
         </AnimatePresence>
       </motion.div>
 
