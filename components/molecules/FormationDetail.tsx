@@ -6,7 +6,7 @@ import { motion } from 'motion/react'
 import { CATEGORY_COLORS } from '@/data/formations'
 import { createRegistration } from '@/requests/registrations'
 import Field from '../atoms/Field'
-import { academicLevels } from '@/utils/form'
+import { academicLevels, formats, timeslots } from '@/utils/form'
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 
@@ -30,7 +30,7 @@ function RegistrationForm({ formation }: { formation: Formation }) {
         price: 0,
         formation: formation.title,
         message: '',
-        session: '',
+        session: timeslots[0],
     }
 
     const [form, setForm] = useState<Registration>(INITIAL)
@@ -131,12 +131,13 @@ function RegistrationForm({ formation }: { formation: Formation }) {
                     Format souhaité *
                 </span>
                 <div className="grid grid-cols-2 gap-3">
-                    {(['onsite', 'online'] as const).map(mode => (
+                    {formats.map(mode => (
                         <button
                             key={mode}
                             onClick={() => {
                                 setForm(prev => ({ ...prev, format: mode }))
                                 setForm(prev => ({ ...prev, price: mode === 'onsite' ? formation.priceOnsite : formation.priceOnline }))
+                                setForm(prev => ({ ...prev, session: mode === 'online' ? '': timeslots[0] }))
                             }}
                             className={[
                                 'flex flex-col items-start gap-1 p-4 rounded border transition-all duration-150 text-left',
@@ -169,7 +170,7 @@ function RegistrationForm({ formation }: { formation: Formation }) {
                         Créneau souhaité
                     </span>
                     <div className="grid grid-cols-2 gap-3">
-                        {(['day', 'evening'] as const).map(session => (
+                        {timeslots.map(session => (
                             <button
                                 key={session}
                                 onClick={() => setForm(prev => ({ ...prev, session }))}

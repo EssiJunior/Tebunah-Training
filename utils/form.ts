@@ -7,4 +7,11 @@ const academicLevels = [
     "Professionnel en activité",
 ]
 
-export { academicLevels }
+const timeslots = [
+    "journée",
+    "soirée",
+]
+
+const formats = ["onsite", "online"] as const
+
+export { academicLevels, timeslots, formats }
