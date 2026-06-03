@@ -182,13 +182,13 @@ function RegistrationForm({ formation }: { formation: Formation }) {
                                 ].join(' ')}
                             >
                                 <span className="font-mono text-[11px] text-white/50">
-                                    {session === 'day' ? '☀️ Journée' : '🌙 Soirée'}
+                                    {session === 'journée' ? '☀️ Journée' : '🌙 Soirée'}
                                 </span>
                                 <span className={[
                                     'font-display text-[14px] font-extrabold',
                                     form.session === session ? 'text-accent' : 'text-white/60',
                                 ].join(' ')}>
-                                    {session === 'day' ? '09:00 - 13:00' : '15:00 - 19:00'}
+                                    {session === 'journée' ? '09:00 - 13:00' : '15:00 - 19:00'}
                                 </span>
                             </button>
                         ))}
