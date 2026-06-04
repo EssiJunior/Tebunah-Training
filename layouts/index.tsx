@@ -9,9 +9,12 @@ import CustomCursor from '@/components/atoms/CustomCursor'
 import Loader from '@/components/atoms/Loader'
 import ScrollToTop from '@/components/atoms/Animated/ScrollToTop'
 
+// Context
+import { FormationsProvider } from '@/context/FormationsContext'
+
 export default function Layout({ children }: { children: React.ReactNode }) {
     return (
-        <>
+        <FormationsProvider>
             <CustomCursor />
             <Loader />
             <Nav />
@@ -20,6 +23,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 <Footer />
             </main>
             <ScrollToTop />
-        </>
+        </FormationsProvider>
     )
 }

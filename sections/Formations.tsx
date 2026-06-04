@@ -1,17 +1,33 @@
 'use client'
 import { AnimatePresence, motion, useInView } from 'framer-motion'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { formations, CATEGORIES } from '@/data/formations'
 import type { Category } from '@/data/formations'
 import SectionMarker from '@/components/atoms/SectionMarker'
 import Formation from '@/components/atoms/cards/Formation'
+import { useFormations } from '@/context/FormationsContext'
 
 
 export default function Formations() {
-  const [active, setActive] = useState<Category>('all')
+  const { active, setActive } = useFormations()
   const [showAvailableOnly, setShowAvailableOnly] = useState(false)
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
+
+  // Listen to hash changes and update active category
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash
+      if (hash.startsWith('#formations-')) {
+        const category = hash.substring(11) as Category
+        setActive(category)
+      }
+    }
+
+    handleHashChange()
+    window.addEventListener('hashchange', handleHashChange)
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [setActive])
 
   const filtered = formations
     .filter(f => active === 'all' || f.category === active)
