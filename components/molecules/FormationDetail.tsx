@@ -309,7 +309,7 @@ export default function FormationDetail({ formation }: { formation: Formation })
                 </div>
 
                 {/* Title */}
-                <h1 className="font-display text-[28px] md:text-[34px] font-extrabold leading-tight"
+                <h1 className="font-display text-[28px] md:text-[34px] font-extrabold leading-[1.0]!"
                     style={{ color: CATEGORY_COLORS[formation.category] }}
                     >
                     {formation.title}

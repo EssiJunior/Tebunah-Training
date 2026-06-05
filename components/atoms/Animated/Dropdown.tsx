@@ -26,7 +26,7 @@ const Dropdown = ({ items, visible }: { items: NonNullable<typeof NAV_LINKS[0]['
                         {items.map((item) => (
                             <a
                                 key={item.label}
-                                href="#formations"
+                                href={'#formations-' + item.href}
                                 onClick={() => {
                                     go("#formations")
                                     setActive(item.href as Category)
