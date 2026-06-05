@@ -3,12 +3,12 @@ export type Category = 'all' | 'ia' | 'dev' | 'data' | 'bureautique'
 
 
 
-export const CATEGORIES: { id: Category; label: string }[] = [
-  { id: 'all',         label: 'Toutes' },
-  { id: 'bureautique', label: 'Bureautique' },
-  { id: 'dev',         label: 'Web & Mobile' },
-  { id: 'ia',          label: 'Intelligence Artificielle' },
-  { id: 'data',        label: 'Data & SQL' },
+export const CATEGORIES: { id: Category; label: string, quantity: number }[] = [
+  { id: 'all',         label: 'Toutes', quantity: 14 },
+  { id: 'bureautique', label: 'Bureautique', quantity: 3 },
+  { id: 'dev',         label: 'Web & Mobile', quantity: 3 },
+  { id: 'ia',          label: 'Intelligence Artificielle', quantity: 3 },
+  { id: 'data',        label: 'Data & SQL', quantity: 2 },
 ]
 
 export const CATEGORY_COLORS: Record<Exclude<Category, 'all'>, string> = {

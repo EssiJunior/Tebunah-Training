@@ -1,3 +1,5 @@
+import { useFormations } from "@/context/FormationsContext";
+import { Category } from "@/data/formations";
 import { NAV_LINKS } from "@/data/navigation";
 import { createGoHandler } from "@/utils/navigation";
 import { motion, AnimatePresence } from "motion/react"
@@ -6,6 +8,7 @@ import { useRouter } from "next/navigation";
 const Dropdown = ({ items, visible }: { items: NonNullable<typeof NAV_LINKS[0]['sub']>; visible: boolean }) => {
     const router = useRouter()
     const go = createGoHandler(router)
+    const { setActive } = useFormations()
 
     return (
         <AnimatePresence>
@@ -23,14 +26,17 @@ const Dropdown = ({ items, visible }: { items: NonNullable<typeof NAV_LINKS[0]['
                         {items.map((item) => (
                             <a
                                 key={item.label}
-                                href={item.href}
-                                onClick={go(item.href)}
-                                className="group flex items-center justify-between px-3 py-2.5 rounded-px hover:bg-white/5 transition-colors duration-150"
+                                href="#formations"
+                                onClick={() => {
+                                    go("#formations")
+                                    setActive(item.href as Category)
+                                }}
+                                className="group flex items-center justify-between px-2 py-2.5 rounded-px hover:bg-white/5 transition-colors duration-150"
                             >
                                 <span className="font-mono text-[12px] text-white/55 group-hover:text-ink transition-colors duration-150 tracking-wide">
                                     {item.label}
                                 </span>
-                                <span className="font-mono text-[10px] text-accent/60 group-hover:text-accent transition-colors duration-150 tracking-[0.08em]">
+                                <span className="font-mono text-[10px] text-accent/60 group-hover:text-accent transition-colors duration-150 tracking-[0.08em] text-ellipsis overflow-hidden whitespace-nowrap">
                                     {item.tag}
                                 </span>
                             </a>

@@ -68,9 +68,15 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
                             {f.category === 'bureautique' ? 'Bureautique' : f.category.toUpperCase()}
                         </span>
                         {f.availableNow ? (
-                            <span className="font-mono text-[9px] px-2 py-0.5 rounded-px tracking-widest border border-green-500/30 text-green-400">
-                                Disponible
-                            </span>
+                            <div className="relative flex items-center gap-2">
+                                <span className="absolute -top-1 -right-1 flex h-2 w-2">
+                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                                </span>
+                                <span className="font-mono text-[9px] px-2 py-0.5 rounded-px tracking-widest border border-green-500/30 text-green-400">
+                                    Disponible
+                                </span>
+                            </div>
                         ) : (
                             <span className="font-mono text-[9px] px-2 py-0.5 rounded-px tracking-widest border border-white/10 text-white/30">
                                 Bientôt

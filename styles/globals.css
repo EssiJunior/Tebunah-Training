@@ -110,12 +110,22 @@
   }
 }
 
+@keyframes ping {
+  75%, 100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
 @layer utilities {
     .animate-shimmer {
         animation: 2s infinite shimmer;
     }
     .animate-upwardPulse {
         animation: 1.5s linear 0.5s infinite alternate upwardPulse;
+    }
+    .animate-ping {
+        animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
     }
 }
 

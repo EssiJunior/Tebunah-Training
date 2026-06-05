@@ -14,21 +14,6 @@ export default function Formations() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
-  // Listen to hash changes and update active category
-  useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash
-      if (hash.startsWith('#formations-')) {
-        const category = hash.substring(11) as Category
-        setActive(category)
-      }
-    }
-
-    handleHashChange()
-    window.addEventListener('hashchange', handleHashChange)
-    return () => window.removeEventListener('hashchange', handleHashChange)
-  }, [setActive])
-
   const filtered = formations
     .filter(f => active === 'all' || f.category === active)
     .filter(f => !showAvailableOnly || f.availableNow)
