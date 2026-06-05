@@ -2,7 +2,7 @@
 
 // Sections
 import Hero from '@/sections/Hero'
-import Instructor from '@/sections/Instructor'
+import Instructors from '@/sections/Instructors'
 import Formations from '@/sections/Formations'
 import FAQ from '@/sections/FAQ'
 
@@ -16,7 +16,7 @@ export default function HomePage() {
       <Marquee />
       <Formations />
       <Marquee />
-      <Instructor />
+      <Instructors />
       <FAQ />
     </>
   )

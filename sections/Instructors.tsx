@@ -6,14 +6,14 @@ import SectionMarker from '@/components/atoms/SectionMarker'
 import { INSTRUCTORS } from '@/data/instructor'
 
 
-export default function Instructor() {
+export default function Instructors() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
   return (
-    <section id="instructeur" ref={ref}
+    <section id="instructeurs" ref={ref}
       className="px-2.5 sm:px-10 py-30 border-t border-white/6">
-      <SectionMarker title="Instructeurs" id="#instructeur" inView={inView} />
+      <SectionMarker title="Instructeurs" id="#instructeurs" inView={inView} />
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-10 items-start">
         {INSTRUCTORS.map((instructor, idx) => (

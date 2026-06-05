@@ -16,6 +16,6 @@ export const NAV_LINKS: NavLink[] = [
       { label: 'Bureautique', href: '#formations', tag: '3 cours' },
     ],
   },
-  { label: 'Instructeur', href: '#instructeur', sub: null },
+  { label: 'Instructeurs', href: '#instructeurs', sub: null },
   { label: 'FAQ', href: '#faq', sub: null },
 ]
