@@ -35,7 +35,6 @@ export const formations: Formation[] = [
     prereq: 'Aucun',
     description: 'Introduction generale + Word, Excel, PowerPoint — niveau opérationnel garanti en fin de formation + L\'IA pour la bureautique',
     availableNow: true,
-    priority: true,
     featured: true,
   },
   {
@@ -52,7 +51,6 @@ export const formations: Formation[] = [
     prereq: 'Notions PC de base',
     description: 'Gmail, Drive, Docs, Sheets, Slides, Forms, Calendar — collaborer efficacement et automatiser ses tâches avec les outils Google',
     availableNow: true,
-    priority: true,
     featured: true,
   },
   {
@@ -69,7 +67,6 @@ export const formations: Formation[] = [
     prereq: 'Excel de base ou équivalent',
     description: 'Formules avancées, tableaux croisés dynamiques, graphiques, introduction à Power Query et Power Pivot pour créer des tableaux de bord interactifs',
     availableNow: false,
-    priority: false,
   },
 
   // ── WEB & MOBILE ─────────────────────────────────────────────────────────
@@ -87,7 +84,6 @@ export const formations: Formation[] = [
     prereq: 'Aucun',
     description: 'Fondamentaux du web, mise en page responsive, référencement SEO de base et déploiement de site',
     availableNow: true,
-    priority: true,
     featured: true,
   },
   {
@@ -104,7 +100,6 @@ export const formations: Formation[] = [
     prereq: 'HTML/CSS de base',
     description: 'Logique de programmation, manipulation du DOM, formulaires interactifs',
     availableNow: false,
-    priority: false,
     featured: false,
   },
   {
@@ -121,7 +116,6 @@ export const formations: Formation[] = [
     prereq: 'Notions PC de base',
     description: 'Installation, thèmes, plugins WooCommerce, mise en ligne et référencement de base',
     availableNow: false,
-    priority: false,
   },
   {
     id: 'dev4',
@@ -137,7 +131,6 @@ export const formations: Formation[] = [
     prereq: 'JavaScript maîtrisé',
     description: 'Développement d\'applications web modernes, performantes et déployables',
     availableNow: false,
-    priority: false,
     featured: true,
   },
   {
@@ -154,7 +147,6 @@ export const formations: Formation[] = [
     prereq: 'React ou JavaScript avancé',
     description: 'Créer des applications Android et iOS avec une seule base de code',
     availableNow: false,
-    priority: false,
   },
  
   // ── INTELLIGENCE ARTIFICIELLE ─────────────────────────────────────────────
@@ -172,7 +164,6 @@ export const formations: Formation[] = [
     prereq: 'Aucun',
     description: 'Utiliser ChatGPT, Claude, Gemini et Copilot pour gagner du temps au travail',
     availableNow: true,
-    priority: true,
     featured: true,
   },
   {
@@ -189,7 +180,6 @@ export const formations: Formation[] = [
     prereq: 'Avoir utilisé ChatGPT ou Claude',
     description: 'Rédiger des prompts efficaces et automatiser ses tâches avec l\'IA',
     availableNow: false,
-    priority: false,
     featured: true,
   },
   {
@@ -206,7 +196,6 @@ export const formations: Formation[] = [
     prereq: 'Réseaux sociaux de base',
     description: 'Générer textes, visuels et vidéos pour ses réseaux sociaux et campagnes publicitaires',
     availableNow: false,
-    priority: false,
   },
   {
     id: 'ia4',
@@ -222,7 +211,6 @@ export const formations: Formation[] = [
     prereq: 'JS ou Python de base',
     description: 'Coder plus vite avec Cursor, intégrer l\'API Claude dans ses projets',
     availableNow: false,
-    priority: false,
     featured: true,
   },
   {
@@ -239,7 +227,6 @@ export const formations: Formation[] = [
     prereq: 'Python de base',
     description: 'Scikit-learn, modèles de régression/classification, cas d\'usage métier concrets',
     availableNow: false,
-    priority: false,
   },
  
   // ── DATA & SQL ────────────────────────────────────────────────────────────
@@ -257,7 +244,6 @@ export const formations: Formation[] = [
     prereq: 'Excel Pratique',
     description: 'Connexion de données, visuels interactifs, partage et publication de rapports Power BI',
     availableNow: false,
-    priority: false,
   },
   {
     id: 'dat2',
@@ -273,7 +259,6 @@ export const formations: Formation[] = [
     prereq: 'Notions informatique de base',
     description: 'Requêtes SQL, conception de bases de données, rapports automatisés',
     availableNow: false,
-    priority: false,
   },
   {
     id: 'dat3',
@@ -289,6 +274,5 @@ export const formations: Formation[] = [
     prereq: 'Logique de base',
     description: 'Automatisation de tâches, scripts utilitaires, initiation à l\'analyse de données',
     availableNow: false,
-    priority: false,
   },
 ]

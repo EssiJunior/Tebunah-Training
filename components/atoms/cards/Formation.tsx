@@ -60,7 +60,7 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
 
                 {/* Tag row */}
                 <div className="flex items-center justify-between gap-2 flex-wrap">
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center justify-between w-full gap-2">
                         <span
                             className="font-mono text-[10px] tracking-[0.12em] uppercase"
                             style={{ color: CATEGORY_COLORS[f.category] }}
@@ -84,13 +84,8 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
                         )}
                     </div>
                     <div className="flex items-center gap-1.5">
-                        {f.priority && (
-                            <span className="font-mono text-[9px] bg-accent/10 text-accent px-2 py-0.5 rounded-px tracking-widest">
-                                1ère session
-                            </span>
-                        )}
                         {f.featured && (
-                            <span className="font-mono text-[9px] border border-accent/20 text-accent/60 px-2 py-0.5 rounded-px tracking-widest">
+                            <span className="font-mono text-[9px] bg-accent/10 text-accent px-2 py-0.5 rounded-px tracking-widest">
                                 Populaire
                             </span>
                         )}
@@ -101,7 +96,8 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
                 <h3 className={[
                     'font-display text-[15px] font-bold leading-snug flex-1',
                     f.featured ? 'text-accent' : 'text-ink',
-                ].join(' ')}>
+                ].join(' ')}
+                style={{ color: CATEGORY_COLORS[f.category] }}>
                     {f.title}
                 </h3>
 
