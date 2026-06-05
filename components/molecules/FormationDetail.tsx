@@ -306,16 +306,12 @@ export default function FormationDetail({ formation }: { formation: Formation })
                             Bientôt disponible
                         </span>
                     )}
-
-                    {formation.priority && (
-                        <span className="font-mono text-[10px] bg-accent/10 text-accent px-2.5 py-1 rounded-px">
-                            1ère session
-                        </span>
-                    )}
                 </div>
 
                 {/* Title */}
-                <h1 className="font-display text-[28px] md:text-[34px] font-extrabold leading-tight text-ink">
+                <h1 className="font-display text-[28px] md:text-[34px] font-extrabold leading-tight"
+                    style={{ color: CATEGORY_COLORS[formation.category] }}
+                    >
                     {formation.title}
                 </h1>
 

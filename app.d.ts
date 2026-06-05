@@ -29,7 +29,6 @@ interface Formation {
     prereq: string
     description: string
     availableNow: boolean   // true = open for enrollment, false = coming soon
-    priority: boolean       // first-session focus formations
     featured?: boolean
 }
 

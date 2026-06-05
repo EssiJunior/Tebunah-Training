@@ -97,7 +97,7 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
                     'font-display text-[15px] font-bold leading-snug flex-1',
                     f.featured ? 'text-accent' : 'text-ink',
                 ].join(' ')}
-                style={{ color: CATEGORY_COLORS[f.category] }}>
+                    style={{ color: CATEGORY_COLORS[f.category] }}>
                     {f.title}
                 </h3>
 

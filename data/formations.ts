@@ -15,7 +15,7 @@ export const CATEGORY_COLORS: Record<Exclude<Category, 'all'>, string> = {
   ia:          '#60a5fa',
   dev:         '#4ade80',
   data:        '#facc15',
-  bureautique: '#a3a3a3',
+  bureautique: '#fb64b6',
 }
 
 export const formations: Formation[] = [
