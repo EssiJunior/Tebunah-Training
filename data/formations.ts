@@ -1,23 +1,6 @@
 
 export type Category = 'all' | 'ia' | 'dev' | 'data' | 'bureautique'
 
-
-
-export const CATEGORIES: { id: Category; label: string, quantity: number }[] = [
-  { id: 'all',         label: 'Toutes', quantity: 14 },
-  { id: 'bureautique', label: 'Bureautique', quantity: 3 },
-  { id: 'dev',         label: 'Web & Mobile', quantity: 3 },
-  { id: 'ia',          label: 'Intelligence Artificielle', quantity: 3 },
-  { id: 'data',        label: 'Data & SQL', quantity: 2 },
-]
-
-export const CATEGORY_COLORS: Record<Exclude<Category, 'all'>, string> = {
-  ia:          '#60a5fa',
-  dev:         '#4ade80',
-  data:        '#facc15',
-  bureautique: '#fb64b6',
-}
-
 export const formations: Formation[] = [
 
   // ── BUREAUTIQUE ──────────────────────────────────────────────────────────
@@ -276,3 +259,19 @@ export const formations: Formation[] = [
     availableNow: false,
   },
 ]
+
+export const CATEGORIES: { id: Category; label: string, quantity: number }[] = [
+  { id: 'all',         label: 'Toutes', quantity: formations.length },
+  { id: 'bureautique', label: 'Bureautique', quantity: formations.filter(f => f.category === 'bureautique').length },
+  { id: 'dev',         label: 'Web & Mobile', quantity: formations.filter(f => f.category === 'dev').length },
+  { id: 'ia',          label: 'Intelligence Artificielle', quantity: formations.filter(f => f.category === 'ia').length },
+  { id: 'data',        label: 'Data & SQL', quantity: formations.filter(f => f.category === 'data').length },
+]
+
+export const CATEGORY_COLORS: Record<Exclude<Category, 'all'>, string> = {
+  ia:          '#60a5fa',
+  dev:         '#4ade80',
+  data:        '#facc15',
+  bureautique: '#fb64b6',
+}
+
