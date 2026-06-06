@@ -3,8 +3,8 @@ import { AnimatePresence, motion } from "framer-motion"
 function MobileNav({ open, onClose, go }: { open: boolean; onClose: () => void; go: (href: string) => (e: React.MouseEvent) => void }) {
     const ALL_LINKS = [
         { label: 'Formations', href: '#formations' },
-        { label: 'IA (6 cours 🔥)', href: '#ia' },
-        { label: 'Instructeur', href: '#instructeur' },
+        { label: 'IA (6 cours 🔥)', href: '#formations-ia' },
+        { label: 'Instructeurs', href: '#instructeurs' },
         { label: 'FAQ', href: '#faq' },
         { label: 'Contact', href: '#contact' },
     ]

@@ -6,13 +6,15 @@ import Logo from '@/components/atoms/Logo'
 import MobileNav from '@/components/molecules/MobileNav'
 import { NAV_LINKS } from '@/data/navigation'
 import { createGoHandler } from '@/utils/navigation'
+import { useFormations } from '@/context/FormationsContext'
 import { motion, useScroll, useSpring } from 'motion/react'
 import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 
 export default function Nav() {
   const router = useRouter()
-  const go = createGoHandler(router)
+  const { setActive } = useFormations()
+  const go = createGoHandler(router, setActive)
   const [scrolled, setScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const [mobileOpen, setMobileOpen] = useState(false)
