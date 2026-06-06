@@ -1,13 +1,7 @@
+import { NAV_LINKS } from "@/data/navigation";
 import { AnimatePresence, motion } from "framer-motion"
 
 function MobileNav({ open, onClose, go }: { open: boolean; onClose: () => void; go: (href: string) => (e: React.MouseEvent) => void }) {
-    const ALL_LINKS = [
-        { label: 'Formations', href: '#formations' },
-        { label: 'IA (6 cours 🔥)', href: '#formations-ia' },
-        { label: 'Instructeurs', href: '#instructeurs' },
-        { label: 'FAQ', href: '#faq' },
-        { label: 'Contact', href: '#contact' },
-    ]
 
     return (
         <AnimatePresence>
@@ -36,7 +30,8 @@ function MobileNav({ open, onClose, go }: { open: boolean; onClose: () => void; 
 
                         {/* links */}
                         <div className="flex-1 px-4 py-6 flex flex-col gap-1 overflow-y-auto">
-                            {ALL_LINKS.map((link, i) => (
+                            
+                            {NAV_LINKS.map((link, i) => (
                                 <motion.a
                                     key={link.href}
                                     href={link.href}
@@ -54,6 +49,21 @@ function MobileNav({ open, onClose, go }: { open: boolean; onClose: () => void; 
                                     </span>
                                 </motion.a>
                             ))}
+                            <motion.a
+                                    href="#contact"
+                                    onClick={(e) => { go('#contact')(e); onClose() }}
+                                    initial={{ opacity: 0, x: 20 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.3, delay: 0.18 }}
+                                    className="group flex items-center justify-between px-3 py-3.5 rounded-px hover:bg-white/5 transition-colors duration-150"
+                                >
+                                    <span className="font-display text-[16px] font-semibold text-white/60 group-hover:text-ink transition-colors duration-150">
+                                        Contact
+                                    </span>
+                                    <span className="text-white/20 group-hover:text-white/50 transition-colors text-[14px] translate-x-0 group-hover:translate-x-1 duration-150">
+                                        →
+                                    </span>
+                                </motion.a>
                         </div>
 
                         {/* CTA */}
