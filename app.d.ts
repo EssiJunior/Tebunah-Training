@@ -1,5 +1,29 @@
 type Category = 'all' | 'ia' | 'dev' | 'data' | 'bureautique'
 
+type BenefitCategory = {
+  title: string
+  icon: string // lucide icon name
+  items: string[]
+}
+
+type Formation = {
+  id: string
+  title: string
+  category: 'bureautique' | 'dev' | 'ia' | 'data'
+  priceOnsite: number
+  priceOnsiteLabel: string
+  priceOnline: number
+  priceOnlineLabel: string
+  duration: string
+  hoursTotal: string
+  target: string
+  prereq: string
+  description: string
+  availableNow: boolean
+  featured?: boolean
+  benefits: BenefitCategory[]
+}
+
 type LogoProps = {
     size?: LogoSize;
     className?: string;
@@ -13,23 +37,6 @@ type LogoSize = 'small' | 'mid' | 'large'
 interface FAQ {
     question: string
     answer: string
-}
-
-interface Formation {
-    id: string
-    title: string
-    category: Exclude<Category, 'all'>
-    priceOnsite: number
-    priceOnsiteLabel: string
-    priceOnline: number
-    priceOnlineLabel: string
-    duration: string        // display label
-    hoursTotal: string      // e.g. "80h"
-    target: string
-    prereq: string
-    description: string
-    availableNow: boolean   // true = open for enrollment, false = coming soon
-    featured?: boolean
 }
 
 interface Registration {
