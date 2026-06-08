@@ -2,7 +2,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence } from "motion/react";
 import {
   LayoutDashboard, Briefcase, Globe2, Users,
   LayoutGrid, Building2, TableProperties, BarChart3,
@@ -32,11 +32,7 @@ const COLOR_MAP: Record<number, { icon: string; check: string }> = {
   3: { icon: "bg-amber-200 text-amber-800", check: "bg-amber-200 text-amber-700" },
 };
 
-type Props = {
-  benefits: BenefitCategory[];
-};
-
-const FormationBenefits = ({ benefits }: Props) => {
+const FormationBenefits = ({ benefits }: {benefits: BenefitCategory[]}) => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const toggle = (i: number) =>
