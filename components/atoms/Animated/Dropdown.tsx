@@ -1,5 +1,4 @@
 import { useFormations } from "@/context/FormationsContext";
-import { Category } from "@/data/formations";
 import { NAV_LINKS } from "@/data/navigation";
 import { createGoHandler } from "@/utils/navigation";
 import { motion, AnimatePresence } from "motion/react"
