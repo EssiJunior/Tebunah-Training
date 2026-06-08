@@ -1,7 +1,6 @@
 'use client'
 
 import { useRouter } from 'next/navigation'
-import type { Category } from '@/data/formations'
 
 const createGoHandler = (router: ReturnType<typeof useRouter>, setActive?: (category: Category) => void) => {
     return (href: string) => (e: React.MouseEvent) => {
