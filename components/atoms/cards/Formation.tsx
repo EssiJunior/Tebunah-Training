@@ -62,7 +62,7 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
                 <div className="flex items-center justify-between gap-2 flex-wrap">
                     <div className="flex items-center justify-between w-full gap-2">
                         <span
-                            className="font-mono text-[10px] tracking-[0.12em] uppercase"
+                            className="text-[10px] tracking-[0.12em] uppercase"
                             style={{ color: CATEGORY_COLORS[f.category] }}
                         >
                             {f.category === 'bureautique' ? 'Bureautique' : f.category.toUpperCase()}
@@ -73,19 +73,19 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
                                     <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                                     <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                                 </span>
-                                <span className="font-mono text-[9px] px-2 py-0.5 rounded-px tracking-widest border border-green-500/30 text-green-400">
+                                <span className="text-[9px] px-2 py-0.5 rounded-px tracking-widest border border-green-500/30 text-green-400">
                                     Disponible
                                 </span>
                             </div>
                         ) : (
-                            <span className="font-mono text-[9px] px-2 py-0.5 rounded-px tracking-widest border border-white/10 text-white/30">
+                            <span className="text-[9px] px-2 py-0.5 rounded-px tracking-widest border border-white/10 text-white/30">
                                 Bientôt
                             </span>
                         )}
                     </div>
                     <div className="flex items-center gap-1.5">
                         {f.featured && (
-                            <span className="font-mono text-[9px] bg-accent/10 text-accent px-2 py-0.5 rounded-px tracking-widest">
+                            <span className="text-[9px] bg-accent/10 text-accent px-2 py-0.5 rounded-px tracking-widest">
                                 Populaire
                             </span>
                         )}
@@ -94,7 +94,7 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
 
                 {/* Title */}
                 <h3 className={[
-                    'font-display text-[15px] font-bold leading-snug flex-1',
+                    'text-[15px] leading-[1.1]! flex-1',
                     f.featured ? 'text-accent' : 'text-ink',
                 ].join(' ')}
                     style={{ color: CATEGORY_COLORS[f.category] }}>
@@ -102,7 +102,7 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
                 </h3>
 
                 {/* Description */}
-                <p className="font-mono text-[11px] text-white/30 leading-[1.7]">
+                <p className="text-[11px] text-white/30 leading-[1.7]">
                     {f.description}
                 </p>
 
@@ -113,7 +113,7 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
                         ['Durée', `${f.duration} · ${f.hoursTotal}`],
                     ] as [string, string][]).map(([k, v]) => (
                         <div key={k}>
-                            <div className="font-mono text-[9px] text-white/20 tracking-widest uppercase mb-0.5">{k}</div>
+                            <div className=" text-[9px] text-white/20 tracking-widest uppercase mb-0.5">{k}</div>
                             <div className="font-mono text-[10px] text-white/45">{v}</div>
                         </div>
                     ))}
@@ -122,7 +122,7 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
                 {/* Footer */}
                 <div className="flex items-end justify-between pt-4 mt-1 border-t border-white/6">
                     <div className="flex flex-col gap-1">
-                        <div className="font-display text-[18px] font-extrabold text-accent">{displayPrice}</div>
+                        <div className="text-2xl font-extrabold text-accent">{displayPrice}</div>
                         <div
                             className="flex gap-0 rounded-px overflow-hidden border border-white/8 w-fit"
                             onClick={e => e.preventDefault()}
