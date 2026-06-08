@@ -35,7 +35,7 @@ export default function Formations() {
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
               className={[
-                'font-mono text-[11px] px-4.5 py-2 rounded-full tracking-[0.06em] transition-all duration-200',
+                'text-[11px] px-4.5 py-2 rounded-full tracking-[0.06em] transition-all duration-200',
                 active === cat.id
                   ? 'border border-accent/50 text-accent bg-accent/6'
                   : 'border border-white/8 text-white/40 hover:border-white/20 hover:text-white/60',
@@ -51,7 +51,7 @@ export default function Formations() {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.97 }}
           className={[
-            'font-mono text-[11px] px-4.5 py-2 rounded-full tracking-[0.06em] transition-all duration-200 flex items-center gap-1.5 ml-auto',
+            'text-[11px] px-4.5 py-2 rounded-full tracking-[0.06em] transition-all duration-200 flex items-center gap-1.5 ml-auto',
             showAvailableOnly
               ? 'border border-green-500/40 text-green-400 bg-green-500/6'
               : 'border border-white/8 text-white/40 hover:border-white/20 hover:text-white/60',
