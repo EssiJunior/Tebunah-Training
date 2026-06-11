@@ -5,7 +5,6 @@ import Image from 'next/image'
 import SectionMarker from '@/components/atoms/SectionMarker'
 import { INSTRUCTORS } from '@/data/instructor'
 
-
 export default function Instructors() {
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
