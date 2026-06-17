@@ -89,7 +89,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Title */}
-      <h1 className="leading-none! tracking-[-0.03em]! mb-8 text-[clamp(48px,7vw,96px)]! max-w-4xl">
+      <h1 className="leading-none! tracking-[-0.03em]! mb-8 text-[clamp(48px,7vw,96px)]! max-w-5xl">
         <div>
           <Slot delay={D + 0.00}>{t('titleLine1')}&nbsp;</Slot>
         </div>
