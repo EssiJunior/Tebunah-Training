@@ -23,7 +23,7 @@ export default function Footer() {
     <>
       {/* CTA */}
       <section id="contact" ref={ref}
-        className={`px-10 py-30 border-t border-white/6 text-center relative overflow-hidden ${actualPage === '/' ? 'block' : 'hidden'}`}>
+        className={`px-10 py-30 border-t border-white/6 text-center relative overflow-hidden ${actualPage === '/en' || actualPage === '/fr' ? 'block' : 'hidden'}`}>
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="w-150 h-75 rounded-full"
             style={{ background: 'radial-gradient(ellipse, rgba(255,210,45,0.1) 0%, transparent 70%)' }} />
