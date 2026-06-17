@@ -82,7 +82,7 @@ export default function Footer() {
       <footer className="px-10 py-6 border-t border-white/6 flex items-center justify-between flex-wrap gap-x-4 gap-y-1">
         <div className="flex items-center ">
           <Logo id="hero" handleClick={go("#hero")} />
-          <span className="text-[11px] text-white/90 -ml-1">© 2025</span>
+          <span className="text-[11px] text-white/90 -ml-1">© 2026</span>
         </div>
         <div className="flex gap-6">
           {['#formations', '#instructeur', '#faq', '#contact'].map(href => (

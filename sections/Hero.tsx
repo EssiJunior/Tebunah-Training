@@ -82,9 +82,9 @@ export default function Hero() {
           animate={{ scaleX: 1 }}
           transition={{ duration: 0.5, delay: D }}
           style={{ transformOrigin: 'left' }}
-          className="inline-block w-10 h-px bg-accent white"
+          className="inline-block w-10 h-px bg-accent white "
         />
-        {t('eyebrow')}
+        <span className="whitespace-nowrap text-ellipsis overflow-hidden">{t('eyebrow')}</span>
         <span className="w-1.5 h-1.5 rounded-full bg-accent animate-blink" />
       </motion.div>
 
@@ -93,12 +93,12 @@ export default function Hero() {
         <div>
           <Slot delay={D + 0.00}>{t('titleLine1')}&nbsp;</Slot>
         </div>
-        <div className="overflow-hidden">
+        <div className="overflow-hidden ">
           <motion.span
             initial={{ y: '105%' }}
             animate={{ y: '0%' }}
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: D + 0.06 }}
-            className="inline-block bg-accent text-bg px-1"
+            className="inline-block bg-accent text-bg px-1 "
           >
             {t('titleLine2')}
           </motion.span>
