@@ -11,6 +11,7 @@ import { useFormations } from '@/context/FormationsContext'
 import { motion, useScroll, useSpring } from 'motion/react'
 import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
+import ToggleLanguages from '@/components/atoms/ToggleLanguages';
 
 export default function Nav() {
   const t = useTranslations('Navigation')
@@ -107,6 +108,9 @@ export default function Nav() {
                 </div>
               ))}
             </div>
+
+            {/* Language toggle */}
+            <ToggleLanguages />
 
             {/* CTA — desktop */}
             <motion.a
