@@ -3,7 +3,7 @@
 import { createRegistration } from "@/requests/registrations"
 import { academicLevels, formats, timeslots } from "@/utils/form"
 import { useState } from "react"
-import {motion} from "motion/react"
+import { motion } from "motion/react"
 import Field from "../atoms/Field"
 
 const RegistrationForm = ({ formation }: { formation: Formation }) => {
@@ -124,7 +124,7 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
                             onClick={() => {
                                 setForm(prev => ({ ...prev, format: mode }))
                                 setForm(prev => ({ ...prev, price: mode === 'onsite' ? formation.priceOnsite : formation.priceOnline }))
-                                setForm(prev => ({ ...prev, session: mode === 'online' ? '': timeslots[0] }))
+                                setForm(prev => ({ ...prev, session: mode === 'online' ? '' : timeslots[0] }))
                             }}
                             className={[
                                 'flex flex-col items-start gap-1 p-4 rounded border transition-all duration-150 text-left',
@@ -205,7 +205,7 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
             </p>
 
             {/* Registration fee notice */}
-            <motion.div 
+            <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
@@ -213,7 +213,7 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
             >
                 <span className="text-accent text-lg shrink-0">ℹ</span>
                 <p className="font-mono text-[11px] text-white/60 leading-relaxed">
-                    Frais d&apos;inscription : <span className="text-accent font-semibold">0 FCFA</span> (Gratuit pour la première session)
+                    Frais d&apos;inscription : <span className="text-accent font-semibold">5 000 FCFA</span>
                 </p>
             </motion.div>
 

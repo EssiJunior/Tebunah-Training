@@ -37,6 +37,7 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       lang="fr"
       className={`${chonburi.variable} ${domine.variable} ${mono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
         <Layout>
