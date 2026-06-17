@@ -212,8 +212,8 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
                 className="bg-accent/10 border border-accent/20 rounded px-3.5 py-1 flex items-center gap-2"
             >
                 <span className="text-accent text-lg shrink-0">ℹ</span>
-                <p className="font-mono text-[11px] text-white/60 leading-relaxed">
-                    Frais d&apos;inscription : <span className="text-accent font-semibold">5 000 FCFA</span>
+                <p className="font-mono text-[11px] text-white/60 leading-relaxed whitespace-nowrap text-ellipsis overflow-hidden">
+                    Frais d&apos;inscription : <span className="text-accent font-semibold">5 000 FCFA</span> (Payable en cash ou via Orange money/MTN Money)
                 </p>
             </motion.div>
 
