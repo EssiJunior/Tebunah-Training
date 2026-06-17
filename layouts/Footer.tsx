@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl';
 import { motion, useInView } from 'motion/react'
 import { useRef } from 'react'
 import { CONTACTS, RESPONSE_TIME, LOCATION } from '@/data/contact'
@@ -9,6 +10,7 @@ import DeveloperInfo from '@/components/atoms/DeveloperInfo'
 import { usePathname, useRouter } from 'next/navigation'
 
 export default function Footer() {
+  const t = useTranslations('Footer')
   const ref = useRef(null)
   const inView = useInView(ref, { once: true, margin: '-80px' })
 
@@ -32,7 +34,7 @@ export default function Footer() {
           transition={{ duration: 0.6 }}
           className="font-mono text-[11px] text-accent tracking-[0.14em] uppercase flex items-center justify-center gap-3 mb-6"
         >
-          <span className="w-8 h-px bg-accent" /> Prêt à commencer ? <span className="w-8 h-px bg-accent" />
+          <span className="w-8 h-px bg-accent" /> {t('readyToStart')} <span className="w-8 h-px bg-accent" />
         </motion.p>
 
         <motion.h2
@@ -40,9 +42,9 @@ export default function Footer() {
           transition={{ duration: 0.8, delay: 0.1, ease: [0.76, 0, 0.24, 1] }}
           className="font-display font-extrabold leading-[1.05]! tracking-[-0.02em] mb-10 text-[clamp(36px,5vw,72px)]"
         >
-          Investissez dans<br />
+          {t('investIn')}<br />
           <span className='text-bg bg-accent px-1'>
-            vos compétences.
+            {t('yourSkills')}
           </span>
         </motion.h2>
 
@@ -72,7 +74,7 @@ export default function Footer() {
           transition={{ duration: 0.6, delay: 0.5 }}
           className="font-mono text-[11px] text-white/20 mt-6"
         >
-          {RESPONSE_TIME} · {LOCATION}
+          {t('responseTime')} · {t('location')}
         </motion.p>
       </section>
 

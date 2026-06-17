@@ -5,9 +5,11 @@ import { formations, CATEGORIES } from '@/data/formations'
 import SectionMarker from '@/components/atoms/SectionMarker'
 import Formation from '@/components/atoms/cards/Formation'
 import { useFormations } from '@/context/FormationsContext'
+import { useTranslations } from 'next-intl'
 
 
 export default function Formations() {
+  const t = useTranslations('Formations')
   const { active, setActive } = useFormations()
   const [showAvailableOnly, setShowAvailableOnly] = useState(false)
   const ref = useRef(null)
@@ -19,7 +21,7 @@ export default function Formations() {
 
   return (
     <section id="formations" ref={ref} className="px-2.5 sm:px-10 py-30">
-      <SectionMarker title="Catalogue" id="#formations" inView={inView} />
+      <SectionMarker title={t('title')} id="#formations" inView={inView} />
 
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -41,7 +43,7 @@ export default function Formations() {
                   : 'border border-white/8 text-white/40 hover:border-white/20 hover:text-white/60',
               ].join(' ')}
             >
-              {cat.label}
+              {t(`categories.${cat.id}`)}
             </motion.button>
           ))}
         </div>
@@ -61,7 +63,7 @@ export default function Formations() {
             'w-1.5 h-1.5 rounded-full inline-block',
             showAvailableOnly ? 'bg-green-400' : 'bg-white/20',
           ].join(' ')} />
-          Disponibles maintenant
+          {t('availableNow')}
         </motion.button>
       </motion.div>
 
@@ -76,8 +78,8 @@ export default function Formations() {
       </motion.div>
 
       <motion.p layout className="font-mono text-[11px] text-white/20 mt-4 text-right">
-        {filtered.length} formation{filtered.length > 1 ? 's' : ''}
-        {showAvailableOnly ? ' · disponibles maintenant' : ''}
+        {t('count', { count: filtered.length })}
+        {showAvailableOnly ? t('availableNowSuffix') : ''}
       </motion.p>
     </section>
   )

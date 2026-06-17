@@ -1,7 +1,15 @@
 import { NAV_LINKS } from "@/data/navigation";
 import { AnimatePresence, motion } from "framer-motion"
+import { useTranslations } from "next-intl";
 
 function MobileNav({ open, onClose, go }: { open: boolean; onClose: () => void; go: (href: string) => (e: React.MouseEvent) => void }) {
+    const t = useTranslations('Navigation')
+
+    const labelKeys: Record<string, string> = {
+        'Formations': 'formations',
+        'Instructeurs': 'instructors',
+        'FAQ': 'faq',
+    }
 
     return (
         <AnimatePresence>
@@ -25,7 +33,7 @@ function MobileNav({ open, onClose, go }: { open: boolean; onClose: () => void; 
                     >
                         {/* header */}
                         <div className="flex items-center justify-between px-6 h-15 border-b border-white/6">
-                            <span className="font-mono text-[12px] text-accent tracking-[0.08em]">Menu</span>
+                            <span className="font-mono text-[12px] text-accent tracking-[0.08em]">{t('menu')}</span>
                         </div>
 
                         {/* links */}
@@ -42,7 +50,7 @@ function MobileNav({ open, onClose, go }: { open: boolean; onClose: () => void; 
                                     className="group flex items-center justify-between px-3 py-3.5 rounded-px hover:bg-white/5 transition-colors duration-150"
                                 >
                                     <span className="font-display text-[16px] font-semibold text-white/60 group-hover:text-ink transition-colors duration-150">
-                                        {link.label}
+                                        {labelKeys[link.label] ? t(labelKeys[link.label]) : link.label}
                                     </span>
                                     <span className="text-white/20 group-hover:text-white/50 transition-colors text-[14px] translate-x-0 group-hover:translate-x-1 duration-150">
                                         →
@@ -58,7 +66,7 @@ function MobileNav({ open, onClose, go }: { open: boolean; onClose: () => void; 
                                     className="group flex items-center justify-between px-3 py-3.5 rounded-px hover:bg-white/5 transition-colors duration-150"
                                 >
                                     <span className="font-display text-[16px] font-semibold text-white/60 group-hover:text-ink transition-colors duration-150">
-                                        Contact
+                                        {t('contact')}
                                     </span>
                                     <span className="text-white/20 group-hover:text-white/50 transition-colors text-[14px] translate-x-0 group-hover:translate-x-1 duration-150">
                                         →
@@ -75,10 +83,10 @@ function MobileNav({ open, onClose, go }: { open: boolean; onClose: () => void; 
                                 transition={{ duration: 0.3, delay: 0.35 }}
                                 className="w-full bg-accent text-bg font-mono text-[12px] font-medium py-3.5 rounded-px tracking-[0.08em] uppercase flex items-center justify-center gap-2"
                             >
-                                Candidater <span>→</span>
+                                {t('apply')} <span>→</span>
                             </motion.a>
                             <p className="font-mono text-[10px] text-white/20 text-center mt-3 tracking-wide">
-                                Réponse sous 24h · Yaoundé, CM
+                                {t('replyTime')}
                             </p>
                         </div>
                     </motion.div>

@@ -1,0 +1,423 @@
+{
+    "Hero": {
+        "eyebrow": "Formations IT · Yaoundé, Cameroun / En ligne",
+        "titleLine1": "Maîtrisez",
+        "titleLine2": "l'informatique.",
+        "titleLine3_1": "à",
+        "titleLine3_2": "l'ère",
+        "titleLine3_3": "de ",
+        "titleLine3_4": "l'IA.",
+        "subtitle": "13+ formations pratiques en développement web, data & IA.\nDispensées à Yaoundé / en ligne (Google meet).",
+        "ctaView": "Voir les formations ↓",
+        "ctaWho": "Qui enseigne ?",
+        "stats": {
+            "courses": "formations disponibles",
+            "experience": "ans d'expérience",
+            "learners": "apprenants actifs"
+        },
+        "words": ["numérique.", "web.", "l'IA.", "la data."]
+    },
+    "Steps": {
+        "title": {
+            "0": "Comment",
+            "1": "Ça",
+            "2": "Marche?"
+        },
+        "hint": "Suivez simplement ces étapes",
+        "navigate": {
+            "title": "Naviguer",
+            "description": "Explorez notre répertoire complet d'experts vérifiés dans divers domaines pour trouver le partenaire idéal correspondant à vos exigences et besoins professionnels."
+        },
+        "find": {
+            "title": "Trouver",
+            "description": "Utilisez nos filtres de recherche avancés pour affiner les experts par compétences, expérience, lieu et disponibilité afin d'identifier le candidat le plus apte."
+        },
+        "review": {
+            "title": "Examiner",
+            "description": "Consultez les profils détaillés, incluant les portfolios, les témoignages clients et les certifications pour valider l'expertise et la compatibilité avec votre projet."
+        },
+        "contact": {
+            "title": "Contacter",
+            "description": "Initiez un contact direct avec l'expert choisi via ses coordonnées pour discuter des détails du projet, des délais et négocier les conditions ensemble."
+        },
+        "collaborate": {
+            "title": "Collaborer",
+            "description": "Travaillez en toute transparence avec votre expert tout au long du projet, suivez les progrès, partagez des fichiers et assurez la qualité des livrables."
+        },
+        "rate": {
+            "title": "Évaluer",
+            "description": "Une fois le projet terminé, laissez un avis et une note pour aider les autres membres de la communauté et renforcer la confiance au sein de notre réseau."
+        }
+    },
+    "Experts": {
+        "title": {
+            "0": "Trouvez",
+            "1": "Des",
+            "2": "Experts"
+        },
+        "hint": "Utilisez notre carte interactive pour trouver des experts près de chez vous",
+        "description": {
+            "0": "Que vous soyez une entreprise dans votre domaine ou un expert, nous avons besoin de vos connaissances et de votre expérience à partager avec les autres.",
+            "1": "Construisons plus avec nos talents.",
+            "2": "Trouvez des experts ici avec notre",
+            "3": "carte interactive",
+            "4": "et faites-les briller."
+        },
+        "banner": {
+            "title": "LES EXPERTS",
+            "hint": "Trouvez ici le profil idéal pour votre prochain travail"
+        },
+        "form": {
+            "search": "Recherche",
+            "filters": "Filtres",
+            "all": "Tous",
+            "on": "sur",
+            "allF": "Toutes",
+            "years": "ans",
+            "minExperience": "Expérience minimale",
+            "experience": "année d'expérience",
+            "experiencePlural": "années d'expérience",
+            "reinitialize": "Réinitialiser tous les filtres",
+            "noResults": "Aucun résultat trouvé pour cette recherche",
+            "placeholder": {
+                "search": "Rechercher par nom, profession, localisation…"
+            }
+        }
+    },
+    "About": {
+        "title": {
+            "0": "Notre",
+            "1": "Vision."
+        },
+        "hint": "Quel est notre objectif",
+        "description": "ExpertLink est une plateforme professionnelle dont l'objectif est de connecter les experts de la",
+        "cards": {
+            "0": {
+                "title": "Pourquoi?",
+                "body": "Nous avons observé qu'en étant principalement occupés à prêcher l'Évangile (ce qui est normal et ne changera pas), il y a des aspects communautaires et professionnels que nous négligeons."
+            },
+            "1": {
+                "title": "Quoi?",
+                "body": "Sur le plan professionnel, nous ne nous connaissons pas. Nous voyons des frères embaucher des non-croyants pour effectuer des tâches qui pourraient parfois être faites par nos frères. Très souvent, ce sont des frères bien connus qui bénéficient de recommandations naturelles."
+            },
+            "2": {
+                "title": "Comment?",
+                "body": "Avec cette plateforme web (estimée à 70% d'accès), qui rassemble les informations de tous les frères et sœurs de l'Église du Cameroun, afin que lorsqu'il y a un besoin pour un professionnel, on puisse rechercher un profil et confier le projet à un frère ou une sœur qui habite à proximité et est suffisamment compétent pour faire le travail."
+            }
+        },
+        "banner": {
+            "title": "À PROPOS",
+            "hint": "La mission d'ExpertLink."
+        }
+    },
+    "Contact": {
+        "title": {
+            "0": "Entrez",
+            "1": "En",
+            "2": "Contact."
+        },
+        "infos": {
+            "location": "Localisation",
+            "email": "Email",
+            "phone": "Téléphone"
+        },
+        "form": {
+            "name": "Nom",
+            "password": "Mot de passe",
+            "email": "Email",
+            "message": "Message",
+            "option": "Option",
+            "placeholder": {
+                "name": "Entrez votre nom",
+                "password": "Entrez votre mot de passe",
+                "email": "Entrez votre email",
+                "message": "Comment pouvons-nous vous aider?",
+                "option": "Sélectionnez une option"
+            }
+        },
+        "banner": {
+            "title": "CONTACTEZ-NOUS",
+            "hint": "Nous aimerions savoir de vous."
+        }
+    },
+    "Formations": {
+        "title": "Catalogue",
+        "availableNow": "Disponibles maintenant",
+        "viewAll": "Voir toutes les formations",
+        "statusAvailable": "Disponible",
+        "statusSoon": "Bientôt",
+        "featured": "Populaire",
+        "targetLabel": "Cible",
+        "durationLabel": "Durée",
+        "onsite": "Présentiel",
+        "online": "En ligne",
+        "count": "{count, plural, =0 {aucune formation} =1 {1 formation} other {# formations}}",
+        "availableNowSuffix": " · disponibles maintenant",
+        "categories": {
+            "all": "Toutes",
+            "bureautique": "Bureautique",
+            "dev": "Web & Mobile",
+            "ia": "Intelligence Artificielle",
+            "data": "Data & SQL"
+        }
+    },
+    "Instructors": {
+        "title": "Instructeurs",
+        "expertise": "Expertise",
+        "philosophyLabel": "— philosophie du formateur",
+        "essi": {
+            "name": "Essi Junior",
+            "title": "Développeur d'applications · Formateur IT · Designeur graphique",
+            "description": "4 ans de développement full-stack, 2 ans d'outils data (Talend, Power BI, Excel avancé) et en formations IT. Designeur Graphique Python Cameroun.",
+            "quote": "Je forme parce que je pratique - pas l'inverse.",
+            "stats": [
+                "ans de dev Full-Stack",
+                "ans de formations IT",
+                "Formations dispensées"
+            ],
+            "philosophy": "L'Informatique est une science majeure dans le monde actuel. Ma mission est de rendre les connaissances pratiques du domaine accessibles à tous ."
+        }
+    },
+    "FAQ": {
+        "title": "Questions fréquentes",
+        "subtitleNormal": "Avez-vous des",
+        "subtitleAccent": "questions ?",
+        "hint": "Si vous ne trouvez pas votre réponse, contactez-nous directement sur WhatsApp.",
+        "items": [
+            {
+                "question": "Les formations sont-elles certifiantes ?",
+                "answer": "Une attestation de formation privée est délivrée à la fin de chaque parcours. Elle n'est pas agréée MINEFOP pour l'instant — mais les compétences acquises sont immédiatement applicables et valorisées sur le marché local et international (Upwork, Andela, missions freelance)."
+            },
+            {
+                "question": "Format présentiel ou en ligne ?",
+                "answer": "Les deux options sont disponibles. Présentiel à Yaoundé pour les ateliers pratiques, ou 100% en ligne via Google Meet. Le matériel de cours est fourni en PDF."
+            },
+            {
+                "question": "Comment se déroule le paiement ?",
+                "answer": "MTN Mobile Money, Orange Money ou virement bancaire. Paiement en 2 fois possible sur demande pour les formations au-dessus de 50 000 FCFA."
+            },
+            {
+                "question": "Faut-il déjà avoir des bases en informatique ?",
+                "answer": "Chaque formation indique clairement ses prérequis. Certaines partent de zéro (Bureautique, HTML/CSS, IA au quotidien). D'autres supposent des bases (React, Python ML). Contactez-nous si vous avez un doute."
+            },
+            {
+                "question": "Peut-on organiser une formation en intra-entreprise ?",
+                "answer": "Oui, avec un tarif forfaitaire pour un groupe. C'est particulièrement pertinent pour les formations Cybersécurité, Power BI et IA pour les entreprises."
+            },
+            {
+                "question": "Quelle est la taille des groupes ?",
+                "answer": "8 à 12 participants maximum pour garantir un suivi personnalisé. Sessions individuelles ou en binôme disponibles sur demande."
+            }
+        ]
+    },
+    "Team": {
+        "title": {
+            "0": "Notre",
+            "1": "Équipe"
+        },
+        "hint": "Qui nous sommes, et pourquoi nous faisons ce que nous faisons.",
+        "team": {
+            "leaders": {
+                "title": "Équipe de Direction",
+                "description": "Notre équipe de direction incarne notre mission, composée de nos leaders directs.",
+                "leaders": {
+                    "0": {
+                        "name": "ENGOLO Valentin",
+                        "title": "Pasteur Principal, Assemblée d'Etoudi",
+                        "bio": "En tant que pasteur principal de l'assemblée d'Etoudi et ..."
+                    },
+                    "1": {
+                        "name": "BAYIHA Cyrille",
+                        "title": "Adjoint du Pasteur Principal, Assemblée d'Etoudi",
+                        "bio": "En tant qu'adjoint du pasteur principal de l'assemblée d'Etoudi et ..."
+                    }
+                }
+            },
+            "technical": {
+                "title": "Équipe Technique",
+                "description": "Notre équipe technique est composée de membres participant à la réalisation concrète.",
+                "technical": {
+                    "0": {
+                        "name": "KONDON Minette",
+                        "title": "Porte Parole Cameroon du DDSEF",
+                        "bio": "En tant que responsable de la communication du Cameroun pour le DDSEF, je suis responsable de la supervision des stratégies de communication et de la mise en œuvre de ce projet"
+                    },
+                    "1": {
+                        "name": "ESSI Junior",
+                        "title": "Communicant, Assemblée d'Etoudi",
+                        "bio": "En tant qu'ingénieur logiciel, je travaille sur la transformation de l'idée du projet en un logiciel fonctionnel.."
+                    }
+                }
+            }
+        }
+    },
+    "CTA": {
+        "getStarted": "Commencer",
+        "learnMore": "En savoir plus",
+        "readMore": "Lire la suite",
+        "subscribe": "S'abonner",
+        "contactUs": "Nous contacter",
+        "signUp": "S'inscrire",
+        "signIn": "Se connecter",
+        "submit": "Envoyer",
+        "send": "Envoyer",
+        "bookNow": "Réserver",
+        "joinUs": "Rejoignez-nous",
+        "support": "Soutenir notre mission",
+        "reset": "Réinitialiser tous les champs",
+        "save": "Enregistrer",
+        "saved": "Enregistré!",
+        "cancel": "Annuler",
+        "viewProfile": "Voir le Profil",
+        "downloadCV": "Télécharger le CV"
+    },
+    "Navigation": {
+        "home": "Accueil",
+        "formations": "Formations",
+        "instructors": "Instructeurs",
+        "faq": "FAQ",
+        "contact": "Contact",
+        "apply": "Candidater",
+        "menu": "Menu",
+        "replyTime": "Réponse sous 24h · Yaoundé, CM"
+    },
+    "Header": {
+        "profile": "Mon profil",
+        "notifications": "Notifications",
+        "help": "Aide & Support",
+        "feedback": "Envoyer des commentaires",
+        "logout": "Se déconnecter"
+    },
+    "Footer": {
+        "readyToStart": "Prêt à commencer ?",
+        "investIn": "Investissez dans",
+        "yourSkills": "vos compétences.",
+        "responseTime": "Réponse sous 24h",
+        "location": "Yaoundé, CM"
+    },
+    "DeveloperInfo": {
+        "madeWith": "Fait avec",
+        "by": "par"
+    },
+    "Marquee": {
+        "items": [
+            "Développement Web",
+            "―",
+            "Intelligence Artificielle",
+            "―",
+            "Data & Analyse",
+            "―",
+            "Bureautique",
+            "―",
+            "Power BI",
+            "―",
+            "React & Next.js",
+            "―",
+            "Claude API",
+            "―",
+            "Cursor AI",
+            "―",
+            "Python",
+            "―",
+            "Excel Avancé",
+            "―"
+        ],
+        "footer": {
+            "0": "Le futur du Networking",
+            "1": "Networking",
+            "2": "Trouvez un expert aussi vite que vous sautez",
+            "3": "Recommandation de carte basée sur l'IA"
+        },
+        "about": {
+            "0": "Jean 3:3 - En vérité, en vérité, je vous le dis, si un homme ne naît de nouveau, il ne peut voir le royaume de Dieu."
+        },
+        "leaders": {
+            "0": "Apocalypse 20:15 - Quiconque n'était pas inscrit dans le livre de vie fut jeté dans l'étang de feu."
+        },
+        "com": {
+            "0": "Colossiens 4:7 - Tychicus vous donnera toutes les nouvelles à mon sujet. C'est un frère bien-aimé, un ministre fidèle et un compagnon de service dans le Seigneur"
+        }
+    },
+    "NotFound": {
+        "title": "Désolé, Page non trouvée",
+        "description": "L'URL demandée est introuvable sur ce serveur. C'est tout ce que nous savons",
+        "link": "Retour à l'accueil"
+    },
+    "Auth": {
+        "leftPanel": {
+            "0": "Se Connecter avec",
+            "1": "des experts",
+            "2": "proches de vous."
+        },
+        "common": {
+            "0": "Continuer avec",
+            "1": "ou"
+        },
+        "signin": {
+            "0": "Bienvenue à nouveau",
+            "1": "Connectez-vous à votre",
+            "2": "compte.",
+            "3": "Vous n'avez pas de compte?",
+            "4": "Créez-en un"
+        },
+        "signup": {
+            "0": "Bienvenue",
+            "1": "Créer un nouveau",
+            "2": "compte.",
+            "3": "Vous avez déjà un compte?",
+            "4": "Se connecter"
+        }
+    },
+    "Profile": {
+        "banner": {
+            "title": "MON PROFIL",
+            "hint": "Gérez votre profil"
+        },
+        "form": {
+            "photo": "Photo",
+            "identity": "Identité",
+            "personal": "Informations personnelles",
+            "social": "Informations sociales",
+            "name": "Nom",
+            "email": "Email",
+            "phone": "Téléphone",
+            "profession": "Proféssion",
+            "website": "Site Web",
+            "localization": "Localisation",
+            "localizationHint": "Commencez à taper une ville ou une adresse pour rechercher",
+            "assembly": "Assemblée",
+            "district": "Districte",
+            "experience": "Expérience",
+            "resume": "Curriculum Vitæ",
+            "placeholder": {
+                "photoSet": "Créez votre photo de profil",
+                "photoModify": "Modifiez votre photo de profil",
+                "name": "Entrez votre nom",
+                "email": "Entrez votre email",
+                "phone": "Entrez votre numéro de téléphone",
+                "profession": "Entrez votre proféssion",
+                "website": "Entrez l'URL de votre site web",
+                "localization": "Entrez votre localisation",
+                "assembly": "Entrez votre assemblée",
+                "district": "Entrez votre districte",
+                "experience": "Combien d'années d'expérience professionnelle avez-vous?",
+                "resume": "Glissez et déposez votre CV (PDF)",
+                "resumeUpload": "Importation du CV...",
+                "resumeDrop": "Déposez le CV ici"
+            }
+        },
+        "delete": {
+            "dangerZone": "Zone Dangereuse",
+            "description": "Supprimez définitivement votre compte et toutes les données associées. Cette action ne peut pas être annulée.",
+            "button": "Supprimer le Compte",
+            "title": "Supprimer Votre Compte",
+            "warning": "Cela supprimera définitivement votre compte et toutes les données associées.",
+            "irreversible": "Cette action est irréversible. Toutes vos informations de profil, projets et historique seront supprimés définitivement.",
+            "confirmationPrompt": "Tapez votre adresse e-mail pour confirmer:"
+        }
+    },
+    "Soon": {
+        "title": "Construction en cours",
+        "hint": "Nous développons cette page, elle sera disponible bientôt."
+    }
+}

@@ -1,5 +1,6 @@
 'use client'
 
+import { useTranslations } from 'next-intl';
 import Dropdown from '@/components/atoms/Animated/Dropdown'
 import HamburgerIcon from '@/components/atoms/Animated/HamburgerIcon'
 import Logo from '@/components/atoms/Logo'
@@ -12,6 +13,7 @@ import { useRouter } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
 
 export default function Nav() {
+  const t = useTranslations('Navigation')
   const router = useRouter()
   const { setActive } = useFormations()
   const go = createGoHandler(router, setActive)
@@ -42,6 +44,12 @@ export default function Nav() {
 
   const closeDropdown = () => {
     dropdownTimeout.current = setTimeout(() => setActiveDropdown(null), 120)
+  }
+
+  const labelKeys: Record<string, string> = {
+    'Formations': 'formations',
+    'Instructeurs': 'instructors',
+    'FAQ': 'faq',
   }
 
   return (
@@ -80,7 +88,7 @@ export default function Nav() {
                     onClick={go(link.href)}
                     className="group relative flex items-center gap-1.5 px-3 py-2 rounded-px font-mono text-[11px] text-white/40 tracking-wider hover:text-ink transition-colors duration-200"
                   >
-                    {link.label}
+                    {labelKeys[link.label] ? t(labelKeys[link.label]) : link.label}
                     {link.sub && (
                       <motion.svg
                         animate={{ rotate: activeDropdown === link.label ? 180 : 0 }}
@@ -107,7 +115,7 @@ export default function Nav() {
               whileTap={{ scale: 0.96 }}
               className="hidden md:inline-flex items-center gap-2 bg-accent text-bg font-mono text-[11px] font-medium px-4 py-2 rounded-px tracking-[0.08em] uppercase"
             >
-              Candidater
+              {t('apply')}
               <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                 <path d="M2 8L8 2M8 2H3M8 2v5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
               </svg>

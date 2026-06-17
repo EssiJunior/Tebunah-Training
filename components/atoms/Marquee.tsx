@@ -1,9 +1,11 @@
 'use client'
 
-import { MARQUEE_ITEMS } from '@/data/marquee'
+import { useTranslations } from 'next-intl'
 
 export default function Marquee() {
-  const all = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS]
+  const t = useTranslations('Marquee')
+  const items = t.raw('items') as string[]
+  const all = [...items, ...items]
   return (
     <div className="overflow-hidden border-y border-white/6 py-4 bg-surface">
       <div className="marquee-track">

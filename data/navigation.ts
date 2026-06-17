@@ -3,7 +3,7 @@ import { CATEGORIES } from "./formations"
 export interface NavLink {
   label: string
   href: string
-  sub?: NavLink[] | null
+  sub?: (NavLink & { quantity?: number })[] | null
   tag?: string
 }
 
@@ -14,7 +14,8 @@ export const NAV_LINKS: NavLink[] = [
     sub: CATEGORIES.filter(c => c.id !== 'all').map(c => ({
       label: c.label,
       href: c.id,
-      tag: `${c.quantity} cours`
+      tag: `${c.quantity} cours`,
+      quantity: c.quantity
     })),
   },
   { label: 'Instructeurs', href: '#instructeurs', sub: null },

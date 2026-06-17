@@ -4,7 +4,10 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { CATEGORY_COLORS } from "@/data/formations";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
+
 const Formation = ({ f, index }: { f: Formation; index: number }) => {
+    const t = useTranslations('Formations')
     const [hovered, setHovered] = useState(false)
     const [tilt, setTilt] = useState({ x: 0, y: 0 })
     const [mode, setMode] = useState<'onsite' | 'online'>('onsite')
@@ -65,7 +68,7 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
                             className="text-[10px] tracking-[0.12em] uppercase"
                             style={{ color: CATEGORY_COLORS[f.category] }}
                         >
-                            {f.category === 'bureautique' ? 'Bureautique' : f.category.toUpperCase()}
+                            {t(`categories.${f.category}`)}
                         </span>
                         {f.availableNow ? (
                             <div className="relative flex items-center gap-2">
@@ -74,19 +77,19 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
                                     <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                                 </span>
                                 <span className="text-[9px] px-2 py-0.5 rounded-px tracking-widest border border-green-500/30 text-green-400">
-                                    Disponible
+                                    {t('statusAvailable')}
                                 </span>
                             </div>
                         ) : (
                             <span className="text-[9px] px-2 py-0.5 rounded-px tracking-widest border border-white/10 text-white/30">
-                                Bientôt
+                                {t('statusSoon')}
                             </span>
                         )}
                     </div>
                     <div className="flex items-center gap-1.5">
                         {f.featured && (
                             <span className="text-[9px] bg-accent/10 text-accent px-2 py-0.5 rounded-px tracking-widest">
-                                Populaire
+                                {t('featured')}
                             </span>
                         )}
                     </div>
@@ -109,8 +112,8 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
                 {/* Meta */}
                 <div className="flex gap-4 flex-wrap">
                     {([
-                        ['Cible', f.target],
-                        ['Durée', `${f.duration} · ${f.hoursTotal}`],
+                        [t('targetLabel'), f.target],
+                        [t('durationLabel'), `${f.duration} · ${f.hoursTotal}`],
                     ] as [string, string][]).map(([k, v]) => (
                         <div key={k}>
                             <div className=" text-[9px] text-white/20 tracking-widest uppercase mb-0.5">{k}</div>
@@ -138,7 +141,7 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
                                             : 'text-white/25 hover:text-white/40',
                                     ].join(' ')}
                                 >
-                                    {m === 'onsite' ? 'Présentiel' : 'En ligne'}
+                                    {m === 'onsite' ? t('onsite') : t('online')}
                                 </button>
                             ))}
                         </div>

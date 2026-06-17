@@ -1,0 +1,300 @@
+{
+    "Hero": {
+        "eyebrow": "IT Trainings · Yaoundé, Cameroon / Online",
+        "titleLine1": "Master",
+        "titleLine2": "computer science.",
+        "titleLine3_1": "in",
+        "titleLine3_2": "the era",
+        "titleLine3_3": "of ",
+        "titleLine3_4": "AI.",
+        "subtitle": "13+ practical courses in web development, data & AI.\nAvailable in Yaoundé / online (Google Meet).",
+        "ctaView": "See courses ↓",
+        "ctaWho": "Who teaches ?",
+        "stats": {
+            "courses": "available courses",
+            "experience": "years of experience",
+            "learners": "active learners"
+        },
+        "words": ["digital.", "web.", "AI.", "data."]
+    },
+    "Formations": {
+        "title": "Catalog",
+        "availableNow": "Available now",
+        "viewAll": "View all courses",
+        "statusAvailable": "Available",
+        "statusSoon": "Soon",
+        "featured": "Popular",
+        "targetLabel": "Target",
+        "durationLabel": "Duration",
+        "onsite": "In-person",
+        "online": "Online",
+        "count": "{count, plural, =0 {no courses} =1 {1 course} other {# courses}}",
+        "availableNowSuffix": " · available now",
+        "categories": {
+            "all": "All",
+            "bureautique": "Office & Workspace",
+            "dev": "Web & Mobile",
+            "ia": "Artificial Intelligence",
+            "data": "Data & SQL"
+        }
+    },
+    "Instructors": {
+        "title": "Instructors",
+        "expertise": "Expertise",
+        "philosophyLabel": "— instructor's philosophy",
+        "essi": {
+            "name": "Essi Junior",
+            "title": "Application Developer · IT Instructor · Graphic Designer",
+            "description": "4 years of full-stack development, 2 years of data tools (Talend, Power BI, advanced Excel) and IT training. Graphic Designer Python Cameroon.",
+            "quote": "I teach because I practice - not the other way around.",
+            "stats": [
+                "years of Full-Stack dev",
+                "years of IT training",
+                "Courses delivered"
+            ],
+            "philosophy": "Computer Science is a major science in today's world. My mission is to make practical knowledge of the field accessible to everyone."
+        }
+    },
+    "FAQ": {
+        "title": "Frequently Asked Questions",
+        "subtitleNormal": "Do you have",
+        "subtitleAccent": "questions ?",
+        "hint": "If you don't find your answer, contact us directly on WhatsApp.",
+        "items": [
+            {
+                "question": "Are the courses certified?",
+                "answer": "A private training certificate is issued at the end of each path. It is not MINEFOP approved at the moment — but the acquired skills are immediately applicable and valued on the local and international market (Upwork, Andela, freelance missions)."
+            },
+            {
+                "question": "In-person or online format?",
+                "answer": "Both options are available. In-person in Yaoundé for practical workshops, or 100% online via Google Meet. Course material is provided in PDF."
+            },
+            {
+                "question": "How does payment work?",
+                "answer": "MTN Mobile Money, Orange Money or bank transfer. Payment in 2 installments possible on request for courses above 50,000 FCFA."
+            },
+            {
+                "question": "Do I need basic computer skills?",
+                "answer": "Each course clearly indicates its prerequisites. Some start from scratch (Office, HTML/CSS, AI in daily life). Others assume basic knowledge (React, Python ML). Contact us if you are in doubt."
+            },
+            {
+                "question": "Can in-house training be organized?",
+                "answer": "Yes, with a flat rate for a group. This is particularly relevant for Cybersecurity, Power BI and AI courses for businesses."
+            },
+            {
+                "question": "What is the group size?",
+                "answer": "8 to 12 participants maximum to ensure personalized follow-up. Individual or pair sessions available on request."
+            }
+        ]
+    },
+    "Team": {
+        "title": {
+            "0": "Our",
+            "1": "Team"
+        },
+        "hint": "Who we are, and why we do what we do.",
+        "team": {
+            "leaders": {
+                "title": "Leadership Team",
+                "description": "Our leadership team embodies our mission, composed of our direct Leaders.",
+                "leaders": {
+                    "0": {
+                        "name": "ENGOLO Valentin",
+                        "title": "Principal Pastor, Etoudi Assembly",
+                        "bio": "As the principal pastor of Etoudi assembly and ..."
+                    },
+                    "1": {
+                        "name": "BAYIHA Cyrille",
+                        "title": "Adjoint of Principal Pastor, Etoudi Assembly",
+                        "bio": "As the Adjoint of principal pastor of Etoudi assembly and ..."
+                    }
+                }
+            },
+            "technical": {
+                "title": "Technical Team",
+                "description": "Our technical team consist of members taking part in actual realisation.",
+                "technical": {
+                    "0": {
+                        "name": "KONDON Minette",
+                        "title": "Cameroon COM leader of DDSEF",
+                        "bio": "As the Cameroon COM leader of DDSEF, I am responsible for overseeing the communication strategies and implementation of this project"
+                    },
+                    "1": {
+                        "name": "ESSI Junior",
+                        "title": "Communicant, Etoudi Assembly",
+                        "bio": "As a software engineer, I work on the transformation of the project idea into a functional software.."
+                    }
+                }
+            }
+        }
+    },
+    "CTA": {
+        "getStarted": "Get Started",
+        "learnMore": "Learn More",
+        "readMore": "Read More",
+        "subscribe": "Subscribe",
+        "contactUs": "Contact Us",
+        "signUp": "Sign Up",
+        "signIn": "Sign In",
+        "submit": "Submit",
+        "send": "Send",
+        "bookNow": "Book Now",
+        "joinUs": "Join Us",
+        "support": "Support Our Mission",
+        "reset": "Reset all fields",
+        "save": "Save",
+        "saved": "Saved!",
+        "cancel": "Cancel",
+        "viewProfile": "View Profile",
+        "downloadResume": "Download Resume"
+    },
+    "Navigation": {
+        "home": "Home",
+        "formations": "Courses",
+        "instructors": "Instructors",
+        "faq": "FAQ",
+        "contact": "Contact",
+        "apply": "Apply",
+        "menu": "Menu",
+        "replyTime": "Reply within 24h · Yaoundé, CM"
+    },
+    "Header": {
+        "profile": "My profile",
+        "notifications": "Notifications",
+        "help": "Help & Support",
+        "feedback": "Send Feedback",
+        "logout": "Sign out"
+    },
+    "Footer": {
+        "readyToStart": "Ready to start?",
+        "investIn": "Invest in",
+        "yourSkills": "your skills.",
+        "responseTime": "Reply within 24h",
+        "location": "Yaoundé, CM"
+    },
+    "DeveloperInfo": {
+        "madeWith": "Made with",
+        "by": "by"
+    },
+    "Marquee": {
+        "items": [
+            "Web Development",
+            "―",
+            "Artificial Intelligence",
+            "―",
+            "Data & Analysis",
+            "―",
+            "Office & Workspace",
+            "―",
+            "Power BI",
+            "―",
+            "React & Next.js",
+            "―",
+            "Claude API",
+            "―",
+            "Cursor AI",
+            "―",
+            "Python",
+            "―",
+            "Advanced Excel",
+            "―"
+        ],
+        "footer": {
+            "0": "Engineering the Future of Networking",
+            "1": "Networking",
+            "2": "Find an Expert as fast as you jump",
+            "3": "AI-Powered Map recommendation"
+        },
+        "about": {
+            "0": "John 3:3 - Very truly I tell you, no one can see the kingdom of God unless they are born again."
+        },
+        "leaders": {
+            "0": "Revelations 20:15 - Anyone whose name was not found written in the book of life was thrown into the lake of fire."
+        },
+        "com": {
+            "0": "Colossians 4:7 - Tychicus will tell you all the news about me. He is a dear brother, a faithful minister and fellow servant in the Lord"
+        }
+    },
+    "NotFound": {
+        "title": "Sorry, Page not found",
+        "description": "The requested URL was not found on this server. That's all we know ",
+        "link": "Back to home"
+    },
+    "Auth": {
+        "leftPanel": {
+            "0": "Connect with",
+            "1": "experts",
+            "2": "near you."
+        },
+        "common": {
+            "0": "Continue with",
+            "1": "or"
+        },
+        "signin": {
+            "0": "Welcome back",
+            "1": "Sign in to your",
+            "2": "account.",
+            "3": "Don't have an account?",
+            "4": "Create one"
+        },
+        "signup": {
+            "0": "Welcome",
+            "1": "Create a new",
+            "2": "account.",
+            "3": "Already have an account?",
+            "4": "Sign in"
+        }
+    },
+    "Profile": {
+        "banner": {
+            "title": "MY PROFILE",
+            "hint": "Manage your profile"
+        },
+        "form": {
+            "photo": "Photo",
+            "identity": "Identity",
+            "personal": "Personal Information",
+            "social": "Social Information",
+            "name": "Name",
+            "email": "Email",
+            "phone": "Phone",
+            "profession": "Profession",
+            "website": "Website",
+            "localization": "Location",
+            "localizationHint": "Start typing a city or address to search",
+            "assembly": "Assembly",
+            "district": "District",
+            "experience": "Experience",
+            "resume": "Curriculum Vitae",
+            "placeholder": {
+                "photoSet": "Set your profile photo",
+                "photoModify": "Modify your profile photo",
+                "name": "Enter your name",
+                "email": "Enter your email",
+                "phone": "Enter your phone number",
+                "profession": "Enter your profession",
+                "website": "Enter your website URL",
+                "localization": "Enter your location",
+                "assembly": "Enter your assembly",
+                "district": "Enter your district",
+                "experience": "How many years of professional experience do you have?",
+                "resume": "Drag and drop your CV (PDF)",
+                "resumeUpload": "Uploading CV...",
+                "resumeDrop": "Drop the CV here"
+            }
+        },
+        "delete": {
+            "dangerZone": "Danger Zone",
+            "description": "Permanently delete your account and all associated data. This action cannot be undone.",
+            "button": "Delete Account",
+            "title": "Delete Your Account",
+            "warning": "This will permanently delete your account and all associated data.",
+            "irreversible": "This action is irreversible. All of your profile information, projects, and history will be permanently deleted.",
+            "confirmationPrompt": "Type your email address to confirm:"
+        }
+    },
+    "Soon": {
+        "title": "Under Construction",
+        "hint": "We are developing this page, it will be available soon."
+    }
+}

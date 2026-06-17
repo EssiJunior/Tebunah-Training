@@ -2,8 +2,9 @@
 
 import { motion } from 'motion/react'
 import { useEffect, useState } from 'react'
-import { WORDS, ANIMATION_DELAY } from '@/data/hero'
+import { ANIMATION_DELAY } from '@/data/hero'
 import GridBackground from '@/components/molecules/GridBackround'
+import { useTranslations } from 'next-intl'
 
 function useCounter(target: number, dur = 2000, delay = 0) {
   const [v, setV] = useState(0)
@@ -38,8 +39,10 @@ function Slot({ children, delay }: { children: React.ReactNode; delay: number })
 }
 
 function WordCycler() {
+  const t = useTranslations('Hero')
+  const words = t.raw('words') as string[]
   const [i, setI] = useState(0)
-  useEffect(() => { const id = setInterval(() => setI(n => (n + 1) % WORDS.length), 2200); return () => clearInterval(id) }, [])
+  useEffect(() => { const id = setInterval(() => setI(n => (n + 1) % words.length), 2200); return () => clearInterval(id) }, [words.length])
   return (
     <span className="relative inline-block overflow-hidden align-bottom">
       <motion.span
@@ -50,13 +53,14 @@ function WordCycler() {
         transition={{ duration: 0.55, ease: [0.76, 0, 0.24, 1] }}
         className="inline-block text-accent"
       >
-        {WORDS[i]}
+        {words[i]}
       </motion.span>
     </span>
   )
 }
 
 export default function Hero() {
+  const t = useTranslations('Hero')
   const formations = useCounter(13, 1500, 0)
   const years = useCounter(2, 1200, 200)
   const D = ANIMATION_DELAY
@@ -80,14 +84,14 @@ export default function Hero() {
           style={{ transformOrigin: 'left' }}
           className="inline-block w-10 h-px bg-accent white"
         />
-        Formations IT · Yaoundé, Cameroun / En ligne
+        {t('eyebrow')}
         <span className="w-1.5 h-1.5 rounded-full bg-accent animate-blink" />
       </motion.div>
 
       {/* Title */}
       <h1 className="leading-none! tracking-[-0.03em]! mb-8 text-[clamp(48px,7vw,96px)]! max-w-4xl">
         <div>
-          <Slot delay={D + 0.00}>Maîtrisez&nbsp;</Slot>
+          <Slot delay={D + 0.00}>{t('titleLine1')}&nbsp;</Slot>
         </div>
         <div className="overflow-hidden">
           <motion.span
@@ -96,17 +100,17 @@ export default function Hero() {
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1], delay: D + 0.06 }}
             className="inline-block bg-accent text-bg px-1"
           >
-            l&apos;informatique.
+            {t('titleLine2')}
           </motion.span>
         </div>
         <div>
-          <Slot delay={D + 0.12}>à&nbsp;</Slot>
-          <Slot delay={D + 0.26}>l&apos;ère&nbsp;</Slot>
-          <Slot delay={D + 0.32}>de{" "}
+          <Slot delay={D + 0.12}>{t('titleLine3_1')}&nbsp;</Slot>
+          <Slot delay={D + 0.26}>{t('titleLine3_2')}&nbsp;</Slot>
+          <Slot delay={D + 0.32}>{t('titleLine3_3')}{" "}
             <span
               className="inline-block"
               style={{ WebkitTextStroke: '0.25px rgba(255,255,255)', color: 'transparent' }}
-            > l&apos;IA.</span>
+            > {t('titleLine3_4')}</span>
           </Slot>
         </div>
       </h1>
@@ -116,10 +120,10 @@ export default function Hero() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: D + 0.6 }}
+        style={{ whiteSpace: 'pre-line' }}
         className="font-mono text-[13px] text-white/45 leading-[1.9] max-w-3xl mb-12"
       >
-        13+ formations pratiques en développement web, data & IA.<br />
-        Dispensées à Yaoundé / en ligne (Google meet).
+        {t('subtitle')}
       </motion.p>
 
       {/* CTAs */}
@@ -136,7 +140,7 @@ export default function Hero() {
           whileTap={{ scale: 0.97 }}
           className="font-mono text-[12px] font-medium bg-accent text-bg px-8 py-3.5 rounded-px tracking-[0.1em] uppercase inline-flex items-center gap-2.5"
         >
-          Voir les formations <span>↓</span>
+          {t('ctaView')}
         </motion.a>
         <motion.a
           href="#instructeur"
@@ -144,7 +148,7 @@ export default function Hero() {
           whileHover={{ x: 4 }}
           className="font-mono text-[12px] text-white/35 tracking-wider flex items-center gap-2 hover:text-white/60 transition-colors"
         >
-          <span className="w-4 h-px bg-current" /> Qui enseigne ?
+          <span className="w-4 h-px bg-current" /> {t('ctaWho')}
         </motion.a>
       </motion.div>
 
@@ -157,9 +161,9 @@ export default function Hero() {
         style={{ borderTop: '1px solid rgba(255,255,255,0.06)' }}
       >
         {[
-          { v: formations, s: '+', l: 'formations disponibles' },
-          { v: years, s: '+', l: "ans d'expérience" },
-          { v: 30, s: '', l: 'apprenants actifs' },
+          { v: formations, s: '+', l: t('stats.courses') },
+          { v: years, s: '+', l: t('stats.experience') },
+          { v: 30, s: '', l: t('stats.learners') },
         ].map((st, i) => (
           <div key={i}>
             <div className="font-display text-[36px] font-extrabold text-ink leading-none">
