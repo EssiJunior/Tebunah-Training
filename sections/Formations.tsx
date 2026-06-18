@@ -10,6 +10,7 @@ import { useTranslations } from 'next-intl'
 
 export default function Formations() {
   const t = useTranslations('Formations')
+
   const { active, setActive } = useFormations()
   const [showAvailableOnly, setShowAvailableOnly] = useState(false)
   const ref = useRef(null)

@@ -8,6 +8,8 @@ import { useTranslations } from "next-intl";
 
 const Formation = ({ f, index }: { f: Formation; index: number }) => {
     const t = useTranslations('Formations')
+    const tData = useTranslations('formations')
+
     const [hovered, setHovered] = useState(false)
     const [tilt, setTilt] = useState({ x: 0, y: 0 })
     const [mode, setMode] = useState<'onsite' | 'online'>('onsite')
@@ -101,19 +103,19 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
                     f.featured ? 'text-accent' : 'text-ink',
                 ].join(' ')}
                     style={{ color: CATEGORY_COLORS[f.category] }}>
-                    {f.title}
+                    {tData(`${f.id}.title`)}
                 </h3>
 
                 {/* Description */}
                 <p className="text-[11px] text-white/30 leading-[1.7]">
-                    {f.description}
+                    {tData(`${f.id}.description`)}
                 </p>
 
                 {/* Meta */}
                 <div className="flex gap-4 flex-wrap">
                     {([
-                        [t('targetLabel'), f.target],
-                        [t('durationLabel'), `${f.duration} · ${f.hoursTotal}`],
+                        [t('targetLabel'), tData(`${f.id}.target`)],
+                        [t('durationLabel'), `${tData(`${f.id}.duration`)} · ${tData(`${f.id}.hoursTotal`)}`],
                     ] as [string, string][]).map(([k, v]) => (
                         <div key={k}>
                             <div className=" text-[9px] text-white/20 tracking-widest uppercase mb-0.5">{k}</div>
