@@ -15,7 +15,12 @@
             "experience": "years of experience",
             "learners": "active learners"
         },
-        "words": ["digital.", "web.", "AI.", "data."]
+        "words": [
+            "digital.",
+            "web.",
+            "AI.",
+            "data."
+        ]
     },
     "Formations": {
         "title": "Catalog",
@@ -36,6 +41,808 @@
             "dev": "Web & Mobile",
             "ia": "Artificial Intelligence",
             "data": "Data & SQL"
+        }
+    },
+    "formations": {
+        "bur1": {
+            "title": "Complete Office Suite",
+            "description": "General introduction + Word, Excel, PowerPoint — operational proficiency guaranteed by end of training + AI for office productivity",
+            "duration": "2 months · 3 days/week",
+            "hoursTotal": "80h",
+            "target": "High school students · Job seekers · Entry-level employees",
+            "prereq": "None",
+            "benefits": [
+                {
+                    "title": "Software Skills",
+                    "items": [
+                        "Word — layout, styles, tables and mail merge",
+                        "Excel — formulas, pivot tables and charts",
+                        "PowerPoint — impactful presentations with animations and templates",
+                        "Outlook — email management, calendar and tasks",
+                        "Keyboard shortcuts and advanced productivity"
+                    ]
+                },
+                {
+                    "title": "Professional Benefits",
+                    "items": [
+                        "Write professional-quality reports, CVs and cover letters",
+                        "Build dashboards (budget, inventory, planning)",
+                        "Prepare presentations for meetings and thesis defenses",
+                        "Use AI to speed up daily office tasks",
+                        "Skill directly marketable on a CV"
+                    ]
+                },
+                {
+                    "title": "Adapted to the Cameroonian Market",
+                    "items": [
+                        "Required in almost all local job postings",
+                        "Useful for dissertations, presentations and internship reports",
+                        "Essential for entrepreneurs — quotes, invoices, reports",
+                        "Applicable in NGOs, government offices and SMEs",
+                        "Private certificate issued upon completion of training"
+                    ]
+                },
+                {
+                    "title": "Target Audience",
+                    "items": [
+                        "High school students and early-cycle university students",
+                        "Job seekers looking to qualify",
+                        "Entry-level employees seeking advancement",
+                        "Entrepreneurs and SME managers",
+                        "Anyone starting from zero in computing"
+                    ]
+                }
+            ]
+        },
+        "bur2": {
+            "title": "Google Workspace",
+            "description": "Gmail, Drive, Docs, Sheets, Slides, Forms, Calendar — collaborate effectively and automate tasks with Google tools",
+            "duration": "2 months · 3 days/week",
+            "hoursTotal": "80h",
+            "target": "Employees · SMEs · Secretaries",
+            "prereq": "Basic PC skills",
+            "benefits": [
+                {
+                    "title": "Tools Mastered",
+                    "items": [
+                        "Gmail — advanced email management, filters and labels",
+                        "Google Drive — organization, sharing and access rights management",
+                        "Docs & Sheets — real-time collaborative writing and calculations",
+                        "Slides & Forms — presentations and data collection forms",
+                        "Calendar — schedule planning and team meetings"
+                    ]
+                },
+                {
+                    "title": "Professional Benefits",
+                    "items": [
+                        "Collaborate remotely with your team without friction",
+                        "Centralize all files in the cloud, accessible anywhere",
+                        "Automate reports and forms with Google Forms + Sheets",
+                        "Zero licensing cost — tools accessible from any device",
+                        "Reduce email back-and-forth through simultaneous work"
+                    ]
+                },
+                {
+                    "title": "Adapted to Local Organizations",
+                    "items": [
+                        "Solution adopted by NGOs, startups and modern administrations",
+                        "Works on Android, iOS, PC and Mac without complex installation",
+                        "Ideal for SMEs looking to migrate to the cloud at low cost",
+                        "Compatible with Microsoft Office for file import/export",
+                        "Private certificate issued upon completion of training"
+                    ]
+                },
+                {
+                    "title": "Target Audience",
+                    "items": [
+                        "Employees and office workers working in teams",
+                        "Secretaries and administrative assistants",
+                        "SMEs looking to modernize their organization",
+                        "Students familiar with collaborative tools",
+                        "Anyone with basic PC skills"
+                    ]
+                }
+            ]
+        },
+        "bur3": {
+            "title": "Advanced Excel & Dashboards",
+            "description": "Advanced formulas, pivot tables, charts, introduction to Power Query and Power Pivot to create interactive dashboards",
+            "duration": "2 months · 3 days/week",
+            "hoursTotal": "80h",
+            "target": "Management Controllers · Project Managers",
+            "prereq": "Basic Excel or equivalent",
+            "benefits": [
+                {
+                    "title": "Technical Skills",
+                    "items": [
+                        "Advanced formulas — VLOOKUP, INDEX/MATCH, SUMIFS",
+                        "Pivot tables — segmentation and multidimensional analysis",
+                        "Dynamic charts linked to real-time data",
+                        "Power Query — data connection, cleaning and transformation",
+                        "Power Pivot — data models and basic DAX measures"
+                    ]
+                },
+                {
+                    "title": "Professional Benefits",
+                    "items": [
+                        "Create interactive dashboards without coding",
+                        "Automate monthly reports and reconciliations",
+                        "Analyze large data volumes in a few clicks",
+                        "Produce clear visualizations for management",
+                        "Reduce data processing time by 70%"
+                    ]
+                },
+                {
+                    "title": "Business Use Cases",
+                    "items": [
+                        "Budget tracking and monthly management control",
+                        "HR dashboard — attendance, performance, costs",
+                        "Sales reporting — revenue, pipeline, margins",
+                        "Inventory management and restocking forecasts",
+                        "Private certificate issued upon completion of training"
+                    ]
+                },
+                {
+                    "title": "Target Audience",
+                    "items": [
+                        "Management controllers and accountants",
+                        "Project managers and team leaders",
+                        "Financial analysts and HR managers",
+                        "Anyone using Excel daily",
+                        "Basic Excel level required to join the training"
+                    ]
+                }
+            ]
+        },
+        "dev1": {
+            "title": "HTML/CSS/JS — Build Your Website",
+            "description": "Web fundamentals, responsive layout, basic SEO and site deployment",
+            "duration": "2 months · 3 days/week",
+            "hoursTotal": "80h",
+            "target": "Students · Beginners · Career changers",
+            "prereq": "None",
+            "benefits": [
+                {
+                    "title": "Skills Acquired",
+                    "items": [
+                        "HTML5 — semantic structure and accessibility best practices",
+                        "CSS3 — Flexbox, Grid layout, mobile-first responsive design",
+                        "JavaScript — basic logic, interactivity and DOM manipulation",
+                        "Basic SEO — meta tags, content structure, page speed",
+                        "Deployment — publishing on Netlify, GitHub Pages or a web host"
+                    ]
+                },
+                {
+                    "title": "Concrete Projects",
+                    "items": [
+                        "Build a complete showcase website for a business or association",
+                        "Develop a personal portfolio to present your work",
+                        "Publish and maintain a website independently",
+                        "Design pages adapted for mobile phones and tablets",
+                        "Understand and modify an existing website's code"
+                    ]
+                },
+                {
+                    "title": "Career Prospects",
+                    "items": [
+                        "Freelance — build websites for local businesses and merchants",
+                        "Gateway to advanced web development (React, Next.js)",
+                        "Complementary skill for designers and marketers",
+                        "Work with web agencies or creative studios",
+                        "Private certificate issued upon completion of training"
+                    ]
+                },
+                {
+                    "title": "Target Audience",
+                    "items": [
+                        "Students in computer science, communications or design",
+                        "Complete beginners with no programming experience",
+                        "Career changers transitioning to web development",
+                        "Entrepreneurs wanting to build their own website",
+                        "No technical prerequisites — training accessible to everyone"
+                    ]
+                }
+            ]
+        },
+        "dev2": {
+            "title": "Advanced JavaScript — Interactivity & DOM",
+            "description": "Programming logic, DOM manipulation, interactive forms",
+            "duration": "2 months · 3 days/week",
+            "hoursTotal": "80h",
+            "target": "Students · Career changers",
+            "prereq": "Basic HTML/CSS",
+            "benefits": [
+                {
+                    "title": "JavaScript Skills",
+                    "items": [
+                        "ES6+ — arrow functions, destructuring, modules, async/await",
+                        "DOM manipulation — selecting, creating and modifying elements",
+                        "Events — clicks, form submissions, scroll and keyboard",
+                        "Fetch API — HTTP requests and consuming external APIs",
+                        "Error handling and debugging with Chrome DevTools"
+                    ]
+                },
+                {
+                    "title": "Concrete Projects",
+                    "items": [
+                        "Interactive contact forms with real-time validation",
+                        "Filterable image galleries and carousels without external libraries",
+                        "To-do list application connected to an API",
+                        "Interactive quiz with score calculation and results display",
+                        "Integration of a weather or public data API"
+                    ]
+                },
+                {
+                    "title": "Career Prospects",
+                    "items": [
+                        "Access React, Next.js and modern framework training",
+                        "Add interactivity to existing websites as a freelancer",
+                        "Understand and modify JavaScript codebases in a company",
+                        "Build solid foundations for full-stack development",
+                        "Private certificate issued upon completion of training"
+                    ]
+                },
+                {
+                    "title": "Target Audience",
+                    "items": [
+                        "Students who completed the HTML/CSS/JS training",
+                        "Beginner developers looking to deepen their JS knowledge",
+                        "Career changers targeting web development",
+                        "Designers wanting to make their integrations interactive",
+                        "Prerequisites: basic mastery of HTML and CSS"
+                    ]
+                }
+            ]
+        },
+        "dev3": {
+            "title": "WordPress & SME Websites",
+            "description": "Installation, themes, WooCommerce plugins, publishing and basic SEO",
+            "duration": "2 months · 3 days/week",
+            "hoursTotal": "80h",
+            "target": "SMEs · Craftsmen · Associations",
+            "prereq": "Basic PC skills",
+            "benefits": [
+                {
+                    "title": "WordPress Skills",
+                    "items": [
+                        "Install and configure a WordPress site from scratch",
+                        "Choose and customize professional themes (Elementor)",
+                        "Essential plugins — contact, SEO (Yoast), security, performance",
+                        "WooCommerce — product catalog, payment and order management",
+                        "Basic SEO and search engine submission"
+                    ]
+                },
+                {
+                    "title": "Concrete Projects",
+                    "items": [
+                        "Create a complete showcase website for a business or craftsman",
+                        "Launch an online store with WooCommerce",
+                        "Publish and manage a company blog regularly",
+                        "Configure forms, newsletters and pop-ups",
+                        "Publish your site on a web host (cPanel, Hostinger)"
+                    ]
+                },
+                {
+                    "title": "Career Prospects",
+                    "items": [
+                        "Offer WordPress website creation to local businesses",
+                        "Bill for monthly maintenance and updates",
+                        "List client sites on Google Maps and directories",
+                        "WordPress powers 43% of all websites worldwide — vast market",
+                        "Private certificate issued upon completion of training"
+                    ]
+                },
+                {
+                    "title": "Target Audience",
+                    "items": [
+                        "SMEs, merchants and craftsmen wanting an online presence",
+                        "Non-profit associations and organizations",
+                        "Entrepreneurs wanting to launch an e-commerce store",
+                        "Freelancers looking to diversify their services",
+                        "Prerequisites: basic PC usage skills"
+                    ]
+                }
+            ]
+        },
+        "dev4": {
+            "title": "React & Next.js — Modern Apps",
+            "description": "Building modern, performant and deployable web applications",
+            "duration": "2 months · 3 days/week",
+            "hoursTotal": "80h",
+            "target": "Junior devs · Freelancers",
+            "prereq": "Proficient in JavaScript",
+            "benefits": [
+                {
+                    "title": "Tech Stack",
+                    "items": [
+                        "React — components, hooks (useState, useEffect), Context API",
+                        "Next.js App Router — routing, layouts, Server and Client Components",
+                        "Tailwind CSS — fast and responsive styling without custom CSS",
+                        "API calls — fetch, SWR or React Query for data management",
+                        "Deployment — Vercel, environment variables and basic CI/CD"
+                    ]
+                },
+                {
+                    "title": "Concrete Projects",
+                    "items": [
+                        "Management application (dashboard) with authentication",
+                        "E-commerce site with cart, filters and dynamic product pages",
+                        "Integration of a REST or GraphQL API in a Next.js app",
+                        "Full app deployment and production release on Vercel",
+                        "Developer portfolio with projects and contact form"
+                    ]
+                },
+                {
+                    "title": "Career Prospects",
+                    "items": [
+                        "Apply for frontend or full-stack developer positions",
+                        "Work freelance on well-paid React/Next.js projects",
+                        "Contribute to open-source projects or tech startups",
+                        "Access React Native and mobile development training",
+                        "Private certificate issued upon completion of training"
+                    ]
+                },
+                {
+                    "title": "Target Audience",
+                    "items": [
+                        "Junior developers proficient in JavaScript (ES6+)",
+                        "Freelancers looking to upgrade their web skills",
+                        "Computer science students targeting modern web development",
+                        "People who completed the Advanced JavaScript training",
+                        "Prerequisites: proficient JavaScript (functions, promises, modules)"
+                    ]
+                }
+            ]
+        },
+        "dev5": {
+            "title": "Mobile Development — React Native",
+            "description": "Build Android and iOS applications from a single codebase",
+            "duration": "2 months · 3 days/week",
+            "hoursTotal": "80h",
+            "target": "Intermediate developers",
+            "prereq": "React or advanced JavaScript",
+            "benefits": [
+                {
+                    "title": "Technical Skills",
+                    "items": [
+                        "React Native — native components, StyleSheet, navigation (Expo Router)",
+                        "Expo — quick setup, OTA updates, access to phone APIs",
+                        "State management — Zustand or Context API for mobile apps",
+                        "Native APIs — camera, geolocation, push notifications",
+                        "Publishing — Android APK build and Play Store submission"
+                    ]
+                },
+                {
+                    "title": "Concrete Projects",
+                    "items": [
+                        "Delivery or reservation app with interactive map",
+                        "Expense management app with local storage (AsyncStorage)",
+                        "Push notification system for a commercial service",
+                        "Mobile interface connected to a REST API or Firebase",
+                        "Build and test on Android emulator and real device"
+                    ]
+                },
+                {
+                    "title": "Career Prospects",
+                    "items": [
+                        "Develop and deliver Android applications for local clients",
+                        "One codebase for Android and iOS — maximum productivity",
+                        "Mobile freelance — fast-growing sector in Africa",
+                        "Join product development teams (startups, agencies)",
+                        "Private certificate issued upon completion of training"
+                    ]
+                },
+                {
+                    "title": "Target Audience",
+                    "items": [
+                        "Intermediate developers proficient in React or advanced JS",
+                        "Freelancers looking to offer mobile development services",
+                        "Entrepreneurs wanting to build their own application",
+                        "People who completed React & Next.js training looking to go further",
+                        "Prerequisites: React or advanced JavaScript proficiency"
+                    ]
+                }
+            ]
+        },
+        "ia1": {
+            "title": "AI for Daily Work — ChatGPT & Copilots",
+            "description": "Use ChatGPT, Claude, Gemini and Copilot to save time at work",
+            "duration": "2 months · 3 days/week",
+            "hoursTotal": "80h",
+            "target": "General public · SMEs · Students",
+            "prereq": "None",
+            "benefits": [
+                {
+                    "title": "Tools Mastered",
+                    "items": [
+                        "ChatGPT — writing, summarizing, translating and analyzing documents",
+                        "Claude (Anthropic) — long-form reasoning and file processing",
+                        "Gemini (Google) — integration with Google Workspace",
+                        "Microsoft Copilot — assistance in Word, Excel and PowerPoint",
+                        "Perplexity — AI-enhanced web research"
+                    ]
+                },
+                {
+                    "title": "Concrete Use Cases",
+                    "items": [
+                        "Write emails, reports and presentations in 10 minutes",
+                        "Summarize long documents (contracts, PDFs, articles)",
+                        "Generate lesson plans, scripts and marketing content",
+                        "Analyze data and get insights without Excel formulas",
+                        "Automate repetitive office tasks with AI"
+                    ]
+                },
+                {
+                    "title": "Immediate Impact",
+                    "items": [
+                        "Save 2 to 3 hours of work per day on average",
+                        "No technical prerequisites — accessible to all from day one",
+                        "Lowest-priced training in the catalog — immediate ROI",
+                        "Applicable the very next morning in any profession",
+                        "Private certificate issued upon completion of training"
+                    ]
+                },
+                {
+                    "title": "Target Audience",
+                    "items": [
+                        "All audiences without exception — beginners to experienced",
+                        "SMEs and entrepreneurs looking to boost productivity",
+                        "Students wanting to optimize their academic work",
+                        "Office employees, secretaries, managers",
+                        "No prerequisites — a phone or PC is enough"
+                    ]
+                }
+            ]
+        },
+        "ia2": {
+            "title": "Prompt Engineering",
+            "description": "Write effective prompts and automate tasks with AI",
+            "duration": "2 months · 3 days/week",
+            "hoursTotal": "80h",
+            "target": "Freelancers · Managers · Students",
+            "prereq": "Prior use of ChatGPT or Claude",
+            "benefits": [
+                {
+                    "title": "Techniques Learned",
+                    "items": [
+                        "Anatomy of a good prompt — role, context, format, constraints",
+                        "Chain-of-thought — guiding AI reasoning step by step",
+                        "Few-shot prompting — giving examples to calibrate responses",
+                        "System prompts — configuring a custom AI assistant",
+                        "Evaluation and iteration — refining prompts for optimal results"
+                    ]
+                },
+                {
+                    "title": "Advanced Use Cases",
+                    "items": [
+                        "Create an AI assistant dedicated to your field of activity",
+                        "Automate generation of reports, contracts and proposals",
+                        "Extract and structure data from raw text",
+                        "Generate complete content plans and editorial calendars",
+                        "Build reusable AI workflows for your team"
+                    ]
+                },
+                {
+                    "title": "Competitive Advantage",
+                    "items": [
+                        "Prompt Engineering is the most in-demand AI skill in 2025",
+                        "Multiply the quality of LLM responses by 5",
+                        "Monetize this skill as a freelance AI consultant",
+                        "Applicable to all models — ChatGPT, Claude, Gemini, Llama",
+                        "Private certificate issued upon completion of training"
+                    ]
+                },
+                {
+                    "title": "Target Audience",
+                    "items": [
+                        "Freelancers looking to offer AI services to clients",
+                        "Managers wanting to optimize team workflows with AI",
+                        "Students preparing for a career in AI",
+                        "Regular ChatGPT or Claude users looking to advance",
+                        "Prerequisites: having used ChatGPT or Claude at least once"
+                    ]
+                }
+            ]
+        },
+        "ia3": {
+            "title": "Generative AI for Marketing",
+            "description": "Generate text, visuals and videos for social media and advertising campaigns",
+            "duration": "2 months · 3 days/week",
+            "hoursTotal": "80h",
+            "target": "Merchants · SMEs · Community managers",
+            "prereq": "Basic social media usage",
+            "benefits": [
+                {
+                    "title": "Tools Mastered",
+                    "items": [
+                        "ChatGPT / Claude — writing posts, captions and video scripts",
+                        "Midjourney / Leonardo AI — generating visuals and illustrations",
+                        "Canva AI — AI-assisted graphic design for social media",
+                        "ElevenLabs / HeyGen — automated voiceovers and video avatars",
+                        "Later / Buffer — automatic content scheduling and publishing"
+                    ]
+                },
+                {
+                    "title": "Marketing Skills",
+                    "items": [
+                        "Create a complete editorial calendar in minutes",
+                        "Generate dozens of visuals consistent with your brand identity",
+                        "Write high-converting Facebook and Instagram ads",
+                        "Produce short videos (Reels, TikTok) with AI without editing",
+                        "Analyze performance and adjust strategy with AI"
+                    ]
+                },
+                {
+                    "title": "Business Impact",
+                    "items": [
+                        "Reduce content budget by 60 to 80% with AI",
+                        "Publish 3× more content without increasing work time",
+                        "Skill sought by local agencies and brands",
+                        "Monetizable as a freelance AI community manager",
+                        "Private certificate issued upon completion of training"
+                    ]
+                },
+                {
+                    "title": "Target Audience",
+                    "items": [
+                        "Merchants and SMEs wanting to animate their social media",
+                        "Community managers looking to integrate AI into their workflow",
+                        "Solo entrepreneurs (solopreneurs) managing their own brand",
+                        "Students in marketing and digital communications",
+                        "Prerequisites: regular use of Facebook or Instagram"
+                    ]
+                }
+            ]
+        },
+        "ia4": {
+            "title": "Develop with AI — Cursor & Claude API",
+            "description": "Code faster with Cursor, integrate the Claude API into your projects",
+            "duration": "2 months · 3 days/week",
+            "hoursTotal": "80h",
+            "target": "Junior · intermediate developers",
+            "prereq": "Basic JS or Python",
+            "benefits": [
+                {
+                    "title": "Tools & Stack",
+                    "items": [
+                        "Cursor IDE — AI code completion, chat and assisted refactoring",
+                        "Claude API (Anthropic) — integration in JavaScript or Python",
+                        "Managing API keys, tokens, models and parameters (temperature)",
+                        "Response streaming and conversation history management",
+                        "Best practices — security, costs and API call optimization"
+                    ]
+                },
+                {
+                    "title": "Concrete Projects",
+                    "items": [
+                        "Business chatbot integrated into a website (customer support, FAQ)",
+                        "Content generation tool connected to the Claude API",
+                        "PDF document processing assistant with AI",
+                        "AI automation pipeline for repetitive tasks",
+                        "Deploy an AI app on Vercel or Railway"
+                    ]
+                },
+                {
+                    "title": "Developer Advantage",
+                    "items": [
+                        "Code up to 3× faster with Cursor assistance",
+                        "Integrate AI into high-value freelance projects",
+                        "Understand the internal workings of LLMs to use them better",
+                        "Strong differentiation in the local developer market",
+                        "Private certificate issued upon completion of training"
+                    ]
+                },
+                {
+                    "title": "Target Audience",
+                    "items": [
+                        "Junior developers with basic JS or Python skills",
+                        "Intermediate developers wanting to integrate AI into their apps",
+                        "Freelancers looking to offer AI solutions to clients",
+                        "Computer science students targeting applied AI careers",
+                        "Prerequisites: basic JavaScript or Python proficiency"
+                    ]
+                }
+            ]
+        },
+        "ia5": {
+            "title": "AI & Data — Python + Machine Learning",
+            "description": "Scikit-learn, regression/classification models, concrete business use cases",
+            "duration": "2 months · 3 days/week",
+            "hoursTotal": "80h",
+            "target": "Engineers · Data analysts",
+            "prereq": "Basic Python",
+            "benefits": [
+                {
+                    "title": "Technical Skills",
+                    "items": [
+                        "Python data stack — NumPy, Pandas, Matplotlib, Seaborn",
+                        "Scikit-learn — regression, classification, clustering, cross-validation",
+                        "Feature engineering — cleaning, encoding and feature selection",
+                        "Model evaluation — accuracy, precision, recall, confusion matrix",
+                        "Introduction to neural networks with Keras / TensorFlow"
+                    ]
+                },
+                {
+                    "title": "Business Use Cases",
+                    "items": [
+                        "Customer churn prediction for a commercial business",
+                        "Credit scoring model for a financial institution",
+                        "Anomaly detection in sales or production data",
+                        "Product recommendation based on purchase history",
+                        "Sentiment analysis on customer reviews or social media"
+                    ]
+                },
+                {
+                    "title": "Career Prospects",
+                    "items": [
+                        "Junior Data Scientist — most recruited tech profile in 2025",
+                        "ML Engineer — deploying models to production",
+                        "AI consultant for SMEs and institutions looking to use their data",
+                        "Access specialized training (NLP, Computer Vision, LLMOps)",
+                        "Private certificate issued upon completion of training"
+                    ]
+                },
+                {
+                    "title": "Target Audience",
+                    "items": [
+                        "Engineers and technicians looking to specialize in AI",
+                        "Data analysts wanting to move into Machine Learning",
+                        "Students in mathematics, statistics or computer science",
+                        "Python developers wanting to integrate ML into their projects",
+                        "Prerequisites: basic Python proficiency (functions, loops, files)"
+                    ]
+                }
+            ]
+        },
+        "dat1": {
+            "title": "Power BI — Introduction & Reporting",
+            "description": "Data connection, interactive visuals, sharing and publishing Power BI reports",
+            "duration": "2 months · 3 days/week",
+            "hoursTotal": "80h",
+            "target": "Managers · Management Controllers",
+            "prereq": "Practical Excel",
+            "benefits": [
+                {
+                    "title": "Power BI Skills",
+                    "items": [
+                        "Source connections — Excel, CSV, SQL Server, Google Sheets",
+                        "Power Query — data transformation and cleaning without code",
+                        "Modeling — table relationships and star schema",
+                        "Basic DAX — calculated measures, KPIs and time intelligence",
+                        "Interactive visuals — charts, maps, gauges and slicers"
+                    ]
+                },
+                {
+                    "title": "Reports Produced",
+                    "items": [
+                        "Sales dashboard — revenue, margins, pipeline and top clients",
+                        "HR report — headcount, absenteeism, payroll",
+                        "Financial dashboard — budget vs actuals, cash flow",
+                        "Operational reporting — inventory, production, delivery lead times",
+                        "Publishing and sharing via Power BI Service (Microsoft cloud)"
+                    ]
+                },
+                {
+                    "title": "Professional Impact",
+                    "items": [
+                        "Produce automated reports that update themselves",
+                        "Replace static Excel tables with live dashboards",
+                        "Make decisions based on real-time visual data",
+                        "Power BI is the #1 BI tool in business according to Gartner",
+                        "Private certificate issued upon completion of training"
+                    ]
+                },
+                {
+                    "title": "Target Audience",
+                    "items": [
+                        "Managers and directors wanting to drive their business with data",
+                        "Management controllers and financial managers",
+                        "Business analysts handling large data volumes",
+                        "Project managers wanting clear and automated reporting",
+                        "Prerequisites: practical Excel (tables, basic formulas)"
+                    ]
+                }
+            ]
+        },
+        "dat2": {
+            "title": "SQL for Management & Analysis",
+            "description": "SQL queries, database design, automated reports",
+            "duration": "2 months · 3 days/week",
+            "hoursTotal": "80h",
+            "target": "Accountants · Managers · Students",
+            "prereq": "Basic computer skills",
+            "benefits": [
+                {
+                    "title": "SQL Skills",
+                    "items": [
+                        "SELECT, WHERE, GROUP BY, ORDER BY — fundamental queries",
+                        "JOIN — combining multiple tables for cross-table analysis",
+                        "Aggregate functions — COUNT, SUM, AVG, MIN, MAX",
+                        "Subqueries and views — structuring complex queries",
+                        "Database design — tables, primary and foreign keys"
+                    ]
+                },
+                {
+                    "title": "Concrete Use Cases",
+                    "items": [
+                        "Extract sales reports from a company database",
+                        "Analyze customer data to identify top buyers",
+                        "Create automated reports connected to the database",
+                        "Manage and query an inventory or billing database",
+                        "Prepare data for Power BI, Excel or Python"
+                    ]
+                },
+                {
+                    "title": "Career Prospects",
+                    "items": [
+                        "SQL is the most in-demand data skill in job postings",
+                        "Essential skill for Data Analyst roles",
+                        "Useful for accountants, managers and IT managers",
+                        "Gateway to Power BI and Python Data training",
+                        "Private certificate issued upon completion of training"
+                    ]
+                },
+                {
+                    "title": "Target Audience",
+                    "items": [
+                        "Accountants and managers working with large databases",
+                        "Students in management, computer science or economics",
+                        "IT managers looking to better leverage their data",
+                        "Anyone wanting to learn how to query databases",
+                        "Prerequisites: basic computer skills (files, spreadsheets)"
+                    ]
+                }
+            ]
+        },
+        "dat3": {
+            "title": "Python — Introduction & Automation",
+            "description": "Task automation, utility scripts, introduction to data analysis",
+            "duration": "2 months · 3 days/week",
+            "hoursTotal": "80h",
+            "target": "Students · Engineers · Curious coders",
+            "prereq": "Basic logic",
+            "benefits": [
+                {
+                    "title": "Python Skills",
+                    "items": [
+                        "Language basics — variables, loops, functions, conditions",
+                        "File manipulation — read/write CSV, Excel, JSON and PDF",
+                        "Utility libraries — os, shutil, requests, schedule",
+                        "Pandas — tabular data manipulation and analysis",
+                        "Matplotlib / Seaborn — data visualization and charts"
+                    ]
+                },
+                {
+                    "title": "Concrete Automations",
+                    "items": [
+                        "Automatically rename and organize file folders",
+                        "Send automated emails with reports as attachments",
+                        "Scrape data from a website for analysis",
+                        "Generate PDF reports from an Excel file",
+                        "Automate downloading and processing of online data"
+                    ]
+                },
+                {
+                    "title": "Career Prospects",
+                    "items": [
+                        "Python is the most popular language in the world (TIOBE 2025)",
+                        "Gateway to Data Science and Machine Learning training",
+                        "Automate repetitive tasks in companies — massive time savings",
+                        "Freelance — automation scripts sold to SMEs and startups",
+                        "Private certificate issued upon completion of training"
+                    ]
+                },
+                {
+                    "title": "Target Audience",
+                    "items": [
+                        "Students in computer science, mathematics or sciences",
+                        "Engineers wanting to automate tasks in their field",
+                        "Curious coders with no prior programming experience",
+                        "Anyone wanting to learn to code quickly",
+                        "Prerequisites: basic logic — knowing how to reason step by step"
+                    ]
+                }
+            ]
         }
     },
     "Instructors": {
