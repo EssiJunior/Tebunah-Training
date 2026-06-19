@@ -41,6 +41,12 @@
             "dev": "Web & Mobile",
             "ia": "Intelligence Artificielle",
             "data": "Data & SQL"
+        },
+        "benefits": {
+            "eyebrow": "Ce que vous allez apprendre",
+            "heading": "Bénéfices de la formation",
+            "subheading": "Cliquez sur chaque catégorie pour découvrir ce que vous allez maîtriser.",
+            "points": "points"
         }
     },
     "formations": {

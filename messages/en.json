@@ -41,6 +41,12 @@
             "dev": "Web & Mobile",
             "ia": "Artificial Intelligence",
             "data": "Data & SQL"
+        },
+        "benefits": {
+            "eyebrow": "What you will learn",
+            "heading": "Training benefits",
+            "subheading": "Click each category to discover what you will master.",
+            "points": "points"
         }
     },
     "formations": {
