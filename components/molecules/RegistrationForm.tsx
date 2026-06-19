@@ -5,8 +5,11 @@ import { academicLevels, formats, timeslots } from "@/utils/form"
 import { useState } from "react"
 import { motion } from "motion/react"
 import Field from "../atoms/Field"
+import { useTranslations } from "next-intl"
 
 const RegistrationForm = ({ formation }: { formation: Formation }) => {
+    const t = useTranslations("formations")
+
     const INITIAL: Registration = {
         name: '',
         email: '',
@@ -15,7 +18,7 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
         academic_level: academicLevels[0],
         format: 'onsite',
         price: 0,
-        formation: formation.title,
+        formation: t(formation.id + ".title"),
         message: '',
         session: timeslots[0],
     }
@@ -56,7 +59,7 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
                 </div>
                 <p className="font-display text-[16px] font-bold text-ink">Pré-inscription initiée !</p>
                 <p className="font-mono text-[12px] text-white/40 max-w-xs leading-relaxed">
-                    Nous vous contacterons dans les 24h pour confirmer votre pré-inscription à <span className="text-white/60">{formation.title}</span>.
+                    Nous vous contacterons dans les 24h pour confirmer votre pré-inscription à <span className="text-white/60">{t(formation.id + ".title")}</span>.
                 </p>
                 <button
                     onClick={() => setStatus('idle')}
@@ -199,7 +202,7 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
 
             {/* Summary line */}
             <p className="font-mono text-[11px] text-white/25 leading-relaxed">
-                Pré-inscription à <span className="text-white/50">{formation.title}</span>
+                Pré-inscription à <span className="text-white/50">{t(formation.id + ".title")}</span>
                 {' · '}<span className="text-accent">{displayPrice}</span>
                 {' · '}{form.format === 'onsite' ? 'Présentiel' : 'En ligne'}
             </p>
