@@ -15,8 +15,8 @@ export async function generateMetadata({ params }: Props) {
     const formation = formations.find((f) => f.id === slug)
     if (!formation) return {}
     return {
-        title: `${formation.title} — Formations IT`,
-        description: formation.description,
+        title: `${formation.metaTitle} — Formations IT`,
+        description: formation.metaDescription,
     }
 }
 

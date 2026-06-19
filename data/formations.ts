@@ -15,6 +15,8 @@ export const formations: Formation[] = [
   // ── BUREAUTIQUE ───────────────────────────────────────────────────────────
   {
     id: 'bur1',
+    metaTitle: 'Complete Office Suite',
+    metaDescription: 'General introduction + Word, Excel, PowerPoint — operational proficiency guaranteed by end of training + AI for office productivity',
     category: 'bureautique',
     priceOnsite: 60000,
     priceOnsiteLabel: '60 000 FCFA',
@@ -32,6 +34,8 @@ export const formations: Formation[] = [
 
   {
     id: 'bur2',
+    metaTitle: "Google Workspace",
+    metaDescription: "Gmail, Drive, Docs, Sheets, Slides, Forms, Calendar — collaborate effectively and automate tasks with Google tools",
     category: 'bureautique',
     priceOnsite: 60000,
     priceOnsiteLabel: '60 000 FCFA',
@@ -49,6 +53,8 @@ export const formations: Formation[] = [
 
   {
     id: 'bur3',
+    metaTitle: "Advanced Excel & Dashboards",
+    metaDescription: "Advanced formulas, pivot tables, charts, introduction to Power Query and Power Pivot to create interactive dashboards",
     category: 'bureautique',
     priceOnsite: 65000,
     priceOnsiteLabel: '65 000 FCFA',
@@ -66,6 +72,8 @@ export const formations: Formation[] = [
   // ── WEB & MOBILE ──────────────────────────────────────────────────────────
   {
     id: 'dev1',
+    metaTitle: "HTML/CSS/JS — Build Your Website",
+    metaDescription: "Web fundamentals, responsive layout, basic SEO and site deployment",
     category: 'dev',
     priceOnsite: 65000,
     priceOnsiteLabel: '65 000 FCFA',
@@ -83,6 +91,8 @@ export const formations: Formation[] = [
 
   {
     id: 'dev2',
+    metaTitle: "Advanced JavaScript — Interactivity & DOM",
+    metaDescription: "Programming logic, DOM manipulation, interactive forms",
     category: 'dev',
     priceOnsite: 65000,
     priceOnsiteLabel: '65 000 FCFA',
@@ -100,6 +110,8 @@ export const formations: Formation[] = [
 
   {
     id: 'dev3',
+    metaTitle: "WordPress & SME Websites",
+    metaDescription: "Installation, themes, WooCommerce plugins, publishing and basic SEO",
     category: 'dev',
     priceOnsite: 45000,
     priceOnsiteLabel: '45 000 FCFA',
@@ -116,6 +128,8 @@ export const formations: Formation[] = [
 
   {
     id: 'dev4',
+    metaTitle: "React & Next.js — Modern Apps",
+    metaDescription: "Building modern, performant and deployable web applications",
     category: 'dev',
     priceOnsite: 100000,
     priceOnsiteLabel: '100 000 FCFA',
@@ -133,6 +147,8 @@ export const formations: Formation[] = [
 
   {
     id: 'dev5',
+    metaTitle: "Mobile Development — React Native",
+    metaDescription: "Build Android and iOS applications from a single codebase",
     category: 'dev',
     priceOnsite: 110000,
     priceOnsiteLabel: '110 000 FCFA',
@@ -150,6 +166,8 @@ export const formations: Formation[] = [
   // ── INTELLIGENCE ARTIFICIELLE ─────────────────────────────────────────────
   {
     id: 'ia1',
+    metaTitle: "AI for Daily Work — ChatGPT & Copilots",
+    metaDescription: "Use ChatGPT, Claude, Gemini and Copilot to save time at work",
     category: 'ia',
     priceOnsite: 40000,
     priceOnsiteLabel: '40 000 FCFA',
@@ -167,6 +185,8 @@ export const formations: Formation[] = [
 
   {
     id: 'ia2',
+    metaTitle: "Prompt Engineering",
+    metaDescription: "Write effective prompts and automate tasks with AI",
     category: 'ia',
     priceOnsite: 55000,
     priceOnsiteLabel: '55 000 FCFA',
@@ -184,6 +204,8 @@ export const formations: Formation[] = [
 
   {
     id: 'ia3',
+    metaTitle: "Generative AI for Marketing",
+    metaDescription: "Generate text, visuals and videos for social media and advertising campaigns",
     category: 'ia',
     priceOnsite: 50000,
     priceOnsiteLabel: '50 000 FCFA',
@@ -200,6 +222,8 @@ export const formations: Formation[] = [
 
   {
     id: 'ia4',
+    metaTitle: "Develop with AI — Cursor & Claude API",
+    metaDescription: "Code faster with Cursor, integrate the Claude API into your projects",
     category: 'ia',
     priceOnsite: 95000,
     priceOnsiteLabel: '95 000 FCFA',
@@ -217,6 +241,8 @@ export const formations: Formation[] = [
 
   {
     id: 'ia5',
+    metaTitle: "AI & Data — Python + Machine Learning",
+    metaDescription: "Scikit-learn, regression/classification models, concrete business use cases",
     category: 'ia',
     priceOnsite: 130000,
     priceOnsiteLabel: '130 000 FCFA',
@@ -234,6 +260,8 @@ export const formations: Formation[] = [
   // ── DATA & SQL ────────────────────────────────────────────────────────────
   {
     id: 'dat1',
+    metaTitle: "Power BI — Introduction & Reporting",
+    metaDescription: "Data connection, interactive visuals, sharing and publishing Power BI reports",
     category: 'data',
     priceOnsite: 60000,
     priceOnsiteLabel: '60 000 FCFA',
@@ -250,6 +278,8 @@ export const formations: Formation[] = [
 
   {
     id: 'dat2',
+    metaTitle: "SQL for Management & Analysis",
+    metaDescription: "SQL queries, database design, automated reports",
     category: 'data',
     priceOnsite: 55000,
     priceOnsiteLabel: '55 000 FCFA',
@@ -266,6 +296,8 @@ export const formations: Formation[] = [
 
   {
     id: 'dat3',
+    metaTitle: "Python — Introduction & Automation",
+    metaDescription: "Task automation, utility scripts, introduction to data analysis",
     category: 'data',
     priceOnsite: 65000,
     priceOnsiteLabel: '65 000 FCFA',

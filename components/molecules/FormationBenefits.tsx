@@ -3,6 +3,7 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { useTranslations } from "next-intl";
 import {
   LayoutDashboard, Briefcase, Globe2, Users,
   LayoutGrid, Building2, TableProperties, BarChart3,
@@ -32,52 +33,66 @@ const COLOR_MAP: Record<number, { icon: string; check: string }> = {
   3: { icon: "bg-amber-200 text-amber-800", check: "bg-amber-200 text-amber-700" },
 };
 
-const FormationBenefits = ({ benefits }: {benefits: BenefitCategory[]}) => {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
+type FormationBenefit = {
+  icon: string
+  itemCount: number
+}
 
-  const toggle = (i: number) =>
-    setOpenIndex((prev) => (prev === i ? null : i));
+type Props = {
+  formationId: string
+  benefits: FormationBenefit[]
+}
+
+const FormationBenefits = ({ formationId, benefits }: Props) => {
+  const tData = useTranslations('formations')
+  const t = useTranslations('Formations')
+
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const toggle = (i: number) => setOpenIndex((prev) => (prev === i ? null : i));
 
   return (
     <section className="py-4">
-      <p className="font-mono text-[10px] text-white/20 tracking-widest text-muted-foreground uppercase mb-2">
-        Ce que vous allez apprendre
+      <p className="font-mono text-[10px] text-white/20 tracking-widest uppercase mb-2">
+        {t('benefits.eyebrow')}
       </p>
-      <h2 className="text-accent">Bénéfices de la formation</h2>
-      <p className="text-[12px] text-muted-foreground mb-8  text-white/45">
-        Cliquez sur chaque catégorie pour découvrir ce que vous allez maîtriser.
+      <h2 className="text-accent">{t('benefits.heading')}</h2>
+      <p className="text-[12px] text-white/45 mb-8">
+        {t('benefits.subheading')}
       </p>
 
       <div className="flex flex-col gap-2">
-        {benefits.map((cat, i) => {
-          const Icon = ICON_MAP[cat.icon] ?? Users;
+        {benefits.map((benefit, i) => {
+          const Icon = ICON_MAP[benefit.icon] ?? Users;
           const colors = COLOR_MAP[i % 4];
           const isOpen = openIndex === i;
 
+          const title = tData(`${formationId}.benefits.${i}.title`)
+          const items = Array.from(
+            { length: benefit.itemCount },
+            (_, ii) => tData(`${formationId}.benefits.${i}.items.${ii}`)
+          )
+
           return (
             <div
-              key={cat.title}
+              key={i}
               className="border border-white/6 bg-surface rounded overflow-hidden"
             >
               <button
                 onClick={() => toggle(i)}
                 aria-expanded={isOpen}
-                className={`w-full flex items-center gap-3 px-4 py-3.5 text-left transition-colors ${
-                  isOpen ? "bg-muted/40" : "hover:bg-muted/30"
-                }`}
+                className={`w-full flex items-center gap-3 px-4 py-3.5 text-left transition-colors ${isOpen ? "bg-muted/40" : "hover:bg-muted/30"
+                  }`}
               >
-                <span
-                  className={`w-8 h-8 rounded-md flex items-center justify-center shrink-0 ${colors.icon}`}
-                >
+                <span className={`w-8 h-8 rounded-md flex items-center justify-center shrink-0 ${colors.icon}`}>
                   <Icon size={16} />
                 </span>
 
                 <span className="flex-1 text-sm font-medium">
-                  {cat.title}
+                  {title}
                 </span>
 
                 <span className="text-xs mr-2 shrink-0">
-                  {cat.items.length} points
+                  {benefit.itemCount} {t('benefits.points')}
                 </span>
 
                 <motion.span
@@ -100,21 +115,13 @@ const FormationBenefits = ({ benefits }: {benefits: BenefitCategory[]}) => {
                     className="overflow-hidden"
                   >
                     <ul className="border-t border-white/6 divide-y divide-white/6 px-4 pb-3 pt-1">
-                      {cat.items.map((item) => (
+                      {items.map((item) => (
                         <li
                           key={item}
                           className="flex items-start gap-2.5 py-2 first:pt-2 last:pb-0"
                         >
-                          <span
-                            className={`mt-0.5 w-4 h-4 rounded-full flex items-center justify-center shrink-0 ${colors.check}`}
-                          >
-                            <svg
-                              width="9"
-                              height="9"
-                              viewBox="0 0 9 9"
-                              fill="none"
-                              aria-hidden="true"
-                            >
+                          <span className={`mt-0.5 w-4 h-4 rounded-full flex items-center justify-center shrink-0 ${colors.check}`}>
+                            <svg width="9" height="9" viewBox="0 0 9 9" fill="none" aria-hidden="true">
                               <path
                                 d="M1.5 4.5L3.5 6.5L7.5 2.5"
                                 stroke="currentColor"

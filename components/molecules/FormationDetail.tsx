@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import { CATEGORY_COLORS } from "@/data/formations";
 import RegistrationForm from "./RegistrationForm";
 import FormationBenefits from "./FormationBenefits";
+import { useTranslations } from "next-intl";
 
 // ─── helpers ────────────────────────────────────────────────────────────────
 
@@ -22,13 +23,14 @@ export default function FormationDetail({
 }: {
   formation: Formation;
 }) {
+  const tData = useTranslations("formations");
   const catColor = CATEGORY_COLORS[formation.category];
 
   const META_ITEMS = [
-    { label: "Durée", value: formation.duration },
-    { label: "Volume horaire", value: formation.hoursTotal },
-    { label: "Public cible", value: formation.target },
-    { label: "Prérequis", value: formation.prereq },
+    { label: "Durée", value: tData(`${formation.id}.duration`) },
+    { label: "Volume horaire", value: tData(`${formation.id}.hoursTotal`) },
+    { label: "Public cible", value: tData(`${formation.id}.target`) },
+    { label: "Prérequis", value: tData(`${formation.id}.prereq`) },
   ];
 
   return (
@@ -83,12 +85,12 @@ export default function FormationDetail({
           className="font-display text-[28px] md:text-[34px] font-extrabold leading-[1.0]!"
           style={{ color: CATEGORY_COLORS[formation.category] }}
         >
-          {formation.title}
+          {tData(`${formation.id}.title`)}
         </h1>
 
         {/* Description */}
         <p className="text-[13px] text-white/45 leading-[1.85] max-w-xl">
-          {formation.description}
+          {tData(`${formation.id}.description`)}
         </p>
       </motion.div>
 
@@ -173,7 +175,7 @@ export default function FormationDetail({
         </div>
       </motion.div>
 
-      <FormationBenefits benefits={formation.benefits} />
+      <FormationBenefits formationId={formation.id} benefits={formation.benefits} />
 
       {/* Divider */}
       <div className="border-t border-white/6 mb-12" />

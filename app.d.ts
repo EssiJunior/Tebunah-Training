@@ -1,13 +1,13 @@
 type Category = 'all' | 'ia' | 'dev' | 'data' | 'bureautique'
 
 type BenefitCategory = {
-  title: string
-  icon: string // lucide icon name
-  items: string[]
+  icon: string
+  itemCount: number
 }
-
 type Formation = {
   id: string
+  metaTitle: string
+  metaDescription: string
   category: 'bureautique' | 'dev' | 'ia' | 'data'
 
   // Static (locale-independent)
