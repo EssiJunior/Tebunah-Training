@@ -24,6 +24,6 @@ export default async function FormationPage({ params }: Props) {
     const { slug } = await params
     const formation = formations.find((f) => f.id === slug)
     console.log('Formation page: ', slug)
-    if (!formation) notFound()
-    return <FormationDetail formation={formation} />
+
+    return <FormationDetail formation={formation!} />
 }
