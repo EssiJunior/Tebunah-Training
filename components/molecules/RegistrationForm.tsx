@@ -9,6 +9,7 @@ import { useTranslations } from "next-intl"
 
 const RegistrationForm = ({ formation }: { formation: Formation }) => {
     const t = useTranslations("formations")
+    const tFormations = useTranslations("Formations")
 
     const INITIAL: Registration = {
         name: '',
@@ -204,7 +205,7 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
             <p className="font-mono text-[11px] text-white/25 leading-relaxed">
                 Pré-inscription à <span className="text-white/50">{t(formation.id + ".title")}</span>
                 {' · '}<span className="text-accent">{displayPrice}</span>
-                {' · '}{form.format === 'onsite' ? 'Présentiel' : 'En ligne'}
+                {' · '}{form.format === 'onsite' ? tFormations("onsite") : tFormations("online")}
             </p>
 
             {/* Registration fee notice */}

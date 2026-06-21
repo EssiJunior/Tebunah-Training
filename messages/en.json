@@ -31,7 +31,7 @@
         "featured": "Popular",
         "targetLabel": "Target",
         "durationLabel": "Duration",
-        "onsite": "In-person",
+        "onsite": "On site",
         "online": "Online",
         "count": "{count, plural, =0 {no courses} =1 {1 course} other {# courses}}",
         "availableNowSuffix": " · available now",
