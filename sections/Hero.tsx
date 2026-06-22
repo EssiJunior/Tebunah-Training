@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react'
 import { ANIMATION_DELAY } from '@/data/hero'
 import GridBackground from '@/components/molecules/GridBackround'
 import { useTranslations } from 'next-intl'
+import Button from '@/components/atoms/Button'
 
 function useCounter(target: number, dur = 2000, delay = 0) {
   const [v, setV] = useState(0)
@@ -133,15 +134,16 @@ export default function Hero() {
         transition={{ duration: 0.7, delay: D + 0.8 }}
         className="flex items-center gap-6 mb-20 flex-wrap"
       >
-        <motion.a
-          href="#formations"
-          onClick={e => { e.preventDefault(); document.querySelector('#formations')?.scrollIntoView({ behavior: 'smooth' }) }}
-          whileHover={{ scale: 1.03, boxShadow: '0 0 32px rgba(200,242,58,0.25)' }}
-          whileTap={{ scale: 0.97 }}
-          className="font-mono text-[12px] font-medium bg-accent text-bg px-8 py-3.5 rounded-px tracking-[0.1em] uppercase inline-flex items-center gap-2.5"
-        >
-          {t('ctaView')}
-        </motion.a>
+        <Button>
+          <a
+            href="#formations"
+            onClick={e => { e.preventDefault(); document.querySelector('#formations')?.scrollIntoView({ behavior: 'smooth' }) }}
+            className="font-mono text-[12px] font-medium bg-accent text-bg rounded-px tracking-widest uppercase inline-flex items-center gap-2.5"
+          >
+            {t('ctaView')}
+          </a>
+        </Button>
+
         <motion.a
           href="#instructeur"
           onClick={e => { e.preventDefault(); document.querySelector('#instructeur')?.scrollIntoView({ behavior: 'smooth' }) }}

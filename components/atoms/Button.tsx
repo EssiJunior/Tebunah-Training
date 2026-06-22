@@ -1,6 +1,6 @@
 import { motion } from "motion/react"
 
-const Button = ({ children, type }: { children: React.ReactNode, type: 'button' | 'submit' }) => {
+const Button = ({ children, type = "button" }: { children: React.ReactNode, type?: 'button' | 'submit' }) => {
     return (
         <motion.button
             type={type}
