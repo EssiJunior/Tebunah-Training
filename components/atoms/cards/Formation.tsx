@@ -3,12 +3,13 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { CATEGORY_COLORS } from "@/data/formations";
-import Link from "next/link";
 import { useTranslations } from "next-intl";
+import Button from "../Button";
 
 const Formation = ({ f, index }: { f: Formation; index: number }) => {
     const t = useTranslations('Formations')
     const tData = useTranslations('formations')
+    const tCTA = useTranslations('CTA')
 
     const [hovered, setHovered] = useState(false)
     const [tilt, setTilt] = useState({ x: 0, y: 0 })
@@ -27,7 +28,7 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
     const displayPrice = mode === 'onsite' ? f.priceOnsiteLabel : f.priceOnlineLabel
 
     return (
-        <Link href={`/formations/${f.id}`} className="block group">
+        <aside className="block group">
             <motion.div
                 ref={ref}
                 layout
@@ -148,15 +149,18 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
                             ))}
                         </div>
                     </div>
-                    <motion.span
-                        animate={{ x: hovered ? 4 : 0 }}
-                        className="text-[18px] text-white/20 group-hover:text-white/40 transition-colors"
-                    >
-                        →
-                    </motion.span>
+                    <Button className={`h-full transition-colors duration-200 ease-in ${hovered ? 'bg-accent text-bg' : 'bg-transparent text-white/40'}`}>
+                        <motion.a
+                            href={`/formations/${f.id}`}
+                            animate={{ x: hovered ? 4 : 0 }}
+                            className="text-sm transition-colors"
+                        >
+                            {tCTA("register")}
+                        </motion.a>
+                    </Button>
                 </div>
             </motion.div>
-        </Link>
+        </aside>
     )
 }
 
