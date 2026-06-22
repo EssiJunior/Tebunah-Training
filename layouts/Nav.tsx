@@ -16,6 +16,8 @@ import Button from '@/components/atoms/Button';
 
 export default function Nav() {
   const t = useTranslations('Navigation')
+  const tCTA = useTranslations('CTA')
+
   const router = useRouter()
   const { setActive } = useFormations()
   const go = createGoHandler(router, setActive)
@@ -120,7 +122,7 @@ export default function Nav() {
                 onClick={go('#formations')}
                 className="hidden md:inline-flex items-center gap-2 bg-accent text-bg font-mono text-[11px] font-medium rounded-px tracking-[0.08em] uppercase"
               >
-                {t('apply')}
+                {tCTA('register')}
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                   <path d="M2 8L8 2M8 2H3M8 2v5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" />
                 </svg>

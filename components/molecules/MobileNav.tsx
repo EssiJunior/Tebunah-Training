@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 
 function MobileNav({ open, onClose, go }: { open: boolean; onClose: () => void; go: (href: string) => (e: React.MouseEvent) => void }) {
     const t = useTranslations('Navigation')
+    const tCTA = useTranslations('CTA')
 
     const labelKeys: Record<string, string> = {
         'Formations': 'formations',
@@ -38,7 +39,7 @@ function MobileNav({ open, onClose, go }: { open: boolean; onClose: () => void; 
 
                         {/* links */}
                         <div className="flex-1 px-4 py-6 flex flex-col gap-1 overflow-y-auto">
-                            
+
                             {NAV_LINKS.map((link, i) => (
                                 <motion.a
                                     key={link.href}
@@ -58,32 +59,32 @@ function MobileNav({ open, onClose, go }: { open: boolean; onClose: () => void; 
                                 </motion.a>
                             ))}
                             <motion.a
-                                    href="#contact"
-                                    onClick={(e) => { go('#contact')(e); onClose() }}
-                                    initial={{ opacity: 0, x: 20 }}
-                                    animate={{ opacity: 1, x: 0 }}
-                                    transition={{ duration: 0.3, delay: 0.18 }}
-                                    className="group flex items-center justify-between px-3 py-3.5 rounded-px hover:bg-white/5 transition-colors duration-150"
-                                >
-                                    <span className="font-display text-[16px] font-semibold text-white/60 group-hover:text-ink transition-colors duration-150">
-                                        {t('contact')}
-                                    </span>
-                                    <span className="text-white/20 group-hover:text-white/50 transition-colors text-[14px] translate-x-0 group-hover:translate-x-1 duration-150">
-                                        →
-                                    </span>
-                                </motion.a>
+                                href="#contact"
+                                onClick={(e) => { go('#contact')(e); onClose() }}
+                                initial={{ opacity: 0, x: 20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ duration: 0.3, delay: 0.18 }}
+                                className="group flex items-center justify-between px-3 py-3.5 rounded-px hover:bg-white/5 transition-colors duration-150"
+                            >
+                                <span className="font-display text-[16px] font-semibold text-white/60 group-hover:text-ink transition-colors duration-150">
+                                    {t('contact')}
+                                </span>
+                                <span className="text-white/20 group-hover:text-white/50 transition-colors text-[14px] translate-x-0 group-hover:translate-x-1 duration-150">
+                                    →
+                                </span>
+                            </motion.a>
                         </div>
 
                         {/* CTA */}
                         <div className="px-4 pb-6 pt-2 border-t border-white/6 mt-auto">
                             <motion.a
-                                href="#contact" onClick={(e) => { go('#contact')(e); onClose() }}
+                                href="#formations" onClick={(e) => { go('#formations')(e); onClose() }}
                                 initial={{ opacity: 0, y: 10 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ duration: 0.3, delay: 0.35 }}
                                 className="w-full bg-accent text-bg font-mono text-[12px] font-medium py-3.5 rounded-px tracking-[0.08em] uppercase flex items-center justify-center gap-2"
                             >
-                                {t('apply')} <span>→</span>
+                                {tCTA('register')} <span>→</span>
                             </motion.a>
                             <p className="font-mono text-[10px] text-white/20 text-center mt-3 tracking-wide">
                                 {t('replyTime')}
