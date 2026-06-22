@@ -153,7 +153,7 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
                         <motion.a
                             href={`/formations/${f.id}`}
                             animate={{ x: hovered ? 4 : 0 }}
-                            className="text-sm transition-colors"
+                            className="text-sm transition-colors w-full h-full flex justify-center items-center"
                         >
                             {tCTA("register")}
                         </motion.a>
