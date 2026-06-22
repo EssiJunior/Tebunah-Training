@@ -45,8 +45,6 @@ export default function Instructors() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="font-mono text-[12px] text-white/45 leading-loose mb-8">
                 {t('essi.description')}
-                <br /><br />
-                <span className="text-accent/70">{t('essi.quote')}</span>
               </motion.p>
 
               <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}}
