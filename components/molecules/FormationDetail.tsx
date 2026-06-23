@@ -7,31 +7,21 @@ import RegistrationForm from "./RegistrationForm";
 import FormationBenefits from "./FormationBenefits";
 import { useTranslations } from "next-intl";
 
-// ─── helpers ────────────────────────────────────────────────────────────────
-
-const CATEGORY_LABELS: Record<string, string> = {
-  bureautique: "Bureautique",
-  dev: "Web & Mobile",
-  ia: "Intelligence Artificielle",
-  data: "Data & SQL",
-};
-
-// ─── main page component ─────────────────────────────────────────────────────
-
 export default function FormationDetail({
   formation,
 }: {
   formation: Formation;
 }) {
   const t = useTranslations("Formation");
+  const tForms = useTranslations('Formations')
   const tData = useTranslations("formations");
   const catColor = CATEGORY_COLORS[formation.category];
 
   const META_ITEMS = [
-    { label: "Durée", value: tData(`${formation.id}.duration`) },
-    { label: "Volume horaire", value: tData(`${formation.id}.hoursTotal`) },
-    { label: "Public cible", value: tData(`${formation.id}.target`) },
-    { label: "Prérequis", value: tData(`${formation.id}.prereq`) },
+    { label: tForms("durationLabel"), value: tData(`${formation.id}.duration`) },
+    { label: tForms("timeSlot"), value: tData(`${formation.id}.hoursTotal`) },
+    { label: tForms("targetLabel"), value: tData(`${formation.id}.target`) },
+    { label: tForms("prerequisites"), value: tData(`${formation.id}.prereq`) },
   ];
 
   return (
@@ -67,16 +57,16 @@ export default function FormationDetail({
             className="font-mono text-[10px] tracking-[0.12em] uppercase px-2.5 py-1 rounded-px"
             style={{ color: catColor, border: `0.5px solid ${catColor}30` }}
           >
-            {CATEGORY_LABELS[formation.category] ?? formation.category}
+            {tForms(`categories.${formation.category}`)}
           </span>
 
           {formation.availableNow ? (
             <span className="font-mono text-[10px] px-2.5 py-1 rounded-px border border-green-500/30 text-green-400">
-              ● Disponible
+              ● {tForms('statusAvailable')}
             </span>
           ) : (
             <span className="font-mono text-[10px] px-2.5 py-1 rounded-px border border-white/10 text-white/30">
-              Bientôt disponible
+              {tForms('statusSoon')}
             </span>
           )}
         </div>
@@ -141,12 +131,12 @@ export default function FormationDetail({
           {(
             [
               {
-                mode: "Présentiel",
+                mode: tForms("onsite"),
                 label: formation.priceOnsiteLabel,
                 note: t("onsite"),
               },
               {
-                mode: "En ligne",
+                mode: tForms("online"),
                 label: formation.priceOnlineLabel,
                 note: t("online"),
               },

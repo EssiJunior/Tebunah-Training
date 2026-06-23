@@ -30,6 +30,8 @@
         "statusSoon": "Soon",
         "featured": "Popular",
         "targetLabel": "Target",
+        "timeSlot": "Overall time",
+        "prerequisites": "Prerequisites",
         "durationLabel": "Duration",
         "onsite": "On site",
         "online": "Online",

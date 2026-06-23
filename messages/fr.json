@@ -30,6 +30,8 @@
         "statusSoon": "Bientôt",
         "featured": "Populaire",
         "targetLabel": "Cible",
+        "timeSlot": "Volume horaire",
+        "prerequisites": "Prérequis",
         "durationLabel": "Durée",
         "onsite": "Présentiel",
         "online": "En ligne",
