@@ -23,6 +23,7 @@ export default function FormationDetail({
 }: {
   formation: Formation;
 }) {
+  const t = useTranslations("Formation");
   const tData = useTranslations("formations");
   const catColor = CATEGORY_COLORS[formation.category];
 
@@ -45,7 +46,7 @@ export default function FormationDetail({
           href="/#formations"
           className="inline-flex items-center gap-2 font-mono text-[11px] text-white/30 hover:text-white/60 transition-colors mb-8"
         >
-          ← Retour aux formations
+          ← {t("back")}
         </Link>
       </motion.div>
 
@@ -82,7 +83,7 @@ export default function FormationDetail({
 
         {/* Title */}
         <h1
-          className="font-display text-[28px] md:text-[34px] font-extrabold leading-[1.0]!"
+          className="font-display text-[28px] md:text-[34px] font-extrabold leading-none!"
           style={{ color: CATEGORY_COLORS[formation.category] }}
         >
           {tData(`${formation.id}.title`)}
@@ -106,7 +107,7 @@ export default function FormationDetail({
         className="mb-10"
       >
         <p className="font-mono text-[10px] text-white/20 tracking-widest uppercase mb-4">
-          Détails de la formation
+          {t("details")}
         </p>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-px bg-white/4 border border-white/4 rounded overflow-hidden">
           {META_ITEMS.map(({ label, value }) => (
@@ -134,7 +135,7 @@ export default function FormationDetail({
         className="mb-12"
       >
         <p className="font-mono text-[10px] text-white/20 tracking-widest uppercase mb-4">
-          Tarifs
+          {t("prices")}
         </p>
         <div className="grid grid-cols-2 gap-3">
           {(
@@ -142,12 +143,12 @@ export default function FormationDetail({
               {
                 mode: "Présentiel",
                 label: formation.priceOnsiteLabel,
-                note: "Yaoundé · en salle",
+                note: t("onsite"),
               },
               {
                 mode: "En ligne",
                 label: formation.priceOnlineLabel,
-                note: "Google Meet / Zoom",
+                note: t("online"),
               },
             ] as const
           ).map(({ mode, label, note }) => (
@@ -192,11 +193,10 @@ export default function FormationDetail({
       >
         <div className="mb-6">
           <h2 className="font-display text-[20px] font-bold text-ink mb-1">
-            Se pré-inscrire à cette formation
+            {t("preenrole")}
           </h2>
           <p className="font-mono text-[12px] text-white/30 leading-relaxed">
-            Remplissez le formulaire ci-dessous. Nous vous contacterons dans les
-            24h pour confirmer votre place.
+            {t("form")}
           </p>
         </div>
 

@@ -851,6 +851,15 @@
             ]
         }
     },
+    "Formation": {
+        "back": "Back to formations",
+        "details": "Formation details",
+        "prices": "Prices",
+        "onsite": "Yaounde · on site",
+        "online": "Google Meet / Zoom",
+        "preenrole": "Pre-enrole yourself for this formation",
+        "form": "Fill the form below. We shall contact you in less than 24 hours to confirm your place."
+    },
     "Instructors": {
         "title": "Instructors",
         "expertise": "Expertise",

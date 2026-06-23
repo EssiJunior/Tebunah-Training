@@ -851,6 +851,15 @@
             ]
         }
     },
+    "Formation": {
+        "back": "Retour aux formations",
+        "details": "Détails de la formation",
+        "prices": "Tarifs",
+        "onsite": "Yaoundé · en salle",
+        "online": "Google Meet / Zoom",
+        "preenrole": "Se pré-inscrire à cette formation",
+        "form": "Remplissez le formulaire ci-dessous. Nous vous contacterons dans les 24 heures pour confirmer votre place."
+    },
     "Instructors": {
         "title": "Instructeurs",
         "expertise": "Expertise",
