@@ -166,7 +166,7 @@ export const formations: Formation[] = [
   // ── INTELLIGENCE ARTIFICIELLE ─────────────────────────────────────────────
   {
     id: 'ia1',
-    metaTitle: "AI for Daily Work — ChatGPT & Copilots",
+    metaTitle: "AI for Daily Work — ChatGPT, Gemini, Claude...",
     metaDescription: "Use ChatGPT, Claude, Gemini and Copilot to save time at work",
     category: 'ia',
     priceOnsite: 40000,
