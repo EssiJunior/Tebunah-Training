@@ -72,7 +72,7 @@ export const formations: Formation[] = [
   // ── WEB & MOBILE ──────────────────────────────────────────────────────────
   {
     id: 'dev1',
-    metaTitle: "HTML/CSS/JS — Build Your Website",
+    metaTitle: "HTML/CSS/JS — Master the bases of web development",
     metaDescription: "Web fundamentals, responsive layout, basic SEO and site deployment",
     category: 'dev',
     priceOnsite: 65000,
