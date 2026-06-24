@@ -859,8 +859,53 @@
         "prices": "Prices",
         "onsite": "Yaounde · on site",
         "online": "Google Meet / Zoom",
-        "preenrole": "Pre-enrole yourself for this formation",
-        "form": "Fill the form below. We shall contact you in less than 24 hours to confirm your place."
+        "preenrole": "Pre-enrol yourself for this formation",
+        "form": {
+            "description": "Fill the form below. We shall contact you in less than 24 hours to confirm your place.",
+            "validation": {
+                "required": "Required field",
+                "email": "Invalid email"
+            },
+            "success": {
+                "title": "Pre-registration submitted!",
+                "body": "We will contact you within 24 hours to confirm your pre-registration for",
+                "again": "Submit another pre-registration"
+            },
+            "fields": {
+                "name": "Full name *",
+                "phone": "Phone *",
+                "email": "Email",
+                "address": "Address",
+                "level": "Academic level",
+                "format": "Preferred format *",
+                "session": "Preferred time slot",
+                "message": "Message (optional)",
+                "messagePlaceholder": "Questions, schedule constraints, special needs…"
+            },
+            "format": {
+                "onsiteLabel": "On-site",
+                "onlineLabel": "Online"
+            },
+            "timeslot": {
+                "morningLabel": "Morning",
+                "eveningLabel": "Evening",
+                "morningHours": "09:00 - 13:00",
+                "eveningHours": "15:00 - 19:00"
+            },
+            "summary": {
+                "prefix": "Pre-registration for"
+            },
+            "fee": {
+                "label": "Registration fee:",
+                "amount": "5,000 FCFA",
+                "methods": "(Payable in cash or via Orange Money / MTN Money)"
+            },
+            "submit": {
+                "idle": "Submit my pre-registration →",
+                "sending": "Sending…"
+            },
+            "error": "An error occurred. Please try again or contact us directly."
+        }
     },
     "Instructors": {
         "title": "Instructors",

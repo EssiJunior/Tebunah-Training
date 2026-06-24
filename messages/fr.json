@@ -859,8 +859,53 @@
         "prices": "Tarifs",
         "onsite": "Yaoundé · en salle",
         "online": "Google Meet / Zoom",
-        "preenrole": "Se pré-inscrire à cette formation",
-        "form": "Remplissez le formulaire ci-dessous. Nous vous contacterons dans les 24 heures pour confirmer votre place."
+        "preenrole": "Pré-inscrivez-vous à cette formation",
+        "form": {
+            "description": "Remplissez le formulaire ci-dessous. Nous vous contacterons dans moins de 24h pour confirmer votre place.",
+            "validation": {
+                "required": "Champ requis",
+                "email": "Email invalide"
+            },
+            "success": {
+                "title": "Pré-inscription initiée !",
+                "body": "Nous vous contacterons dans les 24h pour confirmer votre pré-inscription à",
+                "again": "Soumettre une autre pré-inscription"
+            },
+            "fields": {
+                "name": "Nom complet *",
+                "phone": "Téléphone *",
+                "email": "Email",
+                "address": "Adresse",
+                "level": "Niveau d'études",
+                "format": "Format souhaité *",
+                "session": "Créneau souhaité",
+                "message": "Message (optionnel)",
+                "messagePlaceholder": "Questions, contraintes horaires, besoins particuliers…"
+            },
+            "format": {
+                "onsiteLabel": "Présentiel",
+                "onlineLabel": "En ligne"
+            },
+            "timeslot": {
+                "morningLabel": "Journée",
+                "eveningLabel": "Soirée",
+                "morningHours": "09:00 - 13:00",
+                "eveningHours": "15:00 - 19:00"
+            },
+            "summary": {
+                "prefix": "Pré-inscription à"
+            },
+            "fee": {
+                "label": "Frais d'inscription :",
+                "amount": "5 000 FCFA",
+                "methods": "(Payable en cash ou via Orange Money / MTN Money)"
+            },
+            "submit": {
+                "idle": "Envoyer ma pré-inscription →",
+                "sending": "Envoi en cours…"
+            },
+            "error": "Une erreur s'est produite. Réessayez ou contactez-nous directement."
+        }
     },
     "Instructors": {
         "title": "Instructeurs",
