@@ -910,47 +910,6 @@
             }
         ]
     },
-    "Team": {
-        "title": {
-            "0": "Our",
-            "1": "Team"
-        },
-        "hint": "Who we are, and why we do what we do.",
-        "team": {
-            "leaders": {
-                "title": "Leadership Team",
-                "description": "Our leadership team embodies our mission, composed of our direct Leaders.",
-                "leaders": {
-                    "0": {
-                        "name": "ENGOLO Valentin",
-                        "title": "Principal Pastor, Etoudi Assembly",
-                        "bio": "As the principal pastor of Etoudi assembly and ..."
-                    },
-                    "1": {
-                        "name": "BAYIHA Cyrille",
-                        "title": "Adjoint of Principal Pastor, Etoudi Assembly",
-                        "bio": "As the Adjoint of principal pastor of Etoudi assembly and ..."
-                    }
-                }
-            },
-            "technical": {
-                "title": "Technical Team",
-                "description": "Our technical team consist of members taking part in actual realisation.",
-                "technical": {
-                    "0": {
-                        "name": "KONDON Minette",
-                        "title": "Cameroon COM leader of DDSEF",
-                        "bio": "As the Cameroon COM leader of DDSEF, I am responsible for overseeing the communication strategies and implementation of this project"
-                    },
-                    "1": {
-                        "name": "ESSI Junior",
-                        "title": "Communicant, Etoudi Assembly",
-                        "bio": "As a software engineer, I work on the transformation of the project idea into a functional software.."
-                    }
-                }
-            }
-        }
-    },
     "CTA": {
         "getStarted": "Get Started",
         "learnMore": "Learn More",
@@ -999,122 +958,10 @@
         "madeWith": "Made with",
         "by": "by"
     },
-    "Marquee": {
-        "items": [
-            "Web Development",
-            "―",
-            "Artificial Intelligence",
-            "―",
-            "Data & Analysis",
-            "―",
-            "Office & Workspace",
-            "―",
-            "Power BI",
-            "―",
-            "React & Next.js",
-            "―",
-            "Claude API",
-            "―",
-            "Cursor AI",
-            "―",
-            "Python",
-            "―",
-            "Advanced Excel",
-            "―"
-        ],
-        "footer": {
-            "0": "Engineering the Future of Networking",
-            "1": "Networking",
-            "2": "Find an Expert as fast as you jump",
-            "3": "AI-Powered Map recommendation"
-        },
-        "about": {
-            "0": "John 3:3 - Very truly I tell you, no one can see the kingdom of God unless they are born again."
-        },
-        "leaders": {
-            "0": "Revelations 20:15 - Anyone whose name was not found written in the book of life was thrown into the lake of fire."
-        },
-        "com": {
-            "0": "Colossians 4:7 - Tychicus will tell you all the news about me. He is a dear brother, a faithful minister and fellow servant in the Lord"
-        }
-    },
     "NotFound": {
         "title": "Sorry, Page not found",
         "description": "The requested URL was not found on this server. That's all we know ",
         "link": "Back to home"
-    },
-    "Auth": {
-        "leftPanel": {
-            "0": "Connect with",
-            "1": "experts",
-            "2": "near you."
-        },
-        "common": {
-            "0": "Continue with",
-            "1": "or"
-        },
-        "signin": {
-            "0": "Welcome back",
-            "1": "Sign in to your",
-            "2": "account.",
-            "3": "Don't have an account?",
-            "4": "Create one"
-        },
-        "signup": {
-            "0": "Welcome",
-            "1": "Create a new",
-            "2": "account.",
-            "3": "Already have an account?",
-            "4": "Sign in"
-        }
-    },
-    "Profile": {
-        "banner": {
-            "title": "MY PROFILE",
-            "hint": "Manage your profile"
-        },
-        "form": {
-            "photo": "Photo",
-            "identity": "Identity",
-            "personal": "Personal Information",
-            "social": "Social Information",
-            "name": "Name",
-            "email": "Email",
-            "phone": "Phone",
-            "profession": "Profession",
-            "website": "Website",
-            "localization": "Location",
-            "localizationHint": "Start typing a city or address to search",
-            "assembly": "Assembly",
-            "district": "District",
-            "experience": "Experience",
-            "resume": "Curriculum Vitae",
-            "placeholder": {
-                "photoSet": "Set your profile photo",
-                "photoModify": "Modify your profile photo",
-                "name": "Enter your name",
-                "email": "Enter your email",
-                "phone": "Enter your phone number",
-                "profession": "Enter your profession",
-                "website": "Enter your website URL",
-                "localization": "Enter your location",
-                "assembly": "Enter your assembly",
-                "district": "Enter your district",
-                "experience": "How many years of professional experience do you have?",
-                "resume": "Drag and drop your CV (PDF)",
-                "resumeUpload": "Uploading CV...",
-                "resumeDrop": "Drop the CV here"
-            }
-        },
-        "delete": {
-            "dangerZone": "Danger Zone",
-            "description": "Permanently delete your account and all associated data. This action cannot be undone.",
-            "button": "Delete Account",
-            "title": "Delete Your Account",
-            "warning": "This will permanently delete your account and all associated data.",
-            "irreversible": "This action is irreversible. All of your profile information, projects, and history will be permanently deleted.",
-            "confirmationPrompt": "Type your email address to confirm:"
-        }
     },
     "Soon": {
         "title": "Under Construction",
