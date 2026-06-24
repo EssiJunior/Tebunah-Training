@@ -19,6 +19,7 @@ export async function generateMetadata({ params }: Props) {
         openGraph: {
             title: `${formation.metaTitle} — Formations IT`,
             description: formation.metaDescription,
+            author: "Tebunah Training",
             images: [
                 {
                     url: `/assets/formations/${formation.id}.png`,
