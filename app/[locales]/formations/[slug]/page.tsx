@@ -21,10 +21,10 @@ export async function generateMetadata({ params }: Props) {
             description: formation.metaDescription,
             images: [
                 {
-                    url: '/assets/images/tebunah-presentation.webp',
+                    url: '/assets/formations/office.png',
                     width: 1280,
-                    height: 800,
-                    alt: 'Formations IT',
+                    height: 630,
+                    alt: `${formation.metaTitle} — Formations IT`,
                 },
             ],
         },
@@ -37,4 +37,4 @@ export default async function FormationPage({ params }: Props) {
     return <FormationDetail formation={formation!} />
 }
 
-// export const dynamic = 'force-static'
+export const dynamic = 'force-static'
