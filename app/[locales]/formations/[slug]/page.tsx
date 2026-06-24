@@ -14,10 +14,10 @@ export async function generateMetadata({ params }: Props) {
     const formation = formations.find((f) => f.id === slug)
     if (!formation) return {}
     return {
-        title: `${formation.metaTitle} — Formations IT`,
+        title: `${formation.metaTitle}`,
         description: formation.metaDescription,
         openGraph: {
-            title: `${formation.metaTitle} — Formations IT`,
+            title: `${formation.metaTitle}`,
             description: formation.metaDescription,
             author: "Tebunah Training",
             images: [
@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props) {
                     url: `/assets/formations/${formation.id}.png`,
                     width: 1280,
                     height: 630,
-                    alt: `${formation.metaTitle} — Formations IT`,
+                    alt: `${formation.metaTitle}`,
                 },
             ],
         },
