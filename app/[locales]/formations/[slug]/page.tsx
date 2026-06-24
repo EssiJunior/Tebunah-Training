@@ -22,7 +22,7 @@ export async function generateMetadata({ params }: Props) {
 export default async function FormationPage({ params }: Props) {
     const { slug } = await params
     const formation = formations.find((f) => f.id === slug)
-    console.log('Formation page: ', slug)
-
     return <FormationDetail formation={formation!} />
 }
+
+export const dynamic = 'force-static'

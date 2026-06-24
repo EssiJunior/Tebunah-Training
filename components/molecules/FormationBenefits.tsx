@@ -1,4 +1,3 @@
-// components/FormationBenefits.tsx
 "use client";
 
 import { useState } from "react";
