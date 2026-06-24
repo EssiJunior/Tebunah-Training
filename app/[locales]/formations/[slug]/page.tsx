@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props) {
             description: formation.metaDescription,
             images: [
                 {
-                    url: '/assets/formations/office.png',
+                    url: `/assets/formations/${formation.id}.png`,
                     width: 1280,
                     height: 630,
                     alt: `${formation.metaTitle} — Formations IT`,
