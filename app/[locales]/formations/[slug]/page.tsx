@@ -16,6 +16,18 @@ export async function generateMetadata({ params }: Props) {
     return {
         title: `${formation.metaTitle} — Formations IT`,
         description: formation.metaDescription,
+        openGraph: {
+            title: `${formation.metaTitle} — Formations IT`,
+            description: formation.metaDescription,
+            images: [
+                {
+                    url: '/assets/images/tebunah-presentation.webp',
+                    width: 1280,
+                    height: 800,
+                    alt: 'Formations IT',
+                },
+            ],
+        },
     }
 }
 
@@ -25,4 +37,4 @@ export default async function FormationPage({ params }: Props) {
     return <FormationDetail formation={formation!} />
 }
 
-export const dynamic = 'force-static'
+// export const dynamic = 'force-static'

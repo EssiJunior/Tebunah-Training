@@ -1003,6 +1003,30 @@
         "madeWith": "Made with",
         "by": "by"
     },
+    "Marquee": {
+        "items": [
+            "Web Development",
+            "―",
+            "Artificial Intelligence",
+            "―",
+            "Data & Analysis",
+            "―",
+            "Office & Workspace",
+            "―",
+            "Power BI",
+            "―",
+            "React & Next.js",
+            "―",
+            "Claude API",
+            "―",
+            "Cursor AI",
+            "―",
+            "Python",
+            "―",
+            "Advanced Excel",
+            "―"
+        ]
+    },
     "NotFound": {
         "title": "Sorry, Page not found",
         "description": "The requested URL was not found on this server. That's all we know ",

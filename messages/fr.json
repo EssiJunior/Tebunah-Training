@@ -955,47 +955,6 @@
             }
         ]
     },
-    "Team": {
-        "title": {
-            "0": "Notre",
-            "1": "Équipe"
-        },
-        "hint": "Qui nous sommes, et pourquoi nous faisons ce que nous faisons.",
-        "team": {
-            "leaders": {
-                "title": "Équipe de Direction",
-                "description": "Notre équipe de direction incarne notre mission, composée de nos leaders directs.",
-                "leaders": {
-                    "0": {
-                        "name": "ENGOLO Valentin",
-                        "title": "Pasteur Principal, Assemblée d'Etoudi",
-                        "bio": "En tant que pasteur principal de l'assemblée d'Etoudi et ..."
-                    },
-                    "1": {
-                        "name": "BAYIHA Cyrille",
-                        "title": "Adjoint du Pasteur Principal, Assemblée d'Etoudi",
-                        "bio": "En tant qu'adjoint du pasteur principal de l'assemblée d'Etoudi et ..."
-                    }
-                }
-            },
-            "technical": {
-                "title": "Équipe Technique",
-                "description": "Notre équipe technique est composée de membres participant à la réalisation concrète.",
-                "technical": {
-                    "0": {
-                        "name": "KONDON Minette",
-                        "title": "Porte Parole Cameroon du DDSEF",
-                        "bio": "En tant que responsable de la communication du Cameroun pour le DDSEF, je suis responsable de la supervision des stratégies de communication et de la mise en œuvre de ce projet"
-                    },
-                    "1": {
-                        "name": "ESSI Junior",
-                        "title": "Communicant, Assemblée d'Etoudi",
-                        "bio": "En tant qu'ingénieur logiciel, je travaille sur la transformation de l'idée du projet en un logiciel fonctionnel.."
-                    }
-                }
-            }
-        }
-    },
     "CTA": {
         "getStarted": "Commencer",
         "learnMore": "En savoir plus",
@@ -1066,100 +1025,12 @@
             "―",
             "Excel Avancé",
             "―"
-        ],
-        "footer": {
-            "0": "Le futur du Networking",
-            "1": "Networking",
-            "2": "Trouvez un expert aussi vite que vous sautez",
-            "3": "Recommandation de carte basée sur l'IA"
-        },
-        "about": {
-            "0": "Jean 3:3 - En vérité, en vérité, je vous le dis, si un homme ne naît de nouveau, il ne peut voir le royaume de Dieu."
-        },
-        "leaders": {
-            "0": "Apocalypse 20:15 - Quiconque n'était pas inscrit dans le livre de vie fut jeté dans l'étang de feu."
-        },
-        "com": {
-            "0": "Colossiens 4:7 - Tychicus vous donnera toutes les nouvelles à mon sujet. C'est un frère bien-aimé, un ministre fidèle et un compagnon de service dans le Seigneur"
-        }
+        ]
     },
     "NotFound": {
         "title": "Désolé, Page non trouvée",
         "description": "L'URL demandée est introuvable sur ce serveur. C'est tout ce que nous savons",
         "link": "Retour à l'accueil"
-    },
-    "Auth": {
-        "leftPanel": {
-            "0": "Se Connecter avec",
-            "1": "des experts",
-            "2": "proches de vous."
-        },
-        "common": {
-            "0": "Continuer avec",
-            "1": "ou"
-        },
-        "signin": {
-            "0": "Bienvenue à nouveau",
-            "1": "Connectez-vous à votre",
-            "2": "compte.",
-            "3": "Vous n'avez pas de compte?",
-            "4": "Créez-en un"
-        },
-        "signup": {
-            "0": "Bienvenue",
-            "1": "Créer un nouveau",
-            "2": "compte.",
-            "3": "Vous avez déjà un compte?",
-            "4": "Se connecter"
-        }
-    },
-    "Profile": {
-        "banner": {
-            "title": "MON PROFIL",
-            "hint": "Gérez votre profil"
-        },
-        "form": {
-            "photo": "Photo",
-            "identity": "Identité",
-            "personal": "Informations personnelles",
-            "social": "Informations sociales",
-            "name": "Nom",
-            "email": "Email",
-            "phone": "Téléphone",
-            "profession": "Proféssion",
-            "website": "Site Web",
-            "localization": "Localisation",
-            "localizationHint": "Commencez à taper une ville ou une adresse pour rechercher",
-            "assembly": "Assemblée",
-            "district": "Districte",
-            "experience": "Expérience",
-            "resume": "Curriculum Vitæ",
-            "placeholder": {
-                "photoSet": "Créez votre photo de profil",
-                "photoModify": "Modifiez votre photo de profil",
-                "name": "Entrez votre nom",
-                "email": "Entrez votre email",
-                "phone": "Entrez votre numéro de téléphone",
-                "profession": "Entrez votre proféssion",
-                "website": "Entrez l'URL de votre site web",
-                "localization": "Entrez votre localisation",
-                "assembly": "Entrez votre assemblée",
-                "district": "Entrez votre districte",
-                "experience": "Combien d'années d'expérience professionnelle avez-vous?",
-                "resume": "Glissez et déposez votre CV (PDF)",
-                "resumeUpload": "Importation du CV...",
-                "resumeDrop": "Déposez le CV ici"
-            }
-        },
-        "delete": {
-            "dangerZone": "Zone Dangereuse",
-            "description": "Supprimez définitivement votre compte et toutes les données associées. Cette action ne peut pas être annulée.",
-            "button": "Supprimer le Compte",
-            "title": "Supprimer Votre Compte",
-            "warning": "Cela supprimera définitivement votre compte et toutes les données associées.",
-            "irreversible": "Cette action est irréversible. Toutes vos informations de profil, projets et historique seront supprimés définitivement.",
-            "confirmationPrompt": "Tapez votre adresse e-mail pour confirmer:"
-        }
     },
     "Soon": {
         "title": "Construction en cours",

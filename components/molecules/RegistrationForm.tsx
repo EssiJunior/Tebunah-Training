@@ -9,7 +9,7 @@ import { useTranslations } from "next-intl"
 
 const RegistrationForm = ({ formation }: { formation: Formation }) => {
     const t = useTranslations("formations")
-    const tFormations = useTranslations("Formations")
+    const tF = useTranslations("Formation")
 
     const INITIAL: Registration = {
         name: '',
@@ -34,9 +34,9 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
 
     const validate = () => {
         const e: typeof errors = {}
-        if (!form.name.trim()) e.name = 'Champ requis'
-        if (!form.phone.trim()) e.phone = 'Champ requis'
-        if (form.email && !/\S+@\S+\.\S+/.test(form.email)) e.email = 'Email invalide'
+        if (!form.name.trim()) e.name = tF('form.validation.required')
+        if (!form.phone.trim()) e.phone = tF('form.validation.required')
+        if (form.email && !/\S+@\S+\.\S+/.test(form.email)) e.email = tF('form.validation.email')
         setErrors(e)
         return Object.keys(e).length === 0
     }
@@ -44,8 +44,7 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
     const handleSubmit = async () => {
         if (!validate()) return
         setStatus('sending')
-
-        await createRegistration(form, setStatus);
+        await createRegistration(form, setStatus)
     }
 
     const displayPrice = form.format === 'onsite'
@@ -58,15 +57,18 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
                 <div className="w-12 h-12 rounded-full bg-green-500/10 flex items-center justify-center text-green-400 text-2xl">
                     ✓
                 </div>
-                <p className="font-display text-[16px] font-bold text-ink">Pré-inscription initiée !</p>
+                <p className="font-display text-[16px] font-bold text-ink">
+                    {tF('form.success.title')}
+                </p>
                 <p className="font-mono text-[12px] text-white/40 max-w-xs leading-relaxed">
-                    Nous vous contacterons dans les 24h pour confirmer votre pré-inscription à <span className="text-white/60">{t(formation.id + ".title")}</span>.
+                    {tF('form.success.body')}{' '}
+                    <span className="text-white/60">{t(formation.id + ".title")}</span>.
                 </p>
                 <button
                     onClick={() => setStatus('idle')}
                     className="font-mono text-[11px] text-white/30 hover:text-white/50 mt-2 transition-colors"
                 >
-                    Soumettre une autre pré-inscription
+                    {tF('form.success.again')}
                 </button>
             </div>
         )
@@ -78,12 +80,12 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
             {/* Name + Phone */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Field
-                    label="Nom complet *"
+                    label={tF('form.fields.name')}
                     error={errors.name}
                     input={<input type="text" value={form.name} onChange={set('name')} placeholder="Ex : Essi Junior" />}
                 />
                 <Field
-                    label="Téléphone *"
+                    label={tF('form.fields.phone')}
                     error={errors.phone}
                     input={<input type="tel" value={form.phone} onChange={set('phone')} placeholder="6907437373" />}
                 />
@@ -91,7 +93,7 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
 
             {/* Email */}
             <Field
-                label="Email"
+                label={tF('form.fields.email')}
                 error={errors.email}
                 input={<input type="email" value={form.email} onChange={set('email')} placeholder="dev@essijunior.com" />}
             />
@@ -99,18 +101,16 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
             {/* Address + Level */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Field
-                    label="Adresse"
+                    label={tF('form.fields.address')}
                     input={<input type="text" value={form.address} onChange={set('address')} placeholder="Ex : Santa Barbara, Yaoundé" />}
                 />
                 <Field
-                    label="Niveau d'études"
+                    label={tF('form.fields.level')}
                     input={
                         <select value={form.academic_level} onChange={set('academic_level')}>
-                            {
-                                academicLevels.map(level => (
-                                    <option key={level} value={level}>{level}</option>
-                                ))
-                            }
+                            {academicLevels.map(level => (
+                                <option key={level} value={level}>{level}</option>
+                            ))}
                         </select>
                     }
                 />
@@ -119,7 +119,7 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
             {/* Format toggle */}
             <div className="flex flex-col gap-2">
                 <span className="font-mono text-[11px] text-white/30 uppercase tracking-widest">
-                    Format souhaité *
+                    {tF('form.fields.format')}
                 </span>
                 <div className="grid grid-cols-2 gap-3">
                     {formats.map(mode => (
@@ -138,7 +138,7 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
                             ].join(' ')}
                         >
                             <span className="font-mono text-[11px] text-white/50">
-                                {mode === 'onsite' ? '🏢 Présentiel' : '💻 En ligne'}
+                                {mode === 'onsite' ? `🏢 ${tF('form.format.onsiteLabel')}` : `💻 ${tF('form.format.onlineLabel')}`}
                             </span>
                             <span className={[
                                 'font-display text-[16px] font-extrabold',
@@ -147,18 +147,18 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
                                 {mode === 'onsite' ? formation.priceOnsiteLabel : formation.priceOnlineLabel}
                             </span>
                             <span className="font-mono text-[10px] text-white/25">
-                                {mode === 'onsite' ? 'Yaoundé · en salle' : 'Via Google Meet / Zoom'}
+                                {mode === 'onsite' ? tF('onsite') : tF('online')}
                             </span>
                         </button>
                     ))}
                 </div>
             </div>
 
-            {/* Session timing - only shown if onsite */}
+            {/* Session timing — onsite only */}
             {form.format === 'onsite' && (
                 <div className="flex flex-col gap-2">
                     <span className="font-mono text-[11px] text-white/30 uppercase tracking-widest">
-                        Créneau souhaité
+                        {tF('form.fields.session')}
                     </span>
                     <div className="grid grid-cols-2 gap-3">
                         {timeslots.map(session => (
@@ -173,13 +173,13 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
                                 ].join(' ')}
                             >
                                 <span className="font-mono text-[11px] text-white/50">
-                                    {session === 'journée' ? '☀️ Journée' : '🌙 Soirée'}
+                                    {session === 'journée' ? `☀️ ${tF('form.timeslot.morningLabel')}` : `🌙 ${tF('form.timeslot.eveningLabel')}`}
                                 </span>
                                 <span className={[
                                     'font-display text-[14px] font-extrabold',
                                     form.session === session ? 'text-accent' : 'text-white/60',
                                 ].join(' ')}>
-                                    {session === 'journée' ? '09:00 - 13:00' : '15:00 - 19:00'}
+                                    {session === 'journée' ? tF('form.timeslot.morningHours') : tF('form.timeslot.eveningHours')}
                                 </span>
                             </button>
                         ))}
@@ -189,13 +189,13 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
 
             {/* Message */}
             <Field
-                label="Message (optionnel)"
+                label={tF('form.fields.message')}
                 input={
                     <textarea
                         value={form.message}
                         onChange={set('message')}
                         rows={3}
-                        placeholder="Questions, contraintes horaires, besoins particuliers…"
+                        placeholder={tF('form.fields.messagePlaceholder')}
                         className="resize-none"
                     />
                 }
@@ -203,9 +203,10 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
 
             {/* Summary line */}
             <p className="font-mono text-[11px] text-white/25 leading-relaxed">
-                Pré-inscription à <span className="text-white/50">{t(formation.id + ".title")}</span>
+                {tF('form.summary.prefix')}{' '}
+                <span className="text-white/50">{t(formation.id + ".title")}</span>
                 {' · '}<span className="text-accent">{displayPrice}</span>
-                {' · '}{form.format === 'onsite' ? tFormations("onsite") : tFormations("online")}
+                {' · '}{form.format === 'onsite' ? tF('form.format.onsiteLabel') : tF('form.format.onlineLabel')}
             </p>
 
             {/* Registration fee notice */}
@@ -217,7 +218,9 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
             >
                 <span className="text-accent text-lg shrink-0">ℹ</span>
                 <p className="font-mono text-[11px] text-white/60 leading-relaxed whitespace-nowrap text-ellipsis overflow-hidden">
-                    Frais d&apos;inscription : <span className="text-accent font-semibold">5 000 FCFA</span> (Payable en cash ou via Orange money/MTN Money)
+                    {tF('form.fee.label')}{' '}
+                    <span className="text-accent font-semibold">{tF('form.fee.amount')}</span>
+                    {' '}{tF('form.fee.methods')}
                 </p>
             </motion.div>
 
@@ -232,12 +235,12 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
                         : 'bg-accent text-black hover:bg-accent/90 active:scale-[0.99]',
                 ].join(' ')}
             >
-                {status === 'sending' ? 'Envoi en cours…' : "Envoyer ma pré-inscription →"}
+                {status === 'sending' ? tF('form.submit.sending') : tF('form.submit.idle')}
             </button>
 
             {status === 'error' && (
                 <p className="font-mono text-[11px] text-red-400 text-center">
-                    Une erreur s&apos;est produite. Réessayez ou contactez-nous directement.
+                    {tF('form.error')}
                 </p>
             )}
         </div>

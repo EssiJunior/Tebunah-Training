@@ -186,7 +186,7 @@ export default function FormationDetail({
             {t("preenrole")}
           </h2>
           <p className="font-mono text-[12px] text-white/30 leading-relaxed">
-            {t("form")}
+            {t("form.description")}
           </p>
         </div>
 
