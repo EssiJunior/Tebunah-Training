@@ -55,7 +55,7 @@
         "bur1": {
             "title": "Bureautique Complet",
             "description": "Introduction generale + Word, Excel, PowerPoint — niveau opérationnel garanti en fin de formation + L'IA pour la bureautique",
-            "duration": "2 mois · 3j/sem",
+            "duration": "1,5 mois · 5j/sem",
             "hoursTotal": "80h",
             "target": "Lycéens · Demandeurs d'emploi · Salariés débutants",
             "prereq": "Aucun",
@@ -105,7 +105,7 @@
         "bur2": {
             "title": "Google Workspace",
             "description": "Gmail, Drive, Docs, Sheets, Slides, Forms, Calendar — collaborer efficacement et automatiser ses tâches avec les outils Google",
-            "duration": "2 mois · 3j/sem",
+            "duration": "1,5 mois · 5j/sem",
             "hoursTotal": "80h",
             "target": "Salariés · PME · Secrétaires",
             "prereq": "Notions PC de base",
@@ -155,7 +155,7 @@
         "bur3": {
             "title": "Excel Avancé & Tableaux de bord",
             "description": "Formules avancées, tableaux croisés dynamiques, graphiques, introduction à Power Query et Power Pivot pour créer des tableaux de bord interactifs",
-            "duration": "2 mois · 3j/sem",
+            "duration": "1,5 mois · 5j/sem",
             "hoursTotal": "80h",
             "target": "Contrôleurs de gestion · Chefs de projet",
             "prereq": "Excel de base ou équivalent",
@@ -205,7 +205,7 @@
         "dev1": {
             "title": "HTML/CSS/JS — Créer son site web",
             "description": "Fondamentaux du web, mise en page responsive, référencement SEO de base et déploiement de site",
-            "duration": "2 mois · 3j/sem",
+            "duration": "1,5 mois · 5j/sem",
             "hoursTotal": "80h",
             "target": "Étudiants · Débutants · Reconversion",
             "prereq": "Aucun",
@@ -255,7 +255,7 @@
         "dev2": {
             "title": "JavaScript Avancé — Interactivité & DOM",
             "description": "Logique de programmation, manipulation du DOM, formulaires interactifs",
-            "duration": "2 mois · 3j/sem",
+            "duration": "1,5 mois · 5j/sem",
             "hoursTotal": "80h",
             "target": "Étudiants · Reconversion pro",
             "prereq": "HTML/CSS de base",
@@ -305,7 +305,7 @@
         "dev3": {
             "title": "WordPress & Sites PME",
             "description": "Installation, thèmes, plugins WooCommerce, mise en ligne et référencement de base",
-            "duration": "2 mois · 3j/sem",
+            "duration": "1,5 mois · 5j/sem",
             "hoursTotal": "80h",
             "target": "PME · Artisans · Associations",
             "prereq": "Notions PC de base",
@@ -355,7 +355,7 @@
         "dev4": {
             "title": "React & Next.js — Apps modernes",
             "description": "Développement d'applications web modernes, performantes et déployables",
-            "duration": "2 mois · 3j/sem",
+            "duration": "1,5 mois · 5j/sem",
             "hoursTotal": "80h",
             "target": "Devs juniors · Freelances",
             "prereq": "JavaScript maîtrisé",
@@ -405,7 +405,7 @@
         "dev5": {
             "title": "Développement Mobile — React Native",
             "description": "Créer des applications Android et iOS avec une seule base de code",
-            "duration": "2 mois · 3j/sem",
+            "duration": "1,5 mois · 5j/sem",
             "hoursTotal": "80h",
             "target": "Devs intermédiaires",
             "prereq": "React ou JavaScript avancé",
@@ -455,7 +455,7 @@
         "ia1": {
             "title": "IA au quotidien — ChatGPT, Gemini, Claude...",
             "description": "Utiliser ChatGPT, Claude, Gemini et Copilot pour gagner du temps au travail",
-            "duration": "2 mois · 3j/sem",
+            "duration": "1,5 mois · 5j/sem",
             "hoursTotal": "80h",
             "target": "Tous publics · PME · Étudiants",
             "prereq": "Aucun",
@@ -505,7 +505,7 @@
         "ia2": {
             "title": "Prompt Engineering",
             "description": "Rédiger des prompts efficaces et automatiser ses tâches avec l'IA",
-            "duration": "2 mois · 3j/sem",
+            "duration": "1,5 mois · 5j/sem",
             "hoursTotal": "80h",
             "target": "Freelances · Managers · Étudiants",
             "prereq": "Avoir utilisé ChatGPT ou Claude",
@@ -555,7 +555,7 @@
         "ia3": {
             "title": "IA Générative pour le Marketing",
             "description": "Générer textes, visuels et vidéos pour ses réseaux sociaux et campagnes publicitaires",
-            "duration": "2 mois · 3j/sem",
+            "duration": "1,5 mois · 5j/sem",
             "hoursTotal": "80h",
             "target": "Commerçants · PME · Community managers",
             "prereq": "Réseaux sociaux de base",
@@ -605,7 +605,7 @@
         "ia4": {
             "title": "Développer avec l'IA — Cursor & Claude API",
             "description": "Coder plus vite avec Cursor, intégrer l'API Claude dans ses projets",
-            "duration": "2 mois · 3j/sem",
+            "duration": "1,5 mois · 5j/sem",
             "hoursTotal": "80h",
             "target": "Développeurs juniors · intermédiaires",
             "prereq": "JS ou Python de base",
@@ -655,7 +655,7 @@
         "ia5": {
             "title": "IA & Data — Python + Machine Learning",
             "description": "Scikit-learn, modèles de régression/classification, cas d'usage métier concrets",
-            "duration": "2 mois · 3j/sem",
+            "duration": "1,5 mois · 5j/sem",
             "hoursTotal": "80h",
             "target": "Ingénieurs · Data analysts",
             "prereq": "Python de base",
@@ -705,7 +705,7 @@
         "dat1": {
             "title": "Power BI — Initiation & Reporting",
             "description": "Connexion de données, visuels interactifs, partage et publication de rapports Power BI",
-            "duration": "2 mois · 3j/sem",
+            "duration": "1,5 mois · 5j/sem",
             "hoursTotal": "80h",
             "target": "Managers · Contrôleurs de gestion",
             "prereq": "Excel Pratique",
@@ -755,7 +755,7 @@
         "dat2": {
             "title": "SQL pour la Gestion & Analyse",
             "description": "Requêtes SQL, conception de bases de données, rapports automatisés",
-            "duration": "2 mois · 3j/sem",
+            "duration": "1,5 mois · 5j/sem",
             "hoursTotal": "80h",
             "target": "Comptables · Gestionnaires · Étudiants",
             "prereq": "Notions informatique de base",
@@ -805,7 +805,7 @@
         "dat3": {
             "title": "Python — Introduction & Automatisation",
             "description": "Automatisation de tâches, scripts utilitaires, initiation à l'analyse de données",
-            "duration": "2 mois · 3j/sem",
+            "duration": "1,5 mois · 5j/sem",
             "hoursTotal": "80h",
             "target": "Étudiants · Ingénieurs · Curieux du code",
             "prereq": "Logique de base",

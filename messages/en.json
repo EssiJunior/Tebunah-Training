@@ -55,7 +55,7 @@
         "bur1": {
             "title": "Complete Office Suite",
             "description": "General introduction + Word, Excel, PowerPoint — operational proficiency guaranteed by end of training + AI for office productivity",
-            "duration": "2 months · 3 days/week",
+            "duration": "1.5 month · 5 days/week",
             "hoursTotal": "80h",
             "target": "High school students · Job seekers · Entry-level employees",
             "prereq": "None",
@@ -105,7 +105,7 @@
         "bur2": {
             "title": "Google Workspace",
             "description": "Gmail, Drive, Docs, Sheets, Slides, Forms, Calendar — collaborate effectively and automate tasks with Google tools",
-            "duration": "2 months · 3 days/week",
+            "duration": "1.5 month · 5 days/week",
             "hoursTotal": "80h",
             "target": "Employees · SMEs · Secretaries",
             "prereq": "Basic PC skills",
@@ -155,7 +155,7 @@
         "bur3": {
             "title": "Advanced Excel & Dashboards",
             "description": "Advanced formulas, pivot tables, charts, introduction to Power Query and Power Pivot to create interactive dashboards",
-            "duration": "2 months · 3 days/week",
+            "duration": "1.5 month · 5 days/week",
             "hoursTotal": "80h",
             "target": "Management Controllers · Project Managers",
             "prereq": "Basic Excel or equivalent",
@@ -205,7 +205,7 @@
         "dev1": {
             "title": "HTML/CSS/JS — Build Your Website",
             "description": "Web fundamentals, responsive layout, basic SEO and site deployment",
-            "duration": "2 months · 3 days/week",
+            "duration": "1.5 month · 5 days/week",
             "hoursTotal": "80h",
             "target": "Students · Beginners · Career changers",
             "prereq": "None",
@@ -255,7 +255,7 @@
         "dev2": {
             "title": "Advanced JavaScript — Interactivity & DOM",
             "description": "Programming logic, DOM manipulation, interactive forms",
-            "duration": "2 months · 3 days/week",
+            "duration": "1.5 month · 5 days/week",
             "hoursTotal": "80h",
             "target": "Students · Career changers",
             "prereq": "Basic HTML/CSS",
@@ -305,7 +305,7 @@
         "dev3": {
             "title": "WordPress & SME Websites",
             "description": "Installation, themes, WooCommerce plugins, publishing and basic SEO",
-            "duration": "2 months · 3 days/week",
+            "duration": "1.5 month · 5 days/week",
             "hoursTotal": "80h",
             "target": "SMEs · Craftsmen · Associations",
             "prereq": "Basic PC skills",
@@ -355,7 +355,7 @@
         "dev4": {
             "title": "React & Next.js — Modern Apps",
             "description": "Building modern, performant and deployable web applications",
-            "duration": "2 months · 3 days/week",
+            "duration": "1.5 month · 5 days/week",
             "hoursTotal": "80h",
             "target": "Junior devs · Freelancers",
             "prereq": "Proficient in JavaScript",
@@ -405,7 +405,7 @@
         "dev5": {
             "title": "Mobile Development — React Native",
             "description": "Build Android and iOS applications from a single codebase",
-            "duration": "2 months · 3 days/week",
+            "duration": "1.5 month · 5 days/week",
             "hoursTotal": "80h",
             "target": "Intermediate developers",
             "prereq": "React or advanced JavaScript",
@@ -455,7 +455,7 @@
         "ia1": {
             "title": "AI for Daily Work — ChatGPT, Gemini, Claude...",
             "description": "Use ChatGPT, Claude, Gemini and Copilot to save time at work",
-            "duration": "2 months · 3 days/week",
+            "duration": "1.5 month · 5 days/week",
             "hoursTotal": "80h",
             "target": "General public · SMEs · Students",
             "prereq": "None",
@@ -505,7 +505,7 @@
         "ia2": {
             "title": "Prompt Engineering",
             "description": "Write effective prompts and automate tasks with AI",
-            "duration": "2 months · 3 days/week",
+            "duration": "1.5 month · 5 days/week",
             "hoursTotal": "80h",
             "target": "Freelancers · Managers · Students",
             "prereq": "Prior use of ChatGPT or Claude",
@@ -555,7 +555,7 @@
         "ia3": {
             "title": "Generative AI for Marketing",
             "description": "Generate text, visuals and videos for social media and advertising campaigns",
-            "duration": "2 months · 3 days/week",
+            "duration": "1.5 month · 5 days/week",
             "hoursTotal": "80h",
             "target": "Merchants · SMEs · Community managers",
             "prereq": "Basic social media usage",
@@ -605,7 +605,7 @@
         "ia4": {
             "title": "Develop with AI — Cursor & Claude API",
             "description": "Code faster with Cursor, integrate the Claude API into your projects",
-            "duration": "2 months · 3 days/week",
+            "duration": "1.5 month · 5 days/week",
             "hoursTotal": "80h",
             "target": "Junior · intermediate developers",
             "prereq": "Basic JS or Python",
@@ -655,7 +655,7 @@
         "ia5": {
             "title": "AI & Data — Python + Machine Learning",
             "description": "Scikit-learn, regression/classification models, concrete business use cases",
-            "duration": "2 months · 3 days/week",
+            "duration": "1.5 month · 5 days/week",
             "hoursTotal": "80h",
             "target": "Engineers · Data analysts",
             "prereq": "Basic Python",
@@ -705,7 +705,7 @@
         "dat1": {
             "title": "Power BI — Introduction & Reporting",
             "description": "Data connection, interactive visuals, sharing and publishing Power BI reports",
-            "duration": "2 months · 3 days/week",
+            "duration": "1.5 month · 5 days/week",
             "hoursTotal": "80h",
             "target": "Managers · Management Controllers",
             "prereq": "Practical Excel",
@@ -755,7 +755,7 @@
         "dat2": {
             "title": "SQL for Management & Analysis",
             "description": "SQL queries, database design, automated reports",
-            "duration": "2 months · 3 days/week",
+            "duration": "1.5 month · 5 days/week",
             "hoursTotal": "80h",
             "target": "Accountants · Managers · Students",
             "prereq": "Basic computer skills",
@@ -805,7 +805,7 @@
         "dat3": {
             "title": "Python — Introduction & Automation",
             "description": "Task automation, utility scripts, introduction to data analysis",
-            "duration": "2 months · 3 days/week",
+            "duration": "1.5 month · 5 days/week",
             "hoursTotal": "80h",
             "target": "Students · Engineers · Curious coders",
             "prereq": "Basic logic",
