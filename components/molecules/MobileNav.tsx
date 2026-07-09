@@ -1,5 +1,5 @@
 import { NAV_LINKS } from "@/data/navigation";
-import { AnimatePresence, motion } from "framer-motion"
+import { AnimatePresence, motion } from "motion/react"
 import { useTranslations } from "next-intl";
 
 function MobileNav({ open, onClose, go }: { open: boolean; onClose: () => void; go: (href: string) => (e: React.MouseEvent) => void }) {
