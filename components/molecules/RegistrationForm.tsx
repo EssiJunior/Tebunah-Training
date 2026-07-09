@@ -12,31 +12,46 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
     const tF = useTranslations("Formation")
 
     const INITIAL: Registration = {
-        name: '',
-        email: '',
-        phone: '',
-        address: '',
-        academic_level: academicLevels[0],
+        id: '',
+        student: {
+            id: '',
+            name: '',
+            email: '',
+            phone: '',
+            adress: '',
+            academicLevel: academicLevels[0],
+        },
+        formation: formation,
         format: 'onsite',
-        price: 0,
-        formation: t(formation.id + ".title"),
-        message: '',
+        price: formation.priceOnsite,
         session: timeslots[0],
+        message: '',
+        status: 'pending'
     }
 
     const [form, setForm] = useState<Registration>(INITIAL)
     const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
-    const [errors, setErrors] = useState<Partial<Record<keyof Registration, string>>>({})
+    const [errors, setErrors] = useState<Partial<Record<'name' | 'phone' | 'email', string>>>({})
 
-    const set = (k: keyof Registration) => (
+    const setStudentField = (k: keyof Student) => (
         e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+    ) => setForm(prev => ({
+        ...prev,
+        student: {
+            ...prev.student,
+            [k]: e.target.value
+        }
+    }))
+
+    const setRegField = (k: keyof Registration) => (
+        e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | any>
     ) => setForm(prev => ({ ...prev, [k]: e.target.value }))
 
     const validate = () => {
         const e: typeof errors = {}
-        if (!form.name.trim()) e.name = tF('form.validation.required')
-        if (!form.phone.trim()) e.phone = tF('form.validation.required')
-        if (form.email && !/\S+@\S+\.\S+/.test(form.email)) e.email = tF('form.validation.email')
+        if (!form.student.name.trim()) e.name = tF('form.validation.required')
+        if (!form.student.phone.trim()) e.phone = tF('form.validation.required')
+        if (form.student.email && !/\S+@\S+\.\S+/.test(form.student.email)) e.email = tF('form.validation.email')
         setErrors(e)
         return Object.keys(e).length === 0
     }
@@ -82,12 +97,12 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
                 <Field
                     label={tF('form.fields.name')}
                     error={errors.name}
-                    input={<input type="text" value={form.name} onChange={set('name')} placeholder="Ex : Essi Junior" />}
+                    input={<input type="text" value={form.student.name} onChange={setStudentField('name')} placeholder="Ex : Essi Junior" />}
                 />
                 <Field
                     label={tF('form.fields.phone')}
                     error={errors.phone}
-                    input={<input type="tel" value={form.phone} onChange={set('phone')} placeholder="6907437373" />}
+                    input={<input type="tel" value={form.student.phone} onChange={setStudentField('phone')} placeholder="6907437373" />}
                 />
             </div>
 
@@ -95,19 +110,19 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
             <Field
                 label={tF('form.fields.email')}
                 error={errors.email}
-                input={<input type="email" value={form.email} onChange={set('email')} placeholder="dev@essijunior.com" />}
+                input={<input type="email" value={form.student.email} onChange={setStudentField('email')} placeholder="dev@essijunior.com" />}
             />
 
             {/* Address + Level */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Field
                     label={tF('form.fields.address')}
-                    input={<input type="text" value={form.address} onChange={set('address')} placeholder="Ex : Santa Barbara, Yaoundé" />}
+                    input={<input type="text" value={form.student.adress} onChange={setStudentField('adress')} placeholder="Ex : Santa Barbara, Yaoundé" />}
                 />
                 <Field
                     label={tF('form.fields.level')}
                     input={
-                        <select value={form.academic_level} onChange={set('academic_level')}>
+                        <select value={form.student.academicLevel} onChange={setStudentField('academicLevel')}>
                             {academicLevels.map(level => (
                                 <option key={level} value={level}>{level}</option>
                             ))}
@@ -126,9 +141,12 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
                         <button
                             key={mode}
                             onClick={() => {
-                                setForm(prev => ({ ...prev, format: mode }))
-                                setForm(prev => ({ ...prev, price: mode === 'onsite' ? formation.priceOnsite : formation.priceOnline }))
-                                setForm(prev => ({ ...prev, session: mode === 'online' ? '' : timeslots[0] }))
+                                setForm(prev => ({
+                                    ...prev,
+                                    format: mode,
+                                    price: mode === 'onsite' ? formation.priceOnsite : formation.priceOnline,
+                                    session: mode === 'online' ? '' : timeslots[0]
+                                }))
                             }}
                             className={[
                                 'flex flex-col items-start gap-1 p-4 rounded border transition-all duration-150 text-left',
@@ -161,25 +179,25 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
                         {tF('form.fields.session')}
                     </span>
                     <div className="grid grid-cols-2 gap-3">
-                        {timeslots.map(session => (
+                        {timeslots.map(sess => (
                             <button
-                                key={session}
-                                onClick={() => setForm(prev => ({ ...prev, session }))}
+                                key={sess}
+                                onClick={() => setForm(prev => ({ ...prev, session: sess }))}
                                 className={[
                                     'flex flex-col items-start gap-1 p-4 rounded border transition-all duration-150 text-left',
-                                    form.session === session
+                                    form.session === sess
                                         ? 'border-accent/40 bg-accent/5'
                                         : 'border-white/8 bg-surface hover:border-white/15',
                                 ].join(' ')}
                             >
                                 <span className="font-mono text-[11px] text-white/50">
-                                    {session === 'journée' ? `☀️ ${tF('form.timeslot.morningLabel')}` : `🌙 ${tF('form.timeslot.eveningLabel')}`}
+                                    {sess === 'journée' ? `☀️ ${tF('form.timeslot.morningLabel')}` : `🌙 ${tF('form.timeslot.eveningLabel')}`}
                                 </span>
                                 <span className={[
                                     'font-display text-[14px] font-extrabold',
-                                    form.session === session ? 'text-accent' : 'text-white/60',
+                                    form.session === sess ? 'text-accent' : 'text-white/60',
                                 ].join(' ')}>
-                                    {session === 'journée' ? tF('form.timeslot.morningHours') : tF('form.timeslot.eveningHours')}
+                                    {sess === 'journée' ? tF('form.timeslot.morningHours') : tF('form.timeslot.eveningHours')}
                                 </span>
                             </button>
                         ))}
@@ -193,7 +211,7 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
                 input={
                     <textarea
                         value={form.message}
-                        onChange={set('message')}
+                        onChange={setRegField('message')}
                         rows={3}
                         placeholder={tF('form.fields.messagePlaceholder')}
                         className="resize-none"

@@ -6,14 +6,14 @@ export const createRegistration = async (
     setStatus: (arg: "error" | "sent" | "idle" | "sending") => void
 ) => {
     const data = {
-        "name": formData.name,
-        "email": formData.email,
-        "phone": formData.phone,
-        "address": formData.address,
-        "academic_level": formData.academic_level,
+        "name": formData.student.name,
+        "email": formData.student.email,
+        "phone": formData.student.phone,
+        "address": formData.student.adress,
+        "academic_level": formData.student.academicLevel,
         "format": formData.format,
         "price": formData.price,
-        "formation": formData.formation,
+        "formation": formData.formation.metaTitle,
         "message": formData.message,
         "session": formData.session
     }
@@ -56,9 +56,24 @@ export const updateRegistration = async (
     setError: (arg: string) => void
 ) => {
     setIsLoading(true);
-    formData.updated_at = new Date().toISOString();
+    const updatedAt = new Date().toISOString();
+    const token = formData.student.token || '';
 
-    const { token, ...data } = formData;
+    const data = {
+        "name": formData.student.name,
+        "email": formData.student.email,
+        "phone": formData.student.phone,
+        "address": formData.student.adress,
+        "academic_level": formData.student.academicLevel,
+        "format": formData.format,
+        "price": formData.price,
+        "formation": formData.formation.metaTitle,
+        "message": formData.message,
+        "session": formData.session,
+        "status": formData.status,
+        "updated_at": updatedAt
+    }
+
     try {
         const response = await fetch(`${API_URL}/registrations/id&${id}`, {
             method: "PUT",

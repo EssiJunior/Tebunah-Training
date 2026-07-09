@@ -27,6 +27,8 @@ type Formation = {
   // t(`${id}.prereq`)
 
   benefits: FormationBenefit[]
+  updated_at?: string
+  created_at?: string
 }
 
 type LogoProps = {
@@ -43,20 +45,27 @@ interface FAQ {
   question: string
   answer: string
 }
-
-interface Registration {
+type Student = {
+  id: string
   name: string
   email: string
   phone: string
-  address: string
-  academic_level: string
-  format: 'onsite' | 'online'
+  adress: string
+  academicLevel: string
+  token?: string
+  updated_at?: string
+  created_at?: string
+}
+
+interface Registration {
+  id: string
+  student: Student
+  formation: Formation
   price: number
-  formation: string
-  message: string
+  format: 'onsite' | 'online'
   session: string
+  message: string
   status?: string
   updated_at?: string
   created_at?: string
-  token?: string
 }
