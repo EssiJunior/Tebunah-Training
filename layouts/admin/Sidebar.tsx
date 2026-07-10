@@ -6,7 +6,7 @@ import { useAdmin } from "@/context/AdminContext"
 import { authUserActionsAtom, authUserAtom } from "@/store/auth/userAtoms"
 import { getInitials } from "@/utils/formatting"
 import { useAtomValue, useSetAtom } from "jotai"
-import { Book, BookOpenTextIcon, LayoutDashboard, LogOut, User, Users } from "lucide-react"
+import { Book, BookOpenTextIcon, File, LayoutDashboard, LogOut, Save, User, UserRoundPlus, Users } from "lucide-react"
 import { usePathname, useRouter } from "next/navigation"
 
 const SidebarHeader = () => {
@@ -61,8 +61,6 @@ const SidebarFooter = () => {
     )
 }
 const Sidebar = () => {
-    const { logout } = useAdmin()
-    const router = useRouter()
     const pathname = usePathname()
 
     const segments = pathname?.split('/') || []
@@ -82,7 +80,8 @@ const Sidebar = () => {
                             : 'text-white/40 hover:text-ink hover:bg-white/5 border border-transparent'
                             }`}
                     >
-                        <LayoutDashboard /> Tableaux de bord
+                        <LayoutDashboard size={pathname === `/${locale}/admin` || pathname === `/${locale}/admin/`
+                            ? 24 : 20} /> Tableaux de bord
                     </a>
                     <a
                         href={`/${locale}/admin/formations`}
@@ -91,7 +90,8 @@ const Sidebar = () => {
                             : 'text-white/40 hover:text-ink hover:bg-white/5 border border-transparent'
                             }`}
                     >
-                        <Book /> Formations
+                        <Book size={pathname?.includes('/admin/formations')
+                            ? 24 : 20} /> Formations
                     </a>
                     <a
                         href={`/${locale}/admin/students`}
@@ -100,7 +100,8 @@ const Sidebar = () => {
                             : 'text-white/40 hover:text-ink hover:bg-white/5 border border-transparent'
                             }`}
                     >
-                        <Users /> Étudiants
+                        <Users size={pathname?.includes('/admin/students')
+                            ? 24 : 20} /> Étudiants
                     </a>
                     <a
                         href={`/${locale}/admin/registrations`}
@@ -109,7 +110,8 @@ const Sidebar = () => {
                             : 'text-white/40 hover:text-ink hover:bg-white/5 border border-transparent'
                             }`}
                     >
-                        <BookOpenTextIcon /> Inscriptions
+                        <UserRoundPlus size={pathname?.includes('/admin/registrations')
+                            ? 24 : 20} /> Inscriptions
                     </a>
                 </nav>
             </div>
