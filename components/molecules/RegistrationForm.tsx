@@ -44,7 +44,7 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
     }))
 
     const setRegField = (k: keyof Registration) => (
-        e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement | any>
+        e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
     ) => setForm(prev => ({ ...prev, [k]: e.target.value }))
 
     const validate = () => {
