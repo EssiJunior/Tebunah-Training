@@ -1,10 +1,15 @@
 import { API_URL } from "@/utils/baseURL";
+import { Dispatch, SetStateAction } from "react";
 
 export const userSignIn = async (
+    dispatch: (arg: AuthUserAction) => void,
     formData: { email: string; password: string },
     setIsLoading: (arg: boolean) => void,
-    setMessage: (arg: string) => void,
-    setIsAuthenticated: (arg: boolean) => void
+    setAlert: Dispatch<SetStateAction<{
+        type: string;
+        tag: string;
+        message: string;
+    }>>
 ) => {
     console.log("Login data: ", formData);
     const data = new URLSearchParams();
@@ -23,19 +28,20 @@ export const userSignIn = async (
             body: data,
         });
 
-        const res = await response.json();
-
         if (!response.ok) {
-            setMessage(res.detail);
+            const errorData = await response.json();
+            throw new Error(errorData.detail || "Login failed");
         }
 
-        setMessage("")
-        getCurrentUser(res.access_token, setIsLoading, setIsAuthenticated);
+        const res = await response.json();
+
+        setAlert({ type: '', tag: '', message: '' })
+        getCurrentUser(res.access_token, dispatch, setIsLoading);
     } catch (error) {
         if (error instanceof Error) {
-            setMessage(error.message);
+            setAlert({ type: 'error', tag: '', message: error.message });
         } else {
-            setMessage("An error occurred");
+            setAlert({ type: 'error', tag: '', message: 'An error occurred' });
         }
         console.error("Login error:", error);
         setIsLoading(false);
@@ -44,8 +50,8 @@ export const userSignIn = async (
 
 export const getCurrentUser = async (
     token: string,
-    setIsLoading: (arg: boolean) => void,
-    setIsAuthenticated: (arg: boolean) => void
+    dispatch: (arg: AuthUserAction) => void,
+    setIsLoading: (arg: boolean) => void
 ) => {
     try {
         const response = await fetch(`${API_URL}/auth/current_user`, {
@@ -66,12 +72,12 @@ export const getCurrentUser = async (
         const { password, _id, id, ...safeUser } = user;
 
         console.log("User: ", safeUser);
-        localStorage.setItem('tebunah_admin_auth', safeUser)
-        setIsAuthenticated(true)
+        dispatch({
+            type: 'STORE',
+            payload: { user: safeUser, token: token },
+        });
     } catch (error) {
         console.error("getCurrentUser error:", error);
-        localStorage.removeItem('tebunah_admin_auth')
-        setIsAuthenticated(false)
     }
     finally {
         setIsLoading(false);
