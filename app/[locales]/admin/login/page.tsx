@@ -70,14 +70,6 @@ export default function AdminLoginPage() {
     }, 500)
   }
 
-  useEffect(() => {
-    if (user.user.email !== "") {
-      const segments = pathname?.split('/') || []
-      const locale = segments[1] || 'fr'
-      router.push(`/${locale}/admin`)
-    }
-  }, [user, pathname, router])
-
   return (
     <div className="min-h-screen bg-bg flex flex-col justify-center items-center px-4 relative overflow-hidden font-mono selection:bg-accent selection:text-bg">
       {/* Decorative background glow circles */}
