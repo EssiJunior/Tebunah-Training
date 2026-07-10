@@ -1,9 +1,8 @@
 @import "tailwindcss";
 
 :root {
-
   /* TYPO SCALE */
-  --h1-size: clamp(2.317rem, calc(1.830rem + 2.437vw), 3.962rem);
+  --h1-size: clamp(2.317rem, calc(1.83rem + 2.437vw), 3.962rem);
   --h1-weight: 900;
   --h1-line-height: 1.42;
   --h1-letter-spacing: 0.008em;
@@ -18,12 +17,12 @@
   --h3-line-height: 1.47;
   --h3-letter-spacing: 0.016em;
 
-  --h4-size: clamp(1.399rem, calc(1.300rem + 0.496vw), 1.734rem);
+  --h4-size: clamp(1.399rem, calc(1.3rem + 0.496vw), 1.734rem);
   --h4-weight: 600;
   --h4-line-height: 1.47;
   --h4-letter-spacing: 0.016em;
 
-  --h5-size: clamp(1.287rem, calc(1.220rem + 0.333vw), 1.511rem);
+  --h5-size: clamp(1.287rem, calc(1.22rem + 0.333vw), 1.511rem);
   --h5-weight: 500;
   --h5-line-height: 1.52;
   --h5-letter-spacing: 0.02em;
@@ -33,12 +32,12 @@
   --h6-line-height: 1.52;
   --h6-letter-spacing: 0.02em;
 
-  --body-xl-size: clamp(1.088rem, calc(1.070rem + 0.089vw), 1.148rem);
+  --body-xl-size: clamp(1.088rem, calc(1.07rem + 0.089vw), 1.148rem);
   --body-xl-weight: 400;
   --body-xl-line-height: 1.52;
   --body-xl-letter-spacing: 0.024em;
 
-  --body-size: clamp(1.000rem, calc(1.000rem + 0.000vw), 1.000rem);
+  --body-size: clamp(1rem, calc(1rem + 0vw), 1rem);
   --body-weight: 400;
   --body-line-height: 1.52;
   --body-letter-spacing: 0.024em;
@@ -55,10 +54,10 @@
   --color-surface2: #082742;
   --color-surface3: #17364a;
   --color-accent: #ffd250;
-  --color-ink: #F0EDE6;
+  --color-ink: #f0ede6;
   --color-line: rgba(255, 255, 255, 0.06);
-  --color-orange: #FF6B35;
-  --color-blue-ice: #4FACFE;
+  --color-orange: #ff6b35;
+  --color-blue-ice: #4facfe;
 
   --font-chonburi: "Chonburi", serif;
   --font-domine: "Domine", serif;
@@ -71,25 +70,24 @@
 }
 
 @keyframes shimmer {
-    0% {
-        background-position: -200% 0;
-    }
-    100% {
-        background-position: 200% 0;
-    }
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 @keyframes upwardPulse {
-    0% {
-        transform: translateY(5px);
-    }
-    100% {
-        transform: translateY(-5px);
-    }
+  0% {
+    transform: translateY(5px);
+  }
+  100% {
+    transform: translateY(-5px);
+  }
 }
 
 @keyframes blink {
-
   0%,
   100% {
     opacity: 1;
@@ -111,22 +109,23 @@
 }
 
 @keyframes ping {
-  75%, 100% {
+  75%,
+  100% {
     transform: scale(2);
     opacity: 0;
   }
 }
 
 @layer utilities {
-    .animate-shimmer {
-        animation: 2s infinite shimmer;
-    }
-    .animate-upwardPulse {
-        animation: 1.5s linear 0.5s infinite alternate upwardPulse;
-    }
-    .animate-ping {
-        animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
-    }
+  .animate-shimmer {
+    animation: 2s infinite shimmer;
+  }
+  .animate-upwardPulse {
+    animation: 1.5s linear 0.5s infinite alternate upwardPulse;
+  }
+  .animate-ping {
+    animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
 }
 
 /* ── Base ─────────────────────────────────────────── */
@@ -238,19 +237,24 @@ a {
   z-index: 9999;
   mix-blend-mode: difference;
   transform: translate(-50%, -50%);
-  transition: width .2s, height .2s;
+  transition:
+    width 0.2s,
+    height 0.2s;
 }
 
 .cursor-ring {
   position: fixed;
   width: 36px;
   height: 36px;
-  border: 1px solid rgba(255, 210, 45, .45);
+  border: 1px solid rgba(255, 210, 45, 0.45);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9998;
   transform: translate(-50%, -50%);
-  transition: width .3s ease, height .3s ease, border-color .3s ease;
+  transition:
+    width 0.3s ease,
+    height 0.3s ease,
+    border-color 0.3s ease;
 }
 
 .cursor-dot.hovering {
@@ -288,4 +292,26 @@ a {
 
 .marquee-track:hover {
   animation-play-state: paused;
+}
+
+/* ── Admin Dashboard Overrides ─────────────────────── */
+html.admin-mode,
+html.admin-mode body,
+html.admin-mode *,
+html.admin-mode button,
+html.admin-mode a,
+html.admin-mode input,
+html.admin-mode select,
+html.admin-mode textarea {
+  cursor: auto !important;
+}
+
+html.admin-mode a,
+html.admin-mode button,
+html.admin-mode select,
+html.admin-mode [role="button"],
+html.admin-mode input[type="submit"],
+html.admin-mode input[type="checkbox"],
+html.admin-mode input[type="radio"] {
+  cursor: pointer !important;
 }
