@@ -1,3 +1,9 @@
+type Alert = {
+  type: '' | 'error' | 'success' | 'warning' | 'info'
+  tag?: string
+  message: string
+}
+
 type Category = 'all' | 'ia' | 'dev' | 'data' | 'bureautique'
 
 type BenefitCategory = {
@@ -56,6 +62,22 @@ type Student = {
   updated_at?: string
   created_at?: string
 }
+
+type User = {
+  name: string,
+  email: string,
+  phone: string,
+  role: string
+}
+
+type AuthUser = {
+  token: string;
+  user: User;
+}
+
+type AuthUserAction =
+  | { type: 'STORE'; payload: AuthUser }
+  | { type: 'REMOVE' };
 
 interface Registration {
   id: string

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter, usePathname } from 'next/navigation'
 import { useAdmin } from '@/context/AdminContext'
 import Field from '@/components/atoms/Field'
@@ -8,56 +8,75 @@ import Logo from '@/components/atoms/Logo'
 import { AlertCircle } from 'lucide-react'
 import { motion } from 'motion/react'
 import Button from '@/components/atoms/Button'
+import { userSignIn } from '@/requests/auth'
+import { setTimeout } from 'timers'
+import { useAtomValue, useSetAtom } from 'jotai'
+import { authUserActionsAtom, authUserAtom } from '@/store/auth/userAtoms'
 
 export default function AdminLoginPage() {
-  const { login, message, setMessage } = useAdmin()
+  const dispatch = useSetAtom(authUserActionsAtom);
+  const user = useAtomValue(authUserAtom);
+
   const router = useRouter()
   const pathname = usePathname()
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-  const [error, setError] = useState('')
+
+  const [alert, setAlert] = useState({
+    type: '',
+    tag: '',
+    message: ''
+  })
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    setError('')
+    setAlert({
+      type: '',
+      tag: '',
+      message: ''
+    })
 
     if (!email || !password) {
       if (!email) {
-        setError('email')
-        setMessage('email is required')
+        setAlert({ type: 'error', tag: 'email', message: 'email is required' })
         return
       }
       if (!password) {
-        setError('password')
-        setMessage('password is required')
+        setAlert({ type: 'error', tag: 'password', message: 'password is required' })
         return
       }
     }
 
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-      setError('email')
-      setMessage('Format email invalide')
+      setAlert({
+        type: 'error',
+        tag: 'email',
+        message: 'Format email invalide'
+      })
       return
     }
 
     setIsSubmitting(true)
-    setMessage('')
-    setError('')
-    setTimeout(async () => {
-      const success = await login(email, password)
-      setIsSubmitting(false)
+    setAlert({
+      type: '',
+      tag: '',
+      message: ''
+    })
 
-      if (success) {
-        const segments = pathname?.split('/') || []
-        const locale = segments[1] || 'fr'
-        router.push(`/${locale}/admin`)
-      } else {
-        setError('An error occurred during login. Please try again later.')
-      }
+    setTimeout(() => {
+      userSignIn(dispatch, { email, password }, setIsSubmitting, setAlert);
     }, 500)
   }
+
+  useEffect(() => {
+    if (user.user.email !== "") {
+      const segments = pathname?.split('/') || []
+      const locale = segments[1] || 'fr'
+      router.push(`/${locale}/admin`)
+    }
+  }, [user, pathname, router])
 
   return (
     <div className="min-h-screen bg-bg flex flex-col justify-center items-center px-4 relative overflow-hidden font-mono selection:bg-accent selection:text-bg">
@@ -93,7 +112,7 @@ export default function AdminLoginPage() {
                 disabled={isSubmitting}
               />
             }
-            error={error === 'email' ? message : ''}
+            error={alert.type === 'error' && alert.tag === 'email' ? alert.message : ''}
           />
 
           <Field
@@ -108,17 +127,17 @@ export default function AdminLoginPage() {
                 disabled={isSubmitting}
               />
             }
-            error={error === 'password' ? message : ''}
+            error={alert.type === 'error' && alert.tag === 'password' ? alert.message : ''}
           />
 
           <div className="w-full mt-8">
-            {error == '' && message && <motion.p
+            {alert.type === 'error' && alert.tag === '' && alert.message && <motion.p
               initial={{ opacity: 0, y: -15 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
               className="flex items-center  gap-2 text-red-400 bg-red-400/10 px-2 py-1 mb-4 rounded-lg text-[13px] overflow-hidden text-ellipsis whitespace-nowrap">
               <AlertCircle size={16} />
-              {message}
+              {alert.message}
             </motion.p>}
             <Button
               type="submit"
