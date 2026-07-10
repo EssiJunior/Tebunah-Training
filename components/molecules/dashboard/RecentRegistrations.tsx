@@ -1,5 +1,5 @@
 import { useAdmin } from '@/context/AdminContext'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, MoveRight } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 import React from 'react'
 
@@ -21,7 +21,7 @@ const RecentRegistrations = () => {
                 <div className="flex items-center justify-between mb-6 pb-4 border-b border-white/6">
                     <h6 className="text-[14px] text-ink font-bold">Dernières Inscriptions</h6>
                     <a href={`/${locale}/admin/registrations`} className="text-[11px] text-accent hover:underline flex items-center gap-1">
-                        Voir toutes les inscriptions <ArrowRight size={20} />
+                        Voir toutes les inscriptions <MoveRight size={20} />
                     </a>
                 </div>
 

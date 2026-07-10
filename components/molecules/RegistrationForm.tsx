@@ -18,7 +18,7 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
             name: '',
             email: '',
             phone: '',
-            adress: '',
+            address: '',
             academicLevel: academicLevels[0],
         },
         formation: formation,
@@ -117,7 +117,7 @@ const RegistrationForm = ({ formation }: { formation: Formation }) => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <Field
                     label={tF('form.fields.address')}
-                    input={<input type="text" value={form.student.adress} onChange={setStudentField('adress')} placeholder="Ex : Santa Barbara, Yaoundé" />}
+                    input={<input type="text" value={form.student.address} onChange={setStudentField('address')} placeholder="Ex : Santa Barbara, Yaoundé" />}
                 />
                 <Field
                     label={tF('form.fields.level')}

@@ -18,7 +18,7 @@ export default function AdminStudentsPage() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [phone, setPhone] = useState('')
-  const [adress, setAdress] = useState('') // Matches schema spelling: 'adress'
+  const [address, setaddress] = useState('') // Matches schema spelling: 'address'
   const [academicLevel, setAcademicLevel] = useState(academicLevels[0])
 
   // Filter students
@@ -28,7 +28,7 @@ export default function AdminStudentsPage() {
       s.name.toLowerCase().includes(term) ||
       s.email.toLowerCase().includes(term) ||
       s.phone.toLowerCase().includes(term) ||
-      s.adress.toLowerCase().includes(term)
+      s.address.toLowerCase().includes(term)
     )
   })
 
@@ -37,7 +37,7 @@ export default function AdminStudentsPage() {
     setName('')
     setEmail('')
     setPhone('')
-    setAdress('')
+    setaddress('')
     setAcademicLevel(academicLevels[0])
     setIsAddModalOpen(true)
   }
@@ -47,7 +47,7 @@ export default function AdminStudentsPage() {
     setName(s.name)
     setEmail(s.email)
     setPhone(s.phone)
-    setAdress(s.adress)
+    setaddress(s.address)
     setAcademicLevel(s.academicLevel)
   }
 
@@ -59,7 +59,7 @@ export default function AdminStudentsPage() {
       name,
       email,
       phone,
-      adress,
+      address,
       academicLevel
     })
     setIsAddModalOpen(false)
@@ -73,7 +73,7 @@ export default function AdminStudentsPage() {
       name,
       email,
       phone,
-      adress,
+      address,
       academicLevel
     })
     setEditingStudent(null)
@@ -126,7 +126,7 @@ export default function AdminStudentsPage() {
                   <th className="px-6 py-4 font-normal">Nom complet</th>
                   <th className="px-6 py-4 font-normal">Email</th>
                   <th className="px-6 py-4 font-normal">Téléphone</th>
-                  <th className="px-6 py-4 font-normal">Adresse</th>
+                  <th className="px-6 py-4 font-normal">addresse</th>
                   <th className="px-6 py-4 font-normal">Niveau académique</th>
                   <th className="px-6 py-4 font-normal text-right">Actions</th>
                 </tr>
@@ -137,7 +137,7 @@ export default function AdminStudentsPage() {
                     <td className="px-6 py-3.5 font-bold text-ink">{student.name}</td>
                     <td className="px-6 py-3.5 font-semibold text-white/60">{student.email}</td>
                     <td className="px-6 py-3.5 text-white/60">{student.phone || '—'}</td>
-                    <td className="px-6 py-3.5 text-white/50">{student.adress || '—'}</td>
+                    <td className="px-6 py-3.5 text-white/50">{student.address || '—'}</td>
                     <td className="px-6 py-3.5 text-white/50">{student.academicLevel}</td>
                     <td className="px-6 py-3.5 text-right space-x-2">
                       <button
@@ -182,7 +182,7 @@ export default function AdminStudentsPage() {
               />
 
               <Field
-                label="Adresse Email"
+                label="addresse Email"
                 input={
                   <input
                     type="email"
@@ -225,12 +225,12 @@ export default function AdminStudentsPage() {
               </div>
 
               <Field
-                label="Adresse Physique"
+                label="addresse Physique"
                 input={
                   <input
                     type="text"
-                    value={adress}
-                    onChange={(e) => setAdress(e.target.value)}
+                    value={address}
+                    onChange={(e) => setaddress(e.target.value)}
                     placeholder="Ex: Bastos, Yaoundé"
                   />
                 }
@@ -276,7 +276,7 @@ export default function AdminStudentsPage() {
               />
 
               <Field
-                label="Adresse Email"
+                label="addresse Email"
                 input={
                   <input
                     type="email"
@@ -317,12 +317,12 @@ export default function AdminStudentsPage() {
               </div>
 
               <Field
-                label="Adresse Physique"
+                label="addresse Physique"
                 input={
                   <input
                     type="text"
-                    value={adress}
-                    onChange={(e) => setAdress(e.target.value)}
+                    value={address}
+                    onChange={(e) => setaddress(e.target.value)}
                   />
                 }
               />

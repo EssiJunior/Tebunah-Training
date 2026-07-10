@@ -92,7 +92,7 @@ export default function AdminLoginPage() {
         {/* Login form */}
         <form onSubmit={handleSubmit} className="space-y-5">
           <Field
-            label="Adresse Email"
+            label="addresse Email"
             input={
               <input
                 type="text"

@@ -56,7 +56,7 @@ type Student = {
   name: string
   email: string
   phone: string
-  adress: string
+  address: string
   academicLevel: string
   token?: string
   updated_at?: string
@@ -91,3 +91,8 @@ interface Registration {
   updated_at?: string
   created_at?: string
 }
+
+
+type RegistrationsAction =
+  | { type: 'STORE'; payload: Registration[] }
+  | { type: 'REMOVE' };

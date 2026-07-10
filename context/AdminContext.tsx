@@ -43,7 +43,7 @@ const MOCK_STUDENTS: Student[] = [
     name: 'Essi Junior',
     email: 'dev@essijunior.com',
     phone: '+237 690 74 37 37',
-    adress: 'Santa Barbara, Yaoundé',
+    address: 'Santa Barbara, Yaoundé',
     academicLevel: 'BTS / DUT'
   },
   {
@@ -51,7 +51,7 @@ const MOCK_STUDENTS: Student[] = [
     name: 'Marc Kamga',
     email: 'marc.kamga@gmail.com',
     phone: '+237 677 88 99 00',
-    adress: 'Bastos, Yaoundé',
+    address: 'Bastos, Yaoundé',
     academicLevel: 'Licence'
   },
   {
@@ -59,7 +59,7 @@ const MOCK_STUDENTS: Student[] = [
     name: 'Florence Ngo',
     email: 'florence.ngo@outlook.com',
     phone: '+237 655 44 33 22',
-    adress: 'Bonapriso, Douala',
+    address: 'Bonapriso, Douala',
     academicLevel: 'Master'
   },
   {
@@ -67,7 +67,7 @@ const MOCK_STUDENTS: Student[] = [
     name: 'Jean Dupont',
     email: 'jean.dupont@yahoo.fr',
     phone: '+237 688 11 22 33',
-    adress: 'Mvan, Yaoundé',
+    address: 'Mvan, Yaoundé',
     academicLevel: 'Lycée / Baccalauréat'
   }
 ]
