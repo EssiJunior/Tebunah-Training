@@ -112,7 +112,6 @@ export default function Nav() {
               ))}
             </div>
 
-            {/* Language toggle */}
             <ToggleLanguages />
 
             {/* CTA — desktop */}
