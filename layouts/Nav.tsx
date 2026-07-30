@@ -82,7 +82,7 @@ export default function Nav() {
           <div className="flex items-center gap-3">
             {/* Desktop links */}
             <div className="hidden md:flex items-center gap-1 border border-white/10 bg-white/5 backdrop-blur-xl shadow-lg shadow-black/20">
-              {NAV_LINKS.map((link) => (
+              {NAV_LINKS.map((link: NavLink) => (
                 <div key={link.label} className="relative"
                   onMouseEnter={() => link.sub && openDropdown(link.label)}
                   onMouseLeave={() => link.sub && closeDropdown()}

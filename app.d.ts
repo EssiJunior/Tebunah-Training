@@ -96,3 +96,11 @@ interface Registration {
 type RegistrationsAction =
   | { type: 'STORE'; payload: Registration[] }
   | { type: 'REMOVE' };
+
+
+interface NavLink {
+  label: string
+  href: string
+  sub?: (NavLink & { quantity?: number })[] | null
+  tag?: string
+}

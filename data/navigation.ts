@@ -1,11 +1,5 @@
 import { CATEGORIES } from "./formations"
 
-export interface NavLink {
-  label: string
-  href: string
-  sub?: (NavLink & { quantity?: number })[] | null
-  tag?: string
-}
 
 export const NAV_LINKS: NavLink[] = [
   {
