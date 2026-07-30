@@ -3,6 +3,12 @@
 import { useState } from 'react'
 import { useAdmin } from '@/context/AdminContext'
 import Field from '@/components/atoms/Field'
+import AvailabiliteNow from '@/components/atoms/status/AvailabiliteNow'
+import AvailableSoon from '@/components/atoms/status/AvailableSoon'
+import Popular from '@/components/atoms/status/Popular'
+import Category from '@/components/atoms/status/Category'
+import Tooltip from '@/components/atoms/Animated/Tooltip'
+import { Pencil, Trash } from 'lucide-react'
 
 export default function AdminFormationsPage() {
   const { formations, addFormation, updateFormation, deleteFormation } = useAdmin()
@@ -111,10 +117,10 @@ export default function AdminFormationsPage() {
 
   return (
     <div className="space-y-6 font-mono">
-      
+
       {/* Header controls */}
       <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 bg-surface p-4 border border-white/6 rounded-px">
-        
+
         {/* Left Side: Search + Filter */}
         <div className="flex flex-1 flex-col sm:flex-row gap-3">
           <input
@@ -160,29 +166,12 @@ export default function AdminFormationsPage() {
               className="border border-white/6 bg-surface p-6 rounded-px flex flex-col justify-between hover:border-accent/20 transition-all duration-200"
             >
               <div>
-                <div className="flex items-center justify-between mb-3 text-[10px]">
-                  <span className="bg-white/5 border border-white/10 px-2 py-0.5 rounded text-white/50">
-                    {categoryNames[formation.category]}
-                  </span>
-                  
-                  {/* Status Badges */}
-                  <div className="flex gap-2">
-                    {formation.featured && (
-                      <span className="bg-accent/15 border border-accent/35 text-accent px-2 py-0.5 rounded text-[9px] uppercase font-bold">
-                        Populaire
-                      </span>
-                    )}
-                    <span
-                      className={`px-2 py-0.5 rounded text-[9px] uppercase font-bold ${
-                        formation.availableNow
-                          ? 'bg-green-500/10 border border-green-500/20 text-green-400'
-                          : 'bg-yellow-500/10 border border-yellow-500/20 text-yellow-400'
-                      }`}
-                    >
-                      {formation.availableNow ? 'Disponible' : 'Bientôt'}
-                    </span>
-                  </div>
+                <div className="flex items-center justify-between mb-1 text-[10px]">
+                  <Category category={formation.category} />
+
+                  {formation.availableNow ? <AvailabiliteNow /> : <AvailableSoon />}
                 </div>
+                {formation.featured ? <Popular className="block w-fit mb-3" /> : <div className='mb-3' />}
 
                 <h3 className="font-chonburi text-[14px] text-ink font-bold leading-snug mb-2">
                   {formation.metaTitle}
@@ -197,28 +186,33 @@ export default function AdminFormationsPage() {
                 <div className="grid grid-cols-2 gap-4 text-[11px]">
                   <div>
                     <span className="text-white/30 text-[10px] block">Présentiel</span>
-                    <span className="text-white/70 font-semibold">{formation.priceOnsiteLabel}</span>
+                    <span className="text-accent font-semibold">{formation.priceOnsiteLabel}</span>
                   </div>
                   <div>
                     <span className="text-white/30 text-[10px] block">En Ligne</span>
-                    <span className="text-white/70 font-semibold">{formation.priceOnlineLabel}</span>
+                    <span className="text-accent font-semibold">{formation.priceOnlineLabel}</span>
                   </div>
                 </div>
 
                 {/* Operations buttons */}
                 <div className="flex gap-2 justify-end pt-2">
-                  <button
-                    onClick={() => handleOpenEdit(formation)}
-                    className="px-2.5 py-1.5 border border-white/10 hover:border-white/20 hover:bg-white/5 text-white/70 rounded text-[10px] transition-colors"
-                  >
-                    ✏️ Modifier
-                  </button>
-                  <button
-                    onClick={() => setDeletingId(formation.id)}
-                    className="px-2.5 py-1.5 border border-red-500/20 hover:border-red-500/40 bg-red-500/5 hover:bg-red-500/10 text-red-400 rounded text-[10px] transition-colors"
-                  >
-                    🗑️ Supprimer
-                  </button>
+                  <Tooltip label="Modifier">
+                    <button
+                      onClick={() => handleOpenEdit(formation)}
+                      className="px-2.5 py-1.5 border border-cyan-400/10! hover:border-cyan-400/20! hover:bg-cyan-400/5! text-cyan-400/70! rounded text-[10px] transition-colors"
+                    >
+                      <Pencil size={18} />
+                    </button>
+                  </Tooltip>
+
+                  <Tooltip label="Supprimer">
+                    <button
+                      onClick={() => setDeletingId(formation.id)}
+                      className="px-2.5 py-1.5 border border-red-500/20 hover:border-red-500/40 bg-red-500/5 hover:bg-red-500/10 text-red-400 rounded text-[10px] transition-colors"
+                    >
+                      <Trash size={18} />
+                    </button>
+                  </Tooltip>
                 </div>
               </div>
             </div>
@@ -231,7 +225,7 @@ export default function AdminFormationsPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
           <div className="w-full max-w-lg border border-white/6 bg-surface p-6 rounded shadow-2xl overflow-y-auto max-h-[90vh]">
             <h2 className="font-chonburi text-[15px] font-bold text-accent mb-6">Ajouter une formation</h2>
-            
+
             <form onSubmit={handleSaveAdd} className="space-y-4">
               <Field
                 label="Titre Meta (Titre principal)"
@@ -347,7 +341,7 @@ export default function AdminFormationsPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4">
           <div className="w-full max-w-lg border border-white/6 bg-surface p-6 rounded shadow-2xl overflow-y-auto max-h-[90vh]">
             <h2 className="font-chonburi text-[15px] font-bold text-accent mb-6">Modifier la formation</h2>
-            
+
             <form onSubmit={handleSaveEdit} className="space-y-4">
               <Field
                 label="Titre Meta (Titre principal)"
