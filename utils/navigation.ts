@@ -15,16 +15,19 @@ const createGoHandler = (router: ReturnType<typeof useRouter>, setActive?: (cate
         // Use #formations as the scroll target if it is a category sub-link
         const scrollTarget = href.startsWith('#formations-') ? '#formations' : href
         
-        // Check if target element exists on current page
+        const currentPath = typeof window !== 'undefined' ? window.location.pathname : '/'
+        const segments = currentPath.split('/')
+        const locale = segments[1] || 'fr'
+        const homePath = `/${locale}`
         const target = document.querySelector(scrollTarget)
-        const isNotOnHomePage = typeof window !== 'undefined' && window.location.pathname !== '/'
+        const isNotOnHomePage = currentPath !== homePath
         
         if (target) {
             // Element exists on current page, just scroll
             target.scrollIntoView({ behavior: 'smooth' })
         } else if (isNotOnHomePage) {
-            // We're on another page, navigate to home first
-            router.push('/')
+            // We're on another page, navigate to locale-aware home first
+            router.push(`${homePath}${href.startsWith('#') ? href : ''}`)
             // Wait for navigation and element to appear
             setTimeout(() => {
                 const element = document.querySelector(scrollTarget)

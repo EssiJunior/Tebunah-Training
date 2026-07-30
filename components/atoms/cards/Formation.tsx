@@ -3,8 +3,13 @@
 import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { CATEGORY_COLORS } from "@/data/formations";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import Button from "../Button";
+
+import AvailabiliteNow from "../status/AvailabiliteNow";
+import AvailableSoon from "../status/AvailableSoon";
+import Popular from "../status/Popular";
+import Category from "../status/Category";
 
 const Formation = ({ f, index }: { f: Formation; index: number }) => {
     const t = useTranslations('Formations')
@@ -25,6 +30,7 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
         })
     }
 
+    const locale = useLocale()
     const displayPrice = mode === 'onsite' ? f.priceOnsiteLabel : f.priceOnlineLabel
 
     return (
@@ -67,33 +73,17 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
                 {/* Tag row */}
                 <div className="flex items-center justify-between gap-2 flex-wrap">
                     <div className="flex items-center justify-between w-full gap-2">
-                        <span
-                            className="text-[10px] tracking-[0.12em] uppercase"
-                            style={{ color: CATEGORY_COLORS[f.category] }}
-                        >
-                            {t(`categories.${f.category}`)}
-                        </span>
+                        <Category category={f.category} />
+
                         {f.availableNow ? (
-                            <div className="relative flex items-center gap-2">
-                                <span className="absolute -top-1 -right-1 flex h-2 w-2">
-                                    <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                    <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-                                </span>
-                                <span className="text-[9px] px-2 py-0.5 rounded-px tracking-widest border border-green-500/30 text-green-400">
-                                    {t('statusAvailable')}
-                                </span>
-                            </div>
+                            <AvailabiliteNow />
                         ) : (
-                            <span className="text-[9px] px-2 py-0.5 rounded-px tracking-widest border border-white/10 text-white/30">
-                                {t('statusSoon')}
-                            </span>
+                            <AvailableSoon />
                         )}
                     </div>
                     <div className="flex items-center gap-1.5">
                         {f.featured && (
-                            <span className="text-[9px] bg-accent/10 text-accent px-2 py-0.5 rounded-px tracking-widest">
-                                {t('featured')}
-                            </span>
+                            <Popular />
                         )}
                     </div>
                 </div>
@@ -151,7 +141,7 @@ const Formation = ({ f, index }: { f: Formation; index: number }) => {
                     </div>
                     <Button className={`h-full transition-colors duration-200 ease-in ${hovered ? 'bg-accent text-bg' : 'bg-transparent text-white/40'}`}>
                         <motion.a
-                            href={`/formations/${f.id}`}
+                            href={`/${locale}/formations/${f.id}`}
                             animate={{ x: hovered ? 4 : 0 }}
                             className="text-sm transition-colors w-full h-full flex justify-center items-center"
                         >
