@@ -1,19 +1,27 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useAdmin } from '@/context/AdminContext'
 import Field from '@/components/atoms/Field'
 import { timeslots } from '@/utils/form'
+import { getRegistrations } from '@/requests/registrations'
+import { useAtomValue, useSetAtom } from 'jotai'
+import { registrationsActionsAtom, registrationsAtom } from '@/store/data/registrationAtoms'
 
 export default function AdminRegistrationsPage() {
   const {
-    registrations,
     students,
     formations,
     addRegistration,
     updateRegistration,
     deleteRegistration
   } = useAdmin()
+
+  const dispatch = useSetAtom(registrationsActionsAtom);
+  const registrations = useAtomValue(registrationsAtom);
+  
+  const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const [searchTerm, setSearchTerm] = useState('')
   const [statusFilter, setStatusFilter] = useState('all')
@@ -44,7 +52,7 @@ export default function AdminRegistrationsPage() {
     const matchesSearch =
       reg.student.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       reg.student.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      reg.formations.metaTitle.toLowerCase().includes(searchTerm.toLowerCase())
+      reg.formation.title.toLowerCase().includes(searchTerm.toLowerCase())
 
     const matchesStatus = statusFilter === 'all' || reg.status === statusFilter
     return matchesSearch && matchesStatus
@@ -137,6 +145,11 @@ export default function AdminRegistrationsPage() {
       setDeletingId(null)
     }
   }
+
+  useEffect(() => {
+    getRegistrations(dispatch, setIsLoading, setError)
+
+  }, [dispatch])
 
   return (
     <div className="space-y-6 font-mono">

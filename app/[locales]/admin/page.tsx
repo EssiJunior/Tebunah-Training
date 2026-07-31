@@ -31,7 +31,7 @@ export default function AdminDashboardPage() {
   const confirmedCount = registrations.filter(r => r.status === 'confirmed').length
   const cancelledCount = registrations.filter(r => r.status === 'cancelled').length
 
-  const categoryOrder: Array<keyof typeof CATEGORY_COLORS> = ['bureautique', 'dev', 'ia', 'data']
+  const categoryOrder: Array<keyof typeof CATEGORY_COLORS> = ['office', 'dev', 'ia', 'data']
   const donutSegments = categoryOrder
     .map(cat => ({
       label: cat,

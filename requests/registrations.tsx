@@ -106,6 +106,7 @@ export const updateRegistration = async (
 };
 
 export const getRegistrations = async (
+    dispatch: (arg: RegistrationsAction) => void,
     setIsLoading: (arg: boolean) => void,
     setError: (arg: string) => void
 ) => {
@@ -127,7 +128,10 @@ export const getRegistrations = async (
         const result = await response.json();
 
         console.log("Registrations: ", result)
-
+        dispatch({
+            type: 'STORE',
+            payload: result,
+        });
     } catch (error) {
         if (error instanceof Error) {
             setError(error.message);

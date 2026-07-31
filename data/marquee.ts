@@ -5,7 +5,7 @@ export const MARQUEE_ITEMS = [
   '―',
   'Data & Analyse',
   '―',
-  'Bureautique',
+  'office',
   '―',
   'Power BI',
   '―',

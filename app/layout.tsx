@@ -24,7 +24,7 @@ const domine = Domine({
 
 export const metadata: Metadata = {
   title: "Tebunah Training - Formations en Informatique",
-  description: "Tebunah Training propose des formations pratiques en développement web, Intelligence Artificielle, outils bureautiques (...etc), animées par des experts passionnés. Découvrez notre catalogue et boostez vos compétences IT dès aujourd'hui !",
+  description: "Tebunah Training propose des formations pratiques en développement web, Intelligence Artificielle, outils offices (...etc), animées par des experts passionnés. Découvrez notre catalogue et boostez vos compétences IT dès aujourd'hui !",
 };
 
 export default async function RootLayout({

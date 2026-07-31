@@ -23,7 +23,7 @@ export default function AdminFormationsPage() {
   // Form states
   const [metaTitle, setMetaTitle] = useState('')
   const [metaDescription, setMetaDescription] = useState('')
-  const [category, setCategory] = useState<'bureautique' | 'dev' | 'ia' | 'data'>('dev')
+  const [category, setCategory] = useState<'office' | 'dev' | 'ia' | 'data'>('dev')
   const [priceOnsite, setPriceOnsite] = useState(60000)
   const [priceOnline, setPriceOnline] = useState(45000)
   const [availableNow, setAvailableNow] = useState(true)
@@ -109,7 +109,7 @@ export default function AdminFormationsPage() {
   }
 
   const categoryNames: Record<string, string> = {
-    bureautique: 'Bureautique',
+    office: 'office',
     dev: 'Web & Mobile',
     ia: 'Intelligence Artificielle',
     data: 'Data & SQL'
@@ -137,7 +137,7 @@ export default function AdminFormationsPage() {
             className="bg-surface2 border border-white/6 px-3 py-2 rounded text-[11px] outline-none text-ink"
           >
             <option value="all">Toutes les catégories</option>
-            <option value="bureautique">Bureautique</option>
+            <option value="office">office</option>
             <option value="dev">Web & Mobile</option>
             <option value="ia">Intelligence Artificielle</option>
             <option value="data">Data & SQL</option>
@@ -261,7 +261,7 @@ export default function AdminFormationsPage() {
                       value={category}
                       onChange={(e) => setCategory(e.target.value as any)}
                     >
-                      <option value="bureautique">Bureautique</option>
+                      <option value="office">office</option>
                       <option value="dev">Web & Mobile</option>
                       <option value="ia">Intelligence Artificielle</option>
                       <option value="data">Data & SQL</option>
@@ -375,7 +375,7 @@ export default function AdminFormationsPage() {
                       value={category}
                       onChange={(e) => setCategory(e.target.value as any)}
                     >
-                      <option value="bureautique">Bureautique</option>
+                      <option value="office">office</option>
                       <option value="dev">Web & Mobile</option>
                       <option value="ia">Intelligence Artificielle</option>
                       <option value="data">Data & SQL</option>

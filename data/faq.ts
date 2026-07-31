@@ -13,7 +13,7 @@ export const FAQS: FAQ[] = [
   },
   {
     question: "Faut-il déjà avoir des bases en informatique ?",
-    answer: "Chaque formation indique clairement ses prérequis. Certaines partent de zéro (Bureautique, HTML/CSS, IA au quotidien). D'autres supposent des bases (React, Python ML). Contactez-nous si vous avez un doute.",
+    answer: "Chaque formation indique clairement ses prérequis. Certaines partent de zéro (office, HTML/CSS, IA au quotidien). D'autres supposent des bases (React, Python ML). Contactez-nous si vous avez un doute.",
   },
   {
     question: "Peut-on organiser une formation en intra-entreprise ?",

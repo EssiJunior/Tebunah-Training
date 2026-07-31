@@ -4,7 +4,7 @@ type Alert = {
   message: string
 }
 
-type Category = 'all' | 'ia' | 'dev' | 'data' | 'bureautique'
+type Category = 'all' | 'ia' | 'dev' | 'data' | 'office'
 
 type BenefitCategory = {
   icon: string
@@ -14,7 +14,7 @@ type Formation = {
   id: string
   metaTitle: string
   metaDescription: string
-  category: 'bureautique' | 'dev' | 'ia' | 'data'
+  category: 'office' | 'dev' | 'ia' | 'data'
 
   // Static (locale-independent)
   priceOnsite: number
@@ -77,6 +77,10 @@ type AuthUser = {
 
 type AuthUserAction =
   | { type: 'STORE'; payload: AuthUser }
+  | { type: 'REMOVE' };
+  
+type RegistrationsAction =
+  | { type: 'STORE'; payload: Registration[] }
   | { type: 'REMOVE' };
 
 interface Registration {

@@ -39,7 +39,7 @@
         "availableNowSuffix": " · disponibles maintenant",
         "categories": {
             "all": "Toutes",
-            "bureautique": "Bureautique",
+            "office": "office",
             "dev": "Web & Mobile",
             "ia": "Intelligence Artificielle",
             "data": "Data & SQL"
@@ -53,8 +53,8 @@
     },
     "formations": {
         "bur1": {
-            "title": "Bureautique Complet",
-            "description": "Introduction generale + Word, Excel, PowerPoint — niveau opérationnel garanti en fin de formation + L'IA pour la bureautique",
+            "title": "office Complet",
+            "description": "Introduction generale + Word, Excel, PowerPoint — niveau opérationnel garanti en fin de formation + L'IA pour la office",
             "duration": "1,5 mois · 5j/sem",
             "hoursTotal": "80h",
             "target": "Lycéens · Demandeurs d'emploi · Salariés débutants",
@@ -76,7 +76,7 @@
                         "Rédiger des rapports, CV et lettres de qualité professionnelle",
                         "Créer des tableaux de bord (budget, stock, planning)",
                         "Préparer des présentations pour réunions et soutenances",
-                        "Utiliser l'IA pour accélérer les tâches bureautiques quotidiennes",
+                        "Utiliser l'IA pour accélérer les tâches offices quotidiennes",
                         "Compétence directement valorisable sur un CV"
                     ]
                 },
@@ -943,7 +943,7 @@
             },
             {
                 "question": "Faut-il déjà avoir des bases en informatique ?",
-                "answer": "Chaque formation indique clairement ses prérequis. Certaines partent de zéro (Bureautique, HTML/CSS, IA au quotidien). D'autres supposent des bases (React, Python ML). Contactez-nous si vous avez un doute."
+                "answer": "Chaque formation indique clairement ses prérequis. Certaines partent de zéro (office, HTML/CSS, IA au quotidien). D'autres supposent des bases (React, Python ML). Contactez-nous si vous avez un doute."
             },
             {
                 "question": "Peut-on organiser une formation en intra-entreprise ?",
@@ -1011,7 +1011,7 @@
             "―",
             "Data & Analyse",
             "―",
-            "Bureautique",
+            "office",
             "―",
             "Power BI",
             "―",

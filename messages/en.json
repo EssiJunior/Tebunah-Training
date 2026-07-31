@@ -39,7 +39,7 @@
         "availableNowSuffix": " · available now",
         "categories": {
             "all": "All",
-            "bureautique": "Office & Workspace",
+            "office": "Office & Workspace",
             "dev": "Web & Mobile",
             "ia": "Artificial Intelligence",
             "data": "Data & SQL"

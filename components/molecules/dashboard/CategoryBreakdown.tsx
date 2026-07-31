@@ -4,7 +4,7 @@ const CategoryBreakdown = () => {
     const totalRegistrations = 10
 
     const categoryColors: Record<string, string> = {
-        bureautique: 'bg-pink-500',
+        office: 'bg-pink-500',
         dev: 'bg-green-500',
         ia: 'bg-blue-400',
         data: 'bg-yellow-400'

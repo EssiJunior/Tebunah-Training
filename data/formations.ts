@@ -12,12 +12,12 @@ export type FormationBenefit = {
 
 export const formations: Formation[] = [
 
-  // ── BUREAUTIQUE ───────────────────────────────────────────────────────────
+  // ── office ───────────────────────────────────────────────────────────
   {
     id: 'bur1',
     metaTitle: 'Complete Office Suite',
     metaDescription: 'General introduction + Word, Excel, PowerPoint — operational proficiency guaranteed by end of training + AI for office productivity',
-    category: 'bureautique',
+    category: 'office',
     priceOnsite: 60000,
     priceOnsiteLabel: '60 000 FCFA',
     priceOnline: 45000,
@@ -36,7 +36,7 @@ export const formations: Formation[] = [
     id: 'bur2',
     metaTitle: "Google Workspace",
     metaDescription: "Gmail, Drive, Docs, Sheets, Slides, Forms, Calendar — collaborate effectively and automate tasks with Google tools",
-    category: 'bureautique',
+    category: 'office',
     priceOnsite: 60000,
     priceOnsiteLabel: '60 000 FCFA',
     priceOnline: 45000,
@@ -55,7 +55,7 @@ export const formations: Formation[] = [
     id: 'bur3',
     metaTitle: "Advanced Excel & Dashboards",
     metaDescription: "Advanced formulas, pivot tables, charts, introduction to Power Query and Power Pivot to create interactive dashboards",
-    category: 'bureautique',
+    category: 'office',
     priceOnsite: 65000,
     priceOnsiteLabel: '65 000 FCFA',
     priceOnline: 50000,
@@ -315,7 +315,7 @@ export const formations: Formation[] = [
 
 export const CATEGORIES: { id: Category; label: string, quantity: number }[] = [
   { id: 'all', label: 'Toutes', quantity: formations.length },
-  { id: 'bureautique', label: 'Bureautique', quantity: formations.filter(f => f.category === 'bureautique').length },
+  { id: 'office', label: 'office', quantity: formations.filter(f => f.category === 'office').length },
   { id: 'dev', label: 'Web & Mobile', quantity: formations.filter(f => f.category === 'dev').length },
   { id: 'ia', label: 'Intelligence Artificielle', quantity: formations.filter(f => f.category === 'ia').length },
   { id: 'data', label: 'Data & SQL', quantity: formations.filter(f => f.category === 'data').length },
@@ -325,6 +325,6 @@ export const CATEGORY_COLORS: Record<Exclude<Category, 'all'>, string> = {
   ia: '#60a5fa',
   dev: '#4ade80',
   data: '#facc15',
-  bureautique: '#fb64b6',
+  office: '#fb64b6',
 }
 
