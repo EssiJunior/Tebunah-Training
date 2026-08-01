@@ -61,9 +61,7 @@ type Student = {
   email: string
   phone: string
   address: string
-  academicLevel: string
-  academic_level?: string
-  token?: string
+  academicLevel: Translation
   updated_at?: string
   created_at?: string
 }
@@ -88,7 +86,11 @@ type RegistrationsAction =
   | { type: 'STORE'; payload: Registration[] }
   | { type: 'REMOVE' };
 
-  type RegistrationStatus = 'pending' | 'confirmed' | 'cancelled'
+type StudentsAction =
+  | { type: 'STORE'; payload: Student[] }
+  | { type: 'REMOVE' };
+
+type RegistrationStatus = 'pending' | 'confirmed' | 'cancelled'
 
 interface Registration {
   id: string
