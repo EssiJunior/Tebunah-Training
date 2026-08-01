@@ -4,6 +4,10 @@ type Alert = {
   message: string
 }
 
+type Translation = {
+  [key: string]: string
+}
+
 type Category = 'all' | 'ia' | 'dev' | 'data' | 'office'
 
 type BenefitCategory = {
@@ -58,6 +62,7 @@ type Student = {
   phone: string
   address: string
   academicLevel: string
+  academic_level?: string
   token?: string
   updated_at?: string
   created_at?: string
@@ -83,15 +88,18 @@ type RegistrationsAction =
   | { type: 'STORE'; payload: Registration[] }
   | { type: 'REMOVE' };
 
+  type RegistrationStatus = 'pending' | 'confirmed' | 'cancelled'
+
 interface Registration {
   id: string
+  _id?: string
   student: Student
   formation: Formation
-  price: number
-  format: 'onsite' | 'online'
-  session: string
+  price: number | Price
+  format:  Translation
+  session: Translation
   message: string
-  status?: string
+  status?: RegistrationStatus
   updated_at?: string
   created_at?: string
 }

@@ -11,7 +11,7 @@ import MiniBarChart from '@/components/atoms/Animated/dashboard/charts/MiniBarCh
 import DonutChart from '@/components/atoms/Animated/dashboard/charts/DonutChart'
 import Sparkline from '@/components/atoms/Animated/dashboard/charts/Sparkline'
 import { CATEGORY_COLORS } from '@/data/formations'
-import { Book, Coins, UserPlus, UserPlus2, Users } from 'lucide-react'
+import { Book, Coins, UserPlus2, Users } from 'lucide-react'
 
 export default function AdminDashboardPage() {
   const { formations, students, registrations } = useAdmin()
@@ -25,7 +25,7 @@ export default function AdminDashboardPage() {
   const totalFormations = formations.length
 
   const confirmedRegistrations = registrations.filter(r => r.status === 'confirmed')
-  const totalRevenue = confirmedRegistrations.reduce((sum, reg) => sum + reg.price, 0)
+  const totalRevenue = confirmedRegistrations.reduce((sum, reg) => sum + (typeof reg.price === 'number' ? reg.price : reg.price.amount), 0)
 
   const pendingCount = registrations.filter(r => r.status === 'pending').length
   const confirmedCount = registrations.filter(r => r.status === 'confirmed').length
@@ -42,7 +42,8 @@ export default function AdminDashboardPage() {
 
   const revenueTrend = confirmedRegistrations.reduce<number[]>((acc, reg) => {
     const prev = acc.length ? acc[acc.length - 1] : 0
-    acc.push(prev + reg.price)
+    const amount = typeof reg.price === 'number' ? reg.price : reg.price.amount
+    acc.push(prev + amount)
     return acc
   }, [0])
 

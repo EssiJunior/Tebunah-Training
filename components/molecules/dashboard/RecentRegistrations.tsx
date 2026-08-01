@@ -15,6 +15,12 @@ const RecentRegistrations = () => {
         .sort((a, b) => b.id.localeCompare(a.id)) // mock sorting by latest
         .slice(0, 5)
 
+    const formatLabel = (format: string | Translation) =>
+        typeof format === 'string' ? format : format.value
+
+    const priceAmount = (price: number | Price) =>
+        typeof price === 'number' ? price : price.amount
+
     return (
         <div className="lg:col-span-2 border border-white/6 bg-surface p-6 rounded-px flex flex-col justify-between">
             <div>
@@ -46,8 +52,8 @@ const RecentRegistrations = () => {
                                         <td className="py-3 text-white/60 truncate max-w-[150px]">
                                             {reg.formation?.metaTitle}
                                         </td>
-                                        <td className="py-3 uppercase text-white/40">{reg.format}</td>
-                                        <td className="py-3 text-white/70">{reg.price.toLocaleString()} FCFA</td>
+                                        <td className="py-3 uppercase text-white/40">{formatLabel(reg.format)}</td>
+                                        <td className="py-3 text-white/70">{priceAmount(reg.price).toLocaleString()} FCFA</td>
                                         <td className="py-3 text-right">
                                             <span
                                                 className={`px-2 py-0.5 rounded text-[10px] font-bold ${reg.status === 'confirmed'

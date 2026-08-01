@@ -3,12 +3,16 @@
 import { useEffect, useState } from 'react'
 import { useAdmin } from '@/context/AdminContext'
 import Field from '@/components/atoms/Field'
+import { useLocale, useTranslations } from 'next-intl'
 import { timeslots } from '@/utils/form'
 import { getRegistrations } from '@/requests/registrations'
 import { useAtomValue, useSetAtom } from 'jotai'
 import { registrationsActionsAtom, registrationsAtom } from '@/store/data/registrationAtoms'
 
 export default function AdminRegistrationsPage() {
+  const locale = useLocale()
+  const tF = useTranslations('Formation')
+
   const {
     students,
     formations,
@@ -47,12 +51,27 @@ export default function AdminRegistrationsPage() {
   const [editStatus, setEditStatus] = useState('pending')
   const [editMessage, setEditMessage] = useState('')
 
+  const formatTranslation = (formatKey: string): Translation => ({
+    locale,
+    key: formatKey === 'onsite' ? 'Formation.format.onsiteLabel' : 'Formation.format.onlineLabel',
+    value: formatKey === 'onsite' ? tF('form.format.onsiteLabel') : tF('form.format.onlineLabel')
+  })
+
+  const sessionTranslation = (sessionValue: string): Translation => ({
+    locale,
+    key: sessionValue === 'journée' ? 'Formation.timeslot.morningLabel' : 'Formation.timeslot.eveningLabel',
+    value: sessionValue === 'journée' ? tF('form.timeslot.morningLabel') : tF('form.timeslot.eveningLabel')
+  })
+
+  const getPriceAmount = (price: number | Price) =>
+    typeof price === 'number' ? price : price.amount
+
   // Filter registrations
   const filteredRegistrations = registrations.filter((reg) => {
     const matchesSearch =
       reg.student.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
       reg.student.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      reg.formation.title.toLowerCase().includes(searchTerm.toLowerCase())
+      reg.formation.title[locale].toLowerCase().includes(searchTerm.toLowerCase())
 
     const matchesStatus = statusFilter === 'all' || reg.status === statusFilter
     return matchesSearch && matchesStatus
@@ -95,10 +114,22 @@ export default function AdminRegistrationsPage() {
   }
 
   const handleOpenEdit = (reg: any) => {
+    const existingFormat = typeof reg.format === 'string'
+      ? reg.format
+      : reg.format.key.includes('onsite') ? 'onsite' : 'online'
+
+    const existingSession = typeof reg.session === 'string'
+      ? reg.session
+      : reg.session.value
+
+    const existingPrice = typeof reg.price === 'number'
+      ? reg.price
+      : reg.price.amount
+
     setEditingReg(reg)
-    setEditFormat(reg.format)
-    setEditPrice(reg.price)
-    setEditSession(reg.session)
+    setEditFormat(existingFormat)
+    setEditPrice(existingPrice)
+    setEditSession(existingSession)
     setEditStatus(reg.status)
     setEditMessage(reg.message)
   }
@@ -111,15 +142,28 @@ export default function AdminRegistrationsPage() {
 
     if (!student || !formation) return
 
-    addRegistration({
-      student,
-      formations: formation,
-      price,
-      format,
+    const registrationPayload: Omit<Registration, 'id'> = {
+      student: {
+        ...student,
+        academic_level: student.academicLevel,
+        updated_at: new Date().toISOString(),
+        created_at: new Date().toISOString(),
+      },
+      formation,
+      price: {
+        amount: price,
+        currency: 'FCFA',
+        label: `${price.toLocaleString()} FCFA`,
+      },
+      format: formatTranslation(format),
+      session: format === 'online' ? '' : sessionTranslation(session),
       message,
-      session,
-      status
-    })
+      status,
+      created_at: new Date().toISOString(),
+      updated_at: new Date().toISOString(),
+    }
+
+    addRegistration(registrationPayload)
 
     setIsAddModalOpen(false)
   }
@@ -128,14 +172,20 @@ export default function AdminRegistrationsPage() {
     e.preventDefault()
     if (!editingReg) return
 
-    updateRegistration(editingReg.id, {
-      format: editFormat,
-      price: editPrice,
-      session: editSession,
+    const editedPayload: Partial<Registration> = {
+      format: formatTranslation(editFormat),
+      session: editFormat === 'online' ? '' : sessionTranslation(editSession),
+      price: {
+        amount: editPrice,
+        currency: 'FCFA',
+        label: `${editPrice.toLocaleString()} FCFA`,
+      },
       status: editStatus,
-      message: editMessage
-    })
+      message: editMessage,
+      updated_at: new Date().toISOString(),
+    }
 
+    updateRegistration(editingReg.id, editedPayload)
     setEditingReg(null)
   }
 
@@ -210,20 +260,20 @@ export default function AdminRegistrationsPage() {
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/6 text-white/70">
-                {filteredRegistrations.map((reg) => (
+                {filteredRegistrations.map((reg: Registration) => (
                   <tr key={reg.id} className="hover:bg-white/5 transition-colors">
                     <td className="px-6 py-3.5">
                       <div className="font-bold text-ink">{reg.student.name}</div>
                       <div className="text-[9px] text-white/30">{reg.student.email}</div>
                     </td>
                     <td className="px-6 py-3.5">
-                      <div className="font-semibold text-white/80">{reg.formations.metaTitle}</div>
-                      <div className="text-[9px] text-white/30 capitalize">{reg.formations.category}</div>
+                      <div className="font-semibold text-white/80">{reg.formation.title[locale]}</div>
+                      <div className="text-[9px] text-white/30 capitalize">{reg.formation.category}</div>
                     </td>
-                    <td className="px-6 py-3.5 uppercase text-white/50">{reg.format}</td>
-                    <td className="px-6 py-3.5 capitalize text-white/50">{reg.session || '—'}</td>
+                    <td className="px-6 py-3.5 uppercase text-white/50">{reg.format[locale]}</td>
+                    <td className="px-6 py-3.5 capitalize text-white/50">{reg.session[locale] || '—'}</td>
                     <td className="px-6 py-3.5 font-semibold text-ink">
-                      {reg.price.toLocaleString()} FCFA
+                      {getPriceAmount(reg.price).toLocaleString()} FCFA
                     </td>
                     <td className="px-6 py-3.5 text-white/40 max-w-[150px] truncate" title={reg.message}>
                       {reg.message || '—'}
@@ -404,7 +454,7 @@ export default function AdminRegistrationsPage() {
                 Étudiant : <span className="text-white/80 font-bold">{editingReg.student.name}</span>
               </p>
               <p className="text-white/40">
-                Formation : <span className="text-white/80 font-bold">{editingReg.formations.metaTitle}</span>
+                Formation : <span className="text-white/80 font-bold">{editingReg.formation.metaTitle}</span>
               </p>
             </div>
 
@@ -418,7 +468,7 @@ export default function AdminRegistrationsPage() {
                       onChange={(e) => {
                         setEditFormat(e.target.value)
                         // Adjust default price if clicked format shifts
-                        const formation = formations.find(f => f.id === editingReg.formations.id)
+                        const formation = formations.find(f => f.id === editingReg.formation.id)
                         if (formation) {
                           setEditPrice(e.target.value === 'onsite' ? formation.priceOnsite : formation.priceOnline)
                         }

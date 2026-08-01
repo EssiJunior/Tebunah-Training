@@ -1,21 +1,27 @@
 import { API_URL } from "@/utils/baseURL";
 
 
+const resolveAPIFormat = (format: string | Translation) =>
+  typeof format === 'string' ? format : format.key
+
+const resolveAPISession = (session: string | Translation) =>
+  typeof session === 'string' ? session : session.key
+
 export const createRegistration = async (
     formData: Registration,
     setStatus: (arg: "error" | "sent" | "idle" | "sending") => void
 ) => {
     const data = {
-        "name": formData.student.name,
-        "email": formData.student.email,
-        "phone": formData.student.phone,
-        "address": formData.student.address,
-        "academic_level": formData.student.academicLevel,
-        "format": formData.format,
-        "price": formData.price,
-        "formation": formData.formation.metaTitle,
-        "message": formData.message,
-        "session": formData.session
+        name: formData.student.name,
+        email: formData.student.email,
+        phone: formData.student.phone,
+        address: formData.student.address,
+        academic_level: formData.student.academicLevel,
+        format: resolveAPIFormat(formData.format),
+        price: formData.price,
+        formation: formData.formation.id,
+        message: formData.message,
+        session: resolveAPISession(formData.session)
     }
 
     try {
@@ -60,18 +66,18 @@ export const updateRegistration = async (
     const token = formData.student.token || '';
 
     const data = {
-        "name": formData.student.name,
-        "email": formData.student.email,
-        "phone": formData.student.phone,
-        "address": formData.student.address,
-        "academic_level": formData.student.academicLevel,
-        "format": formData.format,
-        "price": formData.price,
-        "formation": formData.formation.metaTitle,
-        "message": formData.message,
-        "session": formData.session,
-        "status": formData.status,
-        "updated_at": updatedAt
+        name: formData.student.name,
+        email: formData.student.email,
+        phone: formData.student.phone,
+        address: formData.student.address,
+        academic_level: formData.student.academicLevel,
+        format: resolveAPIFormat(formData.format),
+        price: formData.price,
+        formation: formData.formation.id,
+        message: formData.message,
+        session: resolveAPISession(formData.session),
+        status: formData.status,
+        updated_at: updatedAt
     }
 
     try {
