@@ -16,27 +16,27 @@ type BenefitCategory = {
 }
 type Formation = {
   id: string
-  metaTitle: string
-  metaDescription: string
-  category: 'office' | 'dev' | 'ia' | 'data'
-
-  // Static (locale-independent)
-  priceOnsite: number
-  priceOnsiteLabel: string
-  priceOnline: number
-  priceOnlineLabel: string
+  title: Translation
+  description: Translation
+  duration?: {
+    months: number
+    days_per_week: number
+    hours: number
+  }
+  target?: { en: string; fr: string }[]
+  prerequisites?: { en: string; fr: string }[]
+  category: Exclude<Category, 'all'>
+  price: {
+    on_site: number
+    on_line: number
+  }
   availableNow: boolean
   featured?: boolean
-
-  // Translation key shapes (resolved via useTranslations('formations'))
-  // t(`${id}.title`)
-  // t(`${id}.description`)
-  // t(`${id}.duration`)
-  // t(`${id}.hoursTotal`)
-  // t(`${id}.target`)
-  // t(`${id}.prereq`)
-
-  benefits: FormationBenefit[]
+  benefits: Array<{
+    title: { en: string; fr: string }
+    items: { en: string; fr: string }[]
+    icon?: string
+  }>
   updated_at?: string
   created_at?: string
 }
@@ -62,6 +62,8 @@ type Student = {
   phone: string
   address: string
   academicLevel: Translation
+  academic_level?: Translation
+  token?: string
   updated_at?: string
   created_at?: string
 }
@@ -88,6 +90,10 @@ type RegistrationsAction =
 
 type StudentsAction =
   | { type: 'STORE'; payload: Student[] }
+  | { type: 'REMOVE' };
+
+type FormationsAction =
+  | { type: 'STORE'; payload: Formation[] }
   | { type: 'REMOVE' };
 
 type RegistrationStatus = 'pending' | 'confirmed' | 'cancelled'

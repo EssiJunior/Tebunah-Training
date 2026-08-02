@@ -113,6 +113,7 @@ export const updateRegistration = async (
 
 export const getRegistrations = async (
     dispatch: (arg: RegistrationsAction) => void,
+    token: string,
     setIsLoading: (arg: boolean) => void,
     setError: (arg: string) => void
 ) => {
@@ -122,6 +123,7 @@ export const getRegistrations = async (
             method: "GET",
             headers: {
                 Accept: "application/json",
+                Authorization: `Bearer ${token}`,
             },
         });
 
