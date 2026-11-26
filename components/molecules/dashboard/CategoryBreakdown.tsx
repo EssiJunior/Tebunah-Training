@@ -1,14 +1,26 @@
 import { CATEGORIES } from "@/data/formations"
+import { useAdmin } from '@/context/AdminContext'
 
 const CategoryBreakdown = () => {
-    const totalRegistrations = 10
-
+    const { registrations } = useAdmin()
     const categoryColors: Record<string, string> = {
         office: 'bg-pink-500',
         dev: 'bg-green-500',
         ia: 'bg-blue-400',
         data: 'bg-yellow-400'
     }
+
+    const validCategories = new Set(Object.keys(categoryColors))
+    const validRegistrations = registrations.filter(
+        (registration) => registration.formation?.category && validCategories.has(registration.formation.category)
+    )
+    const totalRegistrations = validRegistrations.length
+
+    const categoryCounts = validRegistrations.reduce<Record<string, number>>((acc, registration) => {
+        const category = registration.formation!.category
+        acc[category] = (acc[category] || 0) + 1
+        return acc
+    }, {})
 
     return (
         <div className="border border-white/6 bg-surface p-6 rounded-px">
@@ -18,7 +30,7 @@ const CategoryBreakdown = () => {
 
             <div className="space-y-5">
                 {CATEGORIES.slice(1).map((cat) => {
-                    const count = cat.quantity
+                    const count = categoryCounts[cat.id] || 0
                     const percentage = totalRegistrations > 0 ? (count / totalRegistrations) * 100 : 0
                     return (
                         <div key={cat.id} className="space-y-1.5">
