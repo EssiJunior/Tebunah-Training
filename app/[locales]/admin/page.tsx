@@ -1,8 +1,8 @@
 'use client'
 
+import { useState, useEffect } from 'react'
 import CategoryBreakdown from '@/components/molecules/dashboard/CategoryBreakdown'
 import RecentRegistrations from '@/components/molecules/dashboard/RecentRegistrations'
-import { useAdmin } from '@/context/AdminContext'
 import { usePathname } from 'next/navigation'
 import GlassStatCard from '@/components/atoms/cards/dashboard/GlassStatCard'
 import AnimatedCounter from '@/components/atoms/Animated/dashboard/AnimatedCounter'
@@ -13,10 +13,37 @@ import Sparkline from '@/components/atoms/Animated/dashboard/charts/Sparkline'
 import { CATEGORY_COLORS } from '@/data/formations'
 import { Book, Coins, UserPlus2, Users } from 'lucide-react'
 
-export default function AdminDashboardPage() {
-  const { formations, students, registrations } = useAdmin()
-  const pathname = usePathname()
+import { getFormations } from '@/requests/formations'
+import { getStudents } from '@/requests/students'
+import { getRegistrations } from '@/requests/registrations'
 
+import { useAtomValue, useSetAtom } from 'jotai'
+import { formationsActionsAtom, formationsAtom } from '@/store/data/formationAtoms'
+import { studentsActionsAtom, studentsAtom } from '@/store/data/studentAtoms'
+import { registrationsActionsAtom, registrationsAtom } from '@/store/data/registrationAtoms'
+import { authUserAtom } from '@/store/auth/userAtoms'
+
+export default function AdminDashboardPage() {
+
+
+  const dispatchStudents = useSetAtom(studentsActionsAtom)
+  const students = useAtomValue(studentsAtom)
+  const [isLoadingStudents, setIsLoadingStudents] = useState(false)
+  const [errorStudents, setErrorStudents] = useState<string | null>(null)
+
+  const dispatchFormations = useSetAtom(formationsActionsAtom)
+  const formations = useAtomValue(formationsAtom)
+  const [isLoadingFormations, setIsLoadingFormations] = useState(false)
+  const [errorFormations, setErrorFormations] = useState<string | null>(null)
+
+  const dispatchRegistrations = useSetAtom(registrationsActionsAtom)
+  const registrations = useAtomValue(registrationsAtom)
+  const [isLoadingRegistrations, setIsLoadingRegistrations] = useState(false)
+  const [errorRegistrations, setErrorRegistrations] = useState<string | null>(null)
+
+  const user = useAtomValue(authUserAtom)
+
+  const pathname = usePathname()
   const segments = pathname?.split('/') || []
   const locale = segments[1] || 'fr'
 
@@ -46,6 +73,13 @@ export default function AdminDashboardPage() {
     acc.push(prev + amount)
     return acc
   }, [0])
+
+
+    useEffect(() => {
+      getFormations(dispatchFormations, setIsLoadingFormations, setErrorFormations)
+      getStudents(dispatchStudents, user?.token, setIsLoadingStudents, setErrorStudents)
+      getRegistrations(dispatchRegistrations, user.token, setIsLoadingRegistrations, setErrorRegistrations)
+    }, [dispatchFormations, dispatchStudents, dispatchRegistrations, user?.token])
 
   return (
     <div className="space-y-8 font-mono">
